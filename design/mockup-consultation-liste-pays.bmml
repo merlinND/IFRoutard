@@ -1,0 +1,112 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1133" measuredH="755" mockupW="771" mockupH="738">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="362" y="17" w="771" h="738" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>squareBreakline</borderStyle>
+        <text>Recherche%20%7C%20Voyages%20en%20argentine%0Ahttp%3A//ifroutard.insa-lyon.fr/recherche/pays/argentine</text>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="629" y="116" w="-1" h="-1" measuredW="236" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Voyages%20en%20Argentine</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::HRule" x="397" y="271" w="700" h="-1" measuredW="100" measuredH="10" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.75</backgroundAlpha>
+        <stroke>solid</stroke>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="__group__" x="398" y="158" w="696" h="95" measuredW="696" measuredH="95" zOrder="3" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Paragraph" x="477" y="0" w="219" h="95" measuredW="200" measuredH="80" zOrder="0" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Capitale%20%3A%20Buenos%20Aires%0APopulation%20%3A%2039921833%20habitants%0ATODO</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="462" h="95" measuredW="77" measuredH="79" zOrder="1" locked="false" isInGroup="5">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <rotation>180</rotation>
+            <text>Photo%20caract%E9ristique%20du%20pays</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="11" controlTypeID="__group__" x="397" y="305" w="693" h="192" measuredW="693" measuredH="192" zOrder="4" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::FieldSet" x="0" y="0" w="693" h="192" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="11">
+          <controlProperties>
+            <text>Patagonie</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="581" y="15" w="-1" h="-1" measuredW="102" measuredH="21" zOrder="1" locked="false" isInGroup="11">
+          <controlProperties>
+            <align>right</align>
+            <bold>true</bold>
+            <text>S%E9jour%20%7C%2014%20jours</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="548" y="150" w="134" h="27" measuredW="105" measuredH="27" zOrder="2" locked="false" isInGroup="11">
+          <controlProperties>
+            <text>En%20savoir%20plus</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="423" y="153" w="-1" h="-1" measuredW="110" measuredH="21" zOrder="3" locked="false" isInGroup="11">
+          <controlProperties>
+            <color>10066329</color>
+            <text>%C0%20partir%20de%203205%u20AC</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Paragraph" x="12" y="44" w="669" h="88" measuredW="200" measuredH="80" zOrder="4" locked="false" isInGroup="11">
+          <controlProperties>
+            <text>Nom%20magique%20qui%20vous%20transporte%20et%20vous%20permet%20de%20r%E9aliser%20votre%20r%EAve.%20La%20Patagonie%20Atlantique%20constitue%20un%20point%20majeur%20car%20il%20s%27agit%20de%20l%27une%20des%20plus%20importantes%20r%E9serves%20marines%20de%20la%20plan%E8te.</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="12" controlTypeID="__group__" x="397" y="512" w="693" h="192" measuredW="693" measuredH="192" zOrder="5" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::FieldSet" x="0" y="0" w="693" h="192" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="12">
+          <controlProperties>
+            <text>De%20la%20Patagonie%20%E0%20la%20Terre%20de%20Feu</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="586" y="15" w="-1" h="-1" measuredW="96" measuredH="21" zOrder="1" locked="false" isInGroup="12">
+          <controlProperties>
+            <align>right</align>
+            <bold>true</bold>
+            <text>Circuit%20%7C%207%20jours</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="548" y="150" w="134" h="27" measuredW="105" measuredH="27" zOrder="2" locked="false" isInGroup="12">
+          <controlProperties>
+            <href>mockup-fiche-detaillee%26bm%3Bmockup-fiche-detaillee.bmml%26bm%3Bmockup-fiche-detaillee.bmml%26bm%3Bmockup-fiche-detaillee.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22583%2C645%2C717%2C672%22%20href%3D%22mockup-fiche-detaillee.bmml%22%20alt%3D%22mockup-fiche-detaillee%22%20id%3D%222%22/%3E</map>
+            <text>En%20savoir%20plus</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="423" y="153" w="-1" h="-1" measuredW="110" measuredH="21" zOrder="3" locked="false" isInGroup="12">
+          <controlProperties>
+            <color>10066329</color>
+            <text>%C0%20partir%20de%202000%u20AC</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Paragraph" x="12" y="44" w="669" h="88" measuredW="200" measuredH="80" zOrder="4" locked="false" isInGroup="12">
+          <controlProperties>
+            <text>D%E9couverte%20exceptionnelle%20de%20grands%20espaces%20et%20paysages%20%3A%20la%20Patagonie%2C%20la%20Terre%20de%20Feu%2C%20Ushuaia%20et%20le%20D%E9troit%20de%20Magellan.%20Vous%20allez%20d%E9couvrir%20gr%E2ce%20%E0%20ce%20circuit%20des%20endroits%20parmi%20les%20plus%20magnifiques%20du%20monde.</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::PointyButton" x="393" y="116" w="83" h="-1" measuredW="60" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>left</direction>
+        <href>mockup-consultation%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2231%2C99%2C114%2C126%22%20href%3D%22mockup-consultation.bmml%22%20alt%3D%22mockup-consultation%22%20id%3D%2213%22/%3E</map>
+        <text>Retour</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

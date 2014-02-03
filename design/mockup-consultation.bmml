@@ -1,0 +1,62 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1095" measuredH="626" mockupW="871" mockupH="498">
+  <controls>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Title" x="467" y="278" w="-1" h="-1" measuredW="385" measuredH="43" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Recherche%20de%20voyage</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="224" y="128" w="871" h="498" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Consultation%20du%20catalogue%20client%0Ahttp%3A//ifroutard.insa-lyon.fr/consultation</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="__group__" x="370" y="362" w="235" h="135" measuredW="235" measuredH="135" zOrder="2" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::SubTitle" x="69" y="0" w="-1" h="-1" measuredW="96" measuredH="27" zOrder="0" locked="false" isInGroup="12">
+          <controlProperties>
+            <text>Par%20pays</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::SearchBox" x="0" y="57" w="235" h="-1" measuredW="120" measuredH="25" zOrder="1" locked="false" isInGroup="12">
+          <controlProperties>
+            <text>Argentine</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="48" y="96" w="138" h="39" measuredW="116" measuredH="27" zOrder="2" locked="false" isInGroup="12">
+          <controlProperties>
+            <href>mockup-consultation-liste-pays%26bm%3Bmockup-consultation-liste-pays.bmml%26bm%3Bmockup-consultation-liste-pays.bmml%26bm%3Bmockup-consultation-liste-pays.bmml</href>
+            <icon>SearchIcon%7Csmall</icon>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22194%2C330%2C332%2C369%22%20href%3D%22mockup-consultation-liste-pays.bmml%22%20alt%3D%22mockup-consultation-liste-pays%22%20id%3D%222%22/%3E</map>
+            <rotation>180</rotation>
+            <text>Rechercher</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="13" controlTypeID="__group__" x="672" y="362" w="262" h="135" measuredW="262" measuredH="135" zOrder="3" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::ComboBox" x="0" y="57" w="262" h="-1" measuredW="150" measuredH="24" zOrder="0" locked="false" isInGroup="13">
+          <controlProperties>
+            <state>closed</state>
+            <text>Circuit%20accompagn%E9%0AS%E9jour</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="26" y="0" w="-1" h="-1" measuredW="210" measuredH="27" zOrder="1" locked="false" isInGroup="13">
+          <controlProperties>
+            <bold>false</bold>
+            <text>Par%20type%20de%20voyage</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="62" y="96" w="138" h="39" measuredW="116" measuredH="27" zOrder="2" locked="false" isInGroup="13">
+          <controlProperties>
+            <href>mockup-consultation-liste-type%26bm%3Bmockup-consultation-liste-type.bmml%26bm%3Bmockup-consultation-liste-type.bmml%26bm%3Bmockup-consultation-liste-type.bmml</href>
+            <icon>SearchIcon%7Csmall</icon>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22510%2C330%2C648%2C369%22%20href%3D%22mockup-consultation-liste-type.bmml%22%20alt%3D%22mockup-consultation-liste-type%22%20id%3D%222%22/%3E</map>
+            <rotation>180</rotation>
+            <text>Rechercher</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

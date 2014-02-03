@@ -1,0 +1,121 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1133" measuredH="767" mockupW="771" mockupH="750">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="362" y="17" w="771" h="750" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <text>Voyage%20%22De%20la%20Patagonie%20%E0%20la%20Terre%20de%20Feu%22%0Ahttp%3A//ifroutard.insa-lyon.fr/voyage/17-de-la-patagonie-a-la-terre-de-feu</text>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="678" y="116" w="-1" h="-1" measuredW="123" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Votre%20devis</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="__group__" x="393" y="201" w="693" h="286" measuredW="693" measuredH="286" zOrder="2" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::FieldSet" x="0" y="0" w="693" h="286" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>De%20la%20Patagonie%20%E0%20la%20Terre%20de%20Feu</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="586" y="15" w="-1" h="-1" measuredW="96" measuredH="21" zOrder="1" locked="false" isInGroup="2">
+          <controlProperties>
+            <align>right</align>
+            <bold>true</bold>
+            <text>Circuit%20%7C%207%20jours</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Paragraph" x="12" y="44" w="669" h="88" measuredW="200" measuredH="80" zOrder="2" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>D%E9couverte%20exceptionnelle%20de%20grands%20espaces%20et%20paysages%20%3A%20la%20Patagonie%2C%20la%20Terre%20de%20Feu%2C%20Ushuaia%20et%20le%20D%E9troit%20de%20Magellan.%20Vous%20allez%20d%E9couvrir%20gr%E2ce%20%E0%20ce%20circuit%20des%20endroits%20parmi%20les%20plus%20magnifiques%20du%20monde.</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Image" x="12" y="89" w="667" h="182" measuredW="77" measuredH="79" zOrder="3" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>Photo%20repr%E9sentative%20du%20voyage</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="3" controlTypeID="__group__" x="915" y="578" w="162" h="90" measuredW="162" measuredH="90" zOrder="3" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="5" controlTypeID="__group__" x="0" y="21" w="162" h="69" measuredW="162" measuredH="69" zOrder="0" locked="false" isInGroup="3">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::SubTitle" x="0" y="48" w="-1" h="-1" measuredW="113" measuredH="21" zOrder="0" locked="false" isInGroup="5">
+              <controlProperties>
+                <size>18</size>
+                <text>Total%20%3A%204000%u20AC</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="21" w="-1" h="-1" measuredW="162" measuredH="21" zOrder="1" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Tarif%20par%20personne%20%3A%202000%u20AC</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="149" measuredH="21" zOrder="2" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Nombre%20de%20personnes%20%3A%202</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::SubTitle" x="0" y="0" w="-1" h="-1" measuredW="104" measuredH="21" zOrder="1" locked="false" isInGroup="3">
+          <controlProperties>
+            <size>18</size>
+            <text>R%E9capitulatif</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="5" controlTypeID="__group__" x="401" y="502" w="680" h="82" measuredW="680" measuredH="82" zOrder="4" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::SubTitle" x="0" y="0" w="-1" h="-1" measuredW="105" measuredH="21" zOrder="0" locked="false" isInGroup="5">
+          <controlProperties>
+            <size>18</size>
+            <text>Fiche%20voyage</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Paragraph" x="0" y="28" w="680" h="54" measuredW="200" measuredH="80" zOrder="1" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Transport%20au%20cours%20du%20circuit%20%3A%20bus%20et%20train%0ANombre%20de%20kilom%E8tres%20parcourus%20dans%20le%20circuit%20%3A%20environ%20700%20km</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::PointyButton" x="649" y="683" w="181" h="-1" measuredW="130" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>center</direction>
+        <href>mockup-consultation%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22287%2C666%2C468%2C693%22%20href%3D%22mockup-consultation.bmml%22%20alt%3D%22mockup-consultation%22%20id%3D%226%22/%3E</map>
+        <text>Nouvelle%20recherche</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="586" y="137" w="-1" h="-1" measuredW="329" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2575891</color>
+        <text>Une%20copie%20de%20ce%20devis%20vous%20a%20%E9t%E9%20transmise%20par%20e-mail.</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="__group__" x="401" y="578" w="344" h="69" measuredW="344" measuredH="69" zOrder="7" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="27" w="-1" h="-1" measuredW="187" measuredH="21" zOrder="0" locked="false" isInGroup="11">
+          <controlProperties>
+            <text>D%E9part%20de%20Paris%20le%2007/02/2014.</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="0" y="0" w="-1" h="-1" measuredW="104" measuredH="21" zOrder="1" locked="false" isInGroup="11">
+          <controlProperties>
+            <size>18</size>
+            <text>Votre%20d%E9part</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="0" y="48" w="-1" h="-1" measuredW="344" measuredH="21" zOrder="2" locked="false" isInGroup="11">
+          <controlProperties>
+            <text>Transport%20a%E9rien%20%28susceptible%20d%27%EAtre%20modifi%E9%29%20%3A%20vol%20r%E9gulier.</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

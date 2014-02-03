@@ -1,0 +1,196 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="940" measuredH="752" mockupW="899" mockupH="706">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="250" y="46" w="690" h="706" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Enregistrement%20client%0Ahttp%3A//ifroutard.insa-lyon.fr/enregistrement</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="__group__" x="503" y="648" w="163" h="27" measuredW="163" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="0" w="89" h="27" measuredW="90" measuredH="27" zOrder="0" locked="false" isInGroup="11">
+          <controlProperties>
+            <color>6989903</color>
+            <href>mockup-consultation%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml</href>
+            <icon>CheckMarkIcon%7Csmall</icon>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22462%2C602%2C551%2C629%22%20href%3D%22mockup-consultation.bmml%22%20alt%3D%22mockup-consultation%22%20id%3D%220%22/%3E</map>
+            <text>Valider</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="95" y="0" w="-1" h="-1" measuredW="68" measuredH="27" zOrder="1" locked="false" isInGroup="11">
+          <controlProperties>
+            <text>Annuler</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="22" controlTypeID="__group__" x="41" y="149" w="603" h="303" measuredW="603" measuredH="303" zOrder="3" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::ComboBox" x="382" y="0" w="-1" h="-1" measuredW="41" measuredH="24" zOrder="0" locked="false" isInGroup="22">
+          <controlProperties>
+            <state>closed</state>
+            <text>M%0AMme</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="256" y="2" w="111" h="-1" measuredW="41" measuredH="21" zOrder="1" locked="false" isInGroup="22">
+          <controlProperties>
+            <align>right</align>
+            <text>Civilit%E9</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="382" y="149" w="215" h="-1" measuredW="107" measuredH="27" zOrder="2" locked="false" isInGroup="22">
+          <controlProperties>
+            <text>06%2013%2037%2042%2000</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="382" y="191" w="221" h="-1" measuredW="171" measuredH="27" zOrder="3" locked="false" isInGroup="22">
+          <controlProperties>
+            <text>martin.dupont@insa-lyon.fr</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::TextInput" x="382" y="40" w="215" h="-1" measuredW="57" measuredH="27" zOrder="4" locked="false" isInGroup="22">
+          <controlProperties>
+            <text>Dupont</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::TextInput" x="382" y="76" w="215" h="-1" measuredW="52" measuredH="27" zOrder="5" locked="false" isInGroup="22">
+          <controlProperties>
+            <text>Martin</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::DateChooser" x="382" y="109" w="215" h="-1" measuredW="123" measuredH="25" zOrder="6" locked="false" isInGroup="22">
+          <controlProperties>
+            <text>13/07/1989%20%20</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="256" y="43" w="111" h="-1" measuredW="27" measuredH="21" zOrder="7" locked="false" isInGroup="22">
+          <controlProperties>
+            <align>right</align>
+            <text>Nom</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="256" y="79" w="111" h="-1" measuredW="47" measuredH="21" zOrder="8" locked="false" isInGroup="22">
+          <controlProperties>
+            <align>right</align>
+            <text>Pr%E9nom</text>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="256" y="111" w="111" h="-1" measuredW="111" measuredH="21" zOrder="9" locked="false" isInGroup="22">
+          <controlProperties>
+            <align>right</align>
+            <text>Date%20de%20naissance</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="256" y="152" w="111" h="-1" measuredW="64" measuredH="21" zOrder="10" locked="false" isInGroup="22">
+          <controlProperties>
+            <align>right</align>
+            <text>T%E9l%E9phone</text>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="256" y="194" w="111" h="-1" measuredW="37" measuredH="21" zOrder="11" locked="false" isInGroup="22">
+          <controlProperties>
+            <align>right</align>
+            <text>E-mail</text>
+          </controlProperties>
+        </control>
+        <control controlID="12" controlTypeID="com.balsamiq.mockups::TextInput" x="382" y="241" w="221" h="-1" measuredW="112" measuredH="27" zOrder="12" locked="false" isInGroup="22">
+          <controlProperties>
+            <text>****************</text>
+          </controlProperties>
+        </control>
+        <control controlID="13" controlTypeID="com.balsamiq.mockups::TextInput" x="382" y="276" w="221" h="-1" measuredW="112" measuredH="27" zOrder="13" locked="false" isInGroup="22">
+          <controlProperties>
+            <text>****************</text>
+          </controlProperties>
+        </control>
+        <control controlID="15" controlTypeID="com.balsamiq.mockups::Label" x="256" y="244" w="111" h="-1" measuredW="81" measuredH="21" zOrder="14" locked="false" isInGroup="22">
+          <controlProperties>
+            <align>right</align>
+            <text>Mot%20de%20passe</text>
+          </controlProperties>
+        </control>
+        <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="256" y="279" w="111" h="-1" measuredW="75" measuredH="21" zOrder="15" locked="false" isInGroup="22">
+          <controlProperties>
+            <align>right</align>
+            <text>Confirmation</text>
+          </controlProperties>
+        </control>
+        <control controlID="23" controlTypeID="__group__" x="0" y="82" w="274" h="181" measuredW="274" measuredH="181" zOrder="16" locked="false" isInGroup="22">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::HelpButton" x="256" y="163" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="0" locked="false" isInGroup="23"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::StickyNote" x="0" y="0" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="1" locked="false" isInGroup="23">
+              <controlProperties>
+                <text>Consignes%20de%20s%E9curit%E9%20pour%20le%20choix%20du%20mot%20de%20passe</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Arrow" x="91" y="67" w="-1" h="-1" measuredW="150" measuredH="100" zOrder="2" locked="false" isInGroup="23">
+              <controlProperties>
+                <curvature>0</curvature>
+                <direction>top</direction>
+                <leftArrow>false</leftArrow>
+                <stroke>solid</stroke>
+                <text/>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="23" controlTypeID="__group__" x="287" y="467" w="379" h="166" measuredW="379" measuredH="166" zOrder="2" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="379" h="166" measuredW="379" measuredH="166" zOrder="0" locked="false" isInGroup="23">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::FieldSet" x="0" y="0" w="379" h="166" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>Adresse</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="136" y="28" w="219" h="-1" measuredW="167" measuredH="27" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>20%20Avenue%20Albert%20Einstein</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="136" y="70" w="219" h="-1" measuredW="203" measuredH="27" zOrder="2" locked="false" isInGroup="0">
+              <controlProperties>
+                <state>up</state>
+                <text>R%E9sidence%20F%2C%20Appartement%20042</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="136" y="112" w="53" h="-1" measuredW="52" measuredH="27" zOrder="3" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>69621</text>
+              </controlProperties>
+            </control>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::TextInput" x="197" y="112" w="158" h="-1" measuredW="130" measuredH="27" zOrder="4" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>Villeurbanne%20Cedex</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="15" y="28" w="111" h="-1" measuredW="24" measuredH="21" zOrder="5" locked="false" isInGroup="0">
+              <controlProperties>
+                <align>right</align>
+                <text>Rue</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="15" y="73" w="111" h="-1" measuredW="76" measuredH="21" zOrder="6" locked="false" isInGroup="0">
+              <controlProperties>
+                <align>right</align>
+                <text>Compl%E9ment</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="15" y="115" w="111" h="-1" measuredW="25" measuredH="21" zOrder="7" locked="false" isInGroup="0">
+              <controlProperties>
+                <align>right</align>
+                <text>Ville</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Image" x="687" y="149" w="229" h="526" measuredW="77" measuredH="79" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Paysage%20exotique</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
