@@ -1,0 +1,263 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1625" measuredH="883" mockupW="1264" mockupH="842">
+  <controls>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::TitleWindow" x="361" y="214" w="1038" h="669" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bottomheight>0</bottomheight>
+        <close>true</close>
+        <maximizeRestore>true</maximizeRestore>
+        <minimize>true</minimize>
+        <text>IF%27Routard%20%7C%20Gestion%20du%20catalogue%20voyage</text>
+        <topheight>26</topheight>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::HSplitter" x="953" y="245" w="-1" h="637" measuredW="11" measuredH="100" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::TabBar" x="964" y="249" w="435" h="633" measuredW="210" measuredH="100" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Description%2C%20D%E9parts</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="375" y="243" w="1024" h="640" measuredW="200" measuredH="122" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <position>left</position>
+        <selectedIndex>0</selectedIndex>
+        <text>Voyages%0APays</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="__group__" x="987" y="283" w="394" h="575" measuredW="394" measuredH="575" zOrder="4" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="34" w="335" h="48" measuredW="335" measuredH="48" zOrder="0" locked="false" isInGroup="40">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="21" w="335" h="-1" measuredW="210" measuredH="27" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>De%20la%20Patagonie%20%E0%20la%20Terre%20du%20Feu</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="97" h="-1" measuredW="91" measuredH="21" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>Titre%20du%20voyage</text>
+                <textOrientation>right</textOrientation>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="0" y="97" w="386" h="161" measuredW="386" measuredH="161" zOrder="1" locked="false" isInGroup="40">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>Description</text>
+                <textOrientation>right</textOrientation>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::TextArea" x="0" y="21" w="386" h="140" measuredW="200" measuredH="140" zOrder="1" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>D%E9couverte%20exceptionnelle%20de%20grands%20espaces%20et%20paysages%20%3A%20la%20Patagonie%2C%20la%20Terre%20de%20Feu%2C%20Ushuaia%20et%20le%20D%E9troit%20de%20Magellan.%20Vous%20allez%20d%E9couvrir%20gr%E2ce%20%E0%20ce%20circuit%20des%20endroits%20parmi%20les%20plus%20magnifiques%20du%20monde.</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="3" controlTypeID="__group__" x="0" y="316" w="386" h="24" measuredW="386" measuredH="24" zOrder="2" locked="false" isInGroup="40">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::ComboBox" x="130" y="0" w="256" h="-1" measuredW="150" measuredH="24" zOrder="0" locked="false" isInGroup="3">
+              <controlProperties>
+                <state>closed</state>
+                <text>Circuit%20accompagn%E9%0AS%E9jour</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="2" w="-1" h="-1" measuredW="93" measuredH="21" zOrder="1" locked="false" isInGroup="3">
+              <controlProperties>
+                <text>Type%20de%20voyage</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="4" controlTypeID="__group__" x="0" y="277" w="386" h="24" measuredW="386" measuredH="24" zOrder="3" locked="false" isInGroup="40">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::ComboBox" x="130" y="0" w="256" h="-1" measuredW="87" measuredH="24" zOrder="0" locked="false" isInGroup="4">
+              <controlProperties>
+                <state>closed</state>
+                <text>Argentine%0AAustralie%0ANouveau...</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="2" w="-1" h="-1" measuredW="115" measuredH="21" zOrder="1" locked="false" isInGroup="4">
+              <controlProperties>
+                <text>Pays%20de%20destination</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="5" controlTypeID="__group__" x="357" y="34" w="32" h="42" measuredW="32" measuredH="42" zOrder="4" locked="false" isInGroup="40">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="32" measuredH="21" zOrder="0" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Code</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="21" w="29" h="-1" measuredW="13" measuredH="21" zOrder="1" locked="false" isInGroup="5">
+              <controlProperties>
+                <align>center</align>
+                <text>17</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="7" controlTypeID="__group__" x="0" y="355" w="386" h="220" measuredW="386" measuredH="220" zOrder="5" locked="false" isInGroup="40">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::FieldSet" x="0" y="0" w="386" h="220" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="7">
+              <controlProperties>
+                <text>Fiche%20voyage</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="__group__" x="15" y="26" w="356" h="48" measuredW="356" measuredH="48" zOrder="1" locked="false" isInGroup="7">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="21" w="356" h="-1" measuredW="82" measuredH="27" zOrder="0" locked="false" isInGroup="1">
+                  <controlProperties>
+                    <text>Bus%20et%20train</text>
+                  </controlProperties>
+                </control>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="127" h="-1" measuredW="117" measuredH="21" zOrder="1" locked="false" isInGroup="1">
+                  <controlProperties>
+                    <text>Transport%20sur%20place</text>
+                    <textOrientation>right</textOrientation>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="2" controlTypeID="__group__" x="15" y="86" w="356" h="48" measuredW="356" measuredH="48" zOrder="2" locked="false" isInGroup="7">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="21" w="356" h="-1" measuredW="38" measuredH="27" zOrder="0" locked="false" isInGroup="2">
+                  <controlProperties>
+                    <text>700</text>
+                  </controlProperties>
+                </control>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="205" h="-1" measuredW="193" measuredH="21" zOrder="1" locked="false" isInGroup="2">
+                  <controlProperties>
+                    <text>Nombre%20de%20kilom%E8tres%20parcourus</text>
+                    <textOrientation>right</textOrientation>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="8" controlTypeID="__group__" x="0" y="0" w="394" h="27" measuredW="394" measuredH="27" zOrder="6" locked="false" isInGroup="40">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="0" w="-1" h="-1" measuredW="190" measuredH="27" zOrder="0" locked="false" isInGroup="8">
+              <controlProperties>
+                <color>6989903</color>
+                <menuIcon>false</menuIcon>
+                <state>disabled</state>
+                <text>Enregistrer%20les%20modifications</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="205" y="0" w="-1" h="-1" measuredW="68" measuredH="27" zOrder="1" locked="false" isInGroup="8">
+              <controlProperties>
+                <href>mockup-visualisation-voyages%26bm%3Bmockup-visualisation-voyages.bmml%26bm%3Bmockup-visualisation-voyages.bmml%26bm%3Bmockup-visualisation-voyages.bmml</href>
+                <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22831%2C242%2C899%2C269%22%20href%3D%22mockup-visualisation-voyages.bmml%22%20alt%3D%22mockup-visualisation-voyages%22%20id%3D%221%22/%3E</map>
+                <menuIcon>false</menuIcon>
+                <state>up</state>
+                <text>Annuler</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="348" y="0" w="-1" h="-1" measuredW="46" measuredH="27" zOrder="2" locked="false" isInGroup="8">
+              <controlProperties>
+                <color>13369344</color>
+                <icon>Trash2Icon%7Csmall</icon>
+                <text/>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="44" controlTypeID="__group__" x="1381" y="302" w="244" h="200" measuredW="244" measuredH="200" zOrder="5" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::StickyNote" x="67" y="81" w="177" h="119" measuredW="109" measuredH="123" zOrder="0" locked="false" isInGroup="44">
+          <controlProperties>
+            <text>Pop-up%20de%20confirmation%20%3A%20%22Ce%20voyage%20et%20tous%20les%20d%E9parts%20associ%E9s%20seront%20supprim%E9s.%20%CAtes%20vous%20s%FBr%20de%20vouloir%20continuer%20%3F%22</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Arrow" x="0" y="0" w="-1" h="-1" measuredW="150" measuredH="100" zOrder="1" locked="false" isInGroup="44">
+          <controlProperties>
+            <rightArrow>false</rightArrow>
+            <text/>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="49" controlTypeID="__group__" x="1051" y="41" w="271" h="248" measuredW="271" measuredH="248" zOrder="6" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::StickyNote" x="118" y="0" w="153" h="139" measuredW="109" measuredH="123" zOrder="0" locked="false" isInGroup="49">
+          <controlProperties>
+            <text>Ce%20bouton%20est%20d%E9sactiv%E9%20quand%20il%20n%27y%20a%20pas%20de%20modification%20%E0%20enregistrer</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Arrow" x="0" y="61" w="127" h="187" measuredW="150" measuredH="100" zOrder="1" locked="false" isInGroup="49">
+          <controlProperties>
+            <direction>bottom</direction>
+            <rightArrow>false</rightArrow>
+            <text/>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="52" controlTypeID="__group__" x="437" y="280" w="516" h="595" measuredW="516" measuredH="595" zOrder="7" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::DataGrid" x="0" y="0" w="516" h="595" measuredW="531" measuredH="165" zOrder="0" locked="false" isInGroup="52">
+          <controlProperties>
+            <align>left</align>
+            <borderStyle>square</borderStyle>
+            <hasHeader>false</hasHeader>
+            <hLines>true</hLines>
+            <rowHeight>40</rowHeight>
+            <selectedIndex>2</selectedIndex>
+            <text>Code%20%5Ev%2C%20Titre%20%5E%2C%20Destination%20%5Ev%2C%20Type%20%5Ev%2C%20Dur%E9e%20%28jours%29%20%5Ev%0A27%2C%20Aventures%20Australiennes%2C%20Australie%2C%20Circuit%2C%2020%0A17%2C%20De%20la%20Patagonie%20%E0%20la%20Terre%20du%20Feu%2C%20Argentine%2C%20Circuit%2C%207%0A12%2C%20Patagonie%2C%20Argentine%2C%20S%E9jour%2C%2014%0A%7BC%2C%20L%2C%20C%2C%20C%2C%20C%7D</text>
+            <verticalScrollbar>true</verticalScrollbar>
+            <vLines>false</vLines>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="121" w="497" h="44" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="52">
+          <controlProperties>
+            <backgroundAlpha>0</backgroundAlpha>
+            <borderStyle>none</borderStyle>
+            <href>mockup-modification-sejour%26bm%3Bmockup-modification-sejour.bmml%26bm%3Bmockup-modification-sejour.bmml%26bm%3Bmockup-modification-sejour.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2276%2C360%2C573%2C404%22%20href%3D%22mockup-modification-sejour.bmml%22%20alt%3D%22mockup-modification-sejour%22%20id%3D%221%22/%3E</map>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="82" w="497" h="39" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="52">
+          <controlProperties>
+            <backgroundAlpha>0</backgroundAlpha>
+            <borderStyle>none</borderStyle>
+            <href>mockup-modification-circuit%26bm%3Bmockup-modification-circuit.bmml%26bm%3Bmockup-modification-circuit.bmml%26bm%3Bmockup-modification-circuit.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2276%2C321%2C573%2C360%22%20href%3D%22mockup-modification-circuit.bmml%22%20alt%3D%22mockup-modification-circuit%22%20id%3D%222%22/%3E</map>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="53" controlTypeID="__group__" x="437" y="251" w="516" h="25" measuredW="516" measuredH="25" zOrder="8" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::SearchBox" x="0" y="0" w="265" h="-1" measuredW="120" measuredH="25" zOrder="0" locked="false" isInGroup="53">
+          <controlProperties>
+            <text>Filtrer%20par%20titre</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::ComboBox" x="277" y="0" w="239" h="-1" measuredW="112" measuredH="24" zOrder="1" locked="false" isInGroup="53">
+          <controlProperties>
+            <state>closed</state>
+            <text>Tous%20les%20pays%0AArgentine%0AAustralie</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::Label" x="1373" y="246" w="21" h="-1" measuredW="10" measuredH="26" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <bold>true</bold>
+        <href>mockup-visualisation-voyages%26bm%3Bmockup-visualisation-voyages.bmml%26bm%3Bmockup-visualisation-voyages.bmml%26bm%3Bmockup-visualisation-voyages.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%221012%2C205%2C1033%2C231%22%20href%3D%22mockup-visualisation-voyages.bmml%22%20alt%3D%22mockup-visualisation-voyages%22%20id%3D%2254%22/%3E</map>
+        <size>18</size>
+        <text>x</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
