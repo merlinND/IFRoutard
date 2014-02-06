@@ -1,0 +1,86 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1207" measuredH="782" mockupW="904" mockupH="763">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="303" y="19" w="904" h="763" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>IF%27Routard%0Ahttp%3A//ifroutard.insa-lyon.fr/</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="__group__" x="367" y="556" w="347" h="119" measuredW="347" measuredH="119" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="126" y="0" w="221" h="-1" measuredW="171" measuredH="27" zOrder="0" locked="false" isInGroup="1">
+          <controlProperties>
+            <text>martin.dupont@insa-lyon.fr</text>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="0" y="3" w="111" h="-1" measuredW="37" measuredH="21" zOrder="1" locked="false" isInGroup="1">
+          <controlProperties>
+            <align>right</align>
+            <text>E-mail</text>
+          </controlProperties>
+        </control>
+        <control controlID="12" controlTypeID="com.balsamiq.mockups::TextInput" x="126" y="50" w="221" h="-1" measuredW="112" measuredH="27" zOrder="2" locked="false" isInGroup="1">
+          <controlProperties>
+            <text>****************</text>
+          </controlProperties>
+        </control>
+        <control controlID="15" controlTypeID="com.balsamiq.mockups::Label" x="0" y="53" w="111" h="-1" measuredW="81" measuredH="21" zOrder="3" locked="false" isInGroup="1">
+          <controlProperties>
+            <align>right</align>
+            <text>Mot%20de%20passe</text>
+          </controlProperties>
+        </control>
+        <control controlID="24" controlTypeID="com.balsamiq.mockups::Button" x="243" y="92" w="104" h="27" measuredW="104" measuredH="27" zOrder="4" locked="false" isInGroup="1">
+          <controlProperties>
+            <color>6989903</color>
+            <href>mockup-consultation%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22307%2C629%2C411%2C656%22%20href%3D%22mockup-consultation.bmml%22%20alt%3D%22mockup-consultation%22%20id%3D%2224%22/%3E</map>
+            <text>Me%20connecter</text>
+          </controlProperties>
+        </control>
+        <control controlID="25" controlTypeID="com.balsamiq.mockups::Link" x="94" y="97" w="-1" h="-1" measuredW="134" measuredH="16" zOrder="5" locked="false" isInGroup="1">
+          <controlProperties>
+            <size>10</size>
+            <text>J%27ai%20oubli%E9%20mon%20mot%20de%20passe</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Title" x="669" y="142" w="-1" h="-1" measuredW="188" measuredH="43" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>IF%27Routard</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::SubTitle" x="583" y="185" w="-1" h="-1" measuredW="361" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>L%27agence%20de%20voyage%20des%20insaliens</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Image" x="303" y="91" w="904" h="387" measuredW="77" measuredH="79" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Paysage%20de%20r%EAve%20en%20image%20de%20fond</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::VRule" x="752" y="511" w="-1" h="209" measuredW="10" measuredH="100" zOrder="5" locked="false" isInGroup="-1"/>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::SubTitle" x="522" y="511" w="-1" h="-1" measuredW="192" measuredH="23" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Je%20suis%20d%E9j%E0%20client%28e%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::SubTitle" x="793" y="511" w="-1" h="-1" measuredW="139" measuredH="23" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Enregistrement</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Button" x="793" y="591" w="217" h="48" measuredW="208" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>6989903</color>
+        <href>mockup-enregistrement-client%26bm%3Bmockup-enregistrement-client.bmml%26bm%3Bmockup-enregistrement-client.bmml%26bm%3Bmockup-enregistrement-client.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22490%2C572%2C707%2C620%22%20href%3D%22mockup-enregistrement-client.bmml%22%20alt%3D%22mockup-enregistrement-client%22%20id%3D%228%22/%3E</map>
+        <menuIcon>false</menuIcon>
+        <text>M%27inscire%20et%20acc%E9der%20aux%20offres</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

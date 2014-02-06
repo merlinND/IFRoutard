@@ -1,28 +1,28 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1133" measuredH="755" mockupW="771" mockupH="738">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1273" measuredH="823" mockupW="1144" mockupH="804">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="362" y="17" w="771" h="738" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="360" y="19" w="771" h="804" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>squareBreakline</borderStyle>
         <text>Recherche%20%7C%20Voyages%20en%20argentine%0Ahttp%3A//ifroutard.insa-lyon.fr/recherche/pays/argentine</text>
         <verticalScrollbar>true</verticalScrollbar>
       </controlProperties>
     </control>
-    <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="629" y="116" w="-1" h="-1" measuredW="236" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::SubTitle" x="627" y="184" w="-1" h="-1" measuredW="236" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Voyages%20en%20Argentine</text>
       </controlProperties>
     </control>
-    <control controlID="3" controlTypeID="com.balsamiq.mockups::HRule" x="397" y="271" w="700" h="-1" measuredW="100" measuredH="10" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::HRule" x="395" y="339" w="700" h="-1" measuredW="100" measuredH="10" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>0.75</backgroundAlpha>
         <stroke>solid</stroke>
       </controlProperties>
     </control>
-    <control controlID="5" controlTypeID="__group__" x="398" y="158" w="696" h="95" measuredW="696" measuredH="95" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="5" controlTypeID="__group__" x="396" y="226" w="696" h="95" measuredW="696" measuredH="95" zOrder="3" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Paragraph" x="477" y="0" w="219" h="95" measuredW="200" measuredH="80" zOrder="0" locked="false" isInGroup="5">
           <controlProperties>
-            <text>Capitale%20%3A%20Buenos%20Aires%0APopulation%20%3A%2039921833%20habitants%0ATODO</text>
+            <text>Capitale%20%3A%20Buenos%20Aires%0APopulation%20%3A%2039921833%20habitants%0ASuperficie%20%3A%202766890%20km%B2%0ALangue%20officielle%20%3A%20Espagnol</text>
           </controlProperties>
         </control>
         <control controlID="1" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="462" h="95" measuredW="77" measuredH="79" zOrder="1" locked="false" isInGroup="5">
@@ -34,7 +34,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="11" controlTypeID="__group__" x="397" y="305" w="693" h="192" measuredW="693" measuredH="192" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="11" controlTypeID="__group__" x="395" y="373" w="693" h="192" measuredW="693" measuredH="192" zOrder="4" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::FieldSet" x="0" y="0" w="693" h="192" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="11">
           <controlProperties>
@@ -66,7 +66,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="12" controlTypeID="__group__" x="397" y="512" w="693" h="192" measuredW="693" measuredH="192" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="12" controlTypeID="__group__" x="395" y="580" w="693" h="192" measuredW="693" measuredH="192" zOrder="5" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::FieldSet" x="0" y="0" w="693" h="192" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="12">
           <controlProperties>
@@ -83,7 +83,7 @@
         <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="548" y="150" w="134" h="27" measuredW="105" measuredH="27" zOrder="2" locked="false" isInGroup="12">
           <controlProperties>
             <href>mockup-fiche-detaillee%26bm%3Bmockup-fiche-detaillee.bmml%26bm%3Bmockup-fiche-detaillee.bmml%26bm%3Bmockup-fiche-detaillee.bmml</href>
-            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22583%2C645%2C717%2C672%22%20href%3D%22mockup-fiche-detaillee.bmml%22%20alt%3D%22mockup-fiche-detaillee%22%20id%3D%222%22/%3E</map>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22814%2C711%2C948%2C738%22%20href%3D%22mockup-fiche-detaillee.bmml%22%20alt%3D%22mockup-fiche-detaillee%22%20id%3D%222%22/%3E</map>
             <text>En%20savoir%20plus</text>
           </controlProperties>
         </control>
@@ -100,13 +100,82 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="13" controlTypeID="com.balsamiq.mockups::PointyButton" x="393" y="116" w="83" h="-1" measuredW="60" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::PointyButton" x="391" y="184" w="83" h="-1" measuredW="60" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <direction>left</direction>
         <href>mockup-consultation%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2231%2C99%2C114%2C126%22%20href%3D%22mockup-consultation.bmml%22%20alt%3D%22mockup-consultation%22%20id%3D%2213%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22262%2C165%2C345%2C192%22%20href%3D%22mockup-consultation.bmml%22%20alt%3D%22mockup-consultation%22%20id%3D%2213%22/%3E</map>
         <text>Retour</text>
       </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="__group__" x="1078" y="106" w="195" h="138" measuredW="195" measuredH="138" zOrder="7" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::StickyNote" x="86" y="0" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="0" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>Fiche%20pays</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Arrow" x="0" y="78" w="86" h="60" measuredW="150" measuredH="100" zOrder="1" locked="false" isInGroup="14">
+          <controlProperties>
+            <curvature>0</curvature>
+            <direction>bottom</direction>
+            <leftArrow>true</leftArrow>
+            <rightArrow>false</rightArrow>
+            <stroke>solid</stroke>
+            <text/>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="15" controlTypeID="__group__" x="129" y="307" w="275" h="152" measuredW="275" measuredH="152" zOrder="8" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::StickyNote" x="0" y="0" w="135" h="152" measuredW="109" measuredH="123" zOrder="0" locked="false" isInGroup="15">
+          <controlProperties>
+            <text>Carnet%20de%20voyage%20%E9tabli%20par%20les%20Cr%E9ateurs%20de%20Voyages%20%28%E9ventuellement%20tronqu%E9%20si%20trop%20long%29</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Arrow" x="123" y="69" w="152" h="62" measuredW="150" measuredH="100" zOrder="1" locked="false" isInGroup="15">
+          <controlProperties>
+            <curvature>0</curvature>
+            <direction>top</direction>
+            <leftArrow>false</leftArrow>
+            <stroke>solid</stroke>
+            <text/>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="17" controlTypeID="__group__" x="360" y="98" w="750" h="60" measuredW="750" measuredH="60" zOrder="9" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="13" y="0" w="176" h="45" measuredW="176" measuredH="45" zOrder="0" locked="false" isInGroup="17">
+          <controlProperties>
+            <href>mockup-consultation%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22244%2C79%2C420%2C124%22%20href%3D%22mockup-consultation.bmml%22%20alt%3D%22mockup-consultation%22%20id%3D%220%22/%3E</map>
+          </controlProperties>
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::SubTitle" x="61" y="9" w="115" h="-1" measuredW="113" measuredH="27" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <color>15110456</color>
+                <text>IF%27Routard</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="45" h="45" measuredW="77" measuredH="79" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>Logo</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="50" w="750" h="-1" measuredW="100" measuredH="10" zOrder="1" locked="false" isInGroup="17"/>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::LinkBar" x="204" y="13" w="-1" h="-1" measuredW="313" measuredH="19" zOrder="2" locked="false" isInGroup="17">
+          <controlProperties>
+            <hrefs>%2Cmockup-consultation%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml%26bm%3Bmockup-consultation.bmml%2Cmockup-accueil%26bm%3Bmockup-accueil.bmml%26bm%3Bmockup-accueil.bmml%26bm%3Bmockup-accueil.bmml</hrefs>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22537%2C94%2C653%2C107%22%20href%3D%22mockup-consultation.bmml%22%20alt%3D%22mockup-consultation%22%20id%3D%222%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22671%2C94%2C748%2C107%22%20href%3D%22mockup-accueil.bmml%22%20alt%3D%22mockup-accueil%22%20id%3D%222%22/%3E</map>
+            <selectedIndex>0</selectedIndex>
+            <text>Martin%20Dupont%2C%20Nouvelle%20Recherche%2C%20D%E9connexion</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
     </control>
   </controls>
 </mockup>
