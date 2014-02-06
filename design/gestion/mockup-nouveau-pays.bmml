@@ -1,0 +1,169 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1399" measuredH="797" mockupW="1038" mockupH="669">
+  <controls>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::TitleWindow" x="361" y="128" w="1038" h="669" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bottomheight>0</bottomheight>
+        <close>true</close>
+        <maximizeRestore>true</maximizeRestore>
+        <minimize>true</minimize>
+        <text>IF%27Routard%20%7C%20Gestion%20du%20catalogue%20voyage</text>
+        <topheight>26</topheight>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::DataGrid" x="437" y="157" w="516" h="632" measuredW="169" measuredH="125" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <borderStyle>square</borderStyle>
+        <hasHeader>false</hasHeader>
+        <hLines>true</hLines>
+        <rowHeight>40</rowHeight>
+        <text>Nom%20%5E%2C%20Continent%20%5Ev%0AArgentine%2C%20Am%E9rique%0AAustralie%2C%20Oc%E9anie%0A%7BL%2C%20L%7D</text>
+        <verticalScrollbar>true</verticalScrollbar>
+        <vLines>false</vLines>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::HSplitter" x="953" y="159" w="-1" h="637" measuredW="11" measuredH="100" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="375" y="157" w="1024" h="640" measuredW="200" measuredH="122" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>mockup-visualisation-voyages%26bm%3Bmockup-visualisation-voyages.bmml%26bm%3Bmockup-visualisation-voyages.bmml%26bm%3Bmockup-visualisation-voyages.bmml%2C</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2214%2C49%2C73%2C79%22%20href%3D%22mockup-visualisation-voyages.bmml%22%20alt%3D%22mockup-visualisation-voyages%22%20id%3D%2233%22/%3E</map>
+        <position>left</position>
+        <selectedIndex>1</selectedIndex>
+        <text>Voyages%0APays</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Canvas" x="437" y="241" w="497" h="39" measuredW="100" measuredH="70" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <borderStyle>none</borderStyle>
+        <href>mockup-modification-pays%26bm%3Bmockup-modification-pays.bmml%26bm%3Bmockup-modification-pays.bmml%26bm%3Bmockup-modification-pays.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2276%2C113%2C573%2C152%22%20href%3D%22mockup-modification-pays.bmml%22%20alt%3D%22mockup-modification-pays%22%20id%3D%2248%22/%3E</map>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="__group__" x="987" y="197" w="394" h="328" measuredW="394" measuredH="328" zOrder="5" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="34" w="387" h="48" measuredW="387" measuredH="48" zOrder="0" locked="false" isInGroup="49">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="21" w="387" h="-1" measuredW="55" measuredH="27" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>France</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="112" h="-1" measuredW="77" measuredH="21" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>Nom%20du%20pays</text>
+                <textOrientation>right</textOrientation>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="0" y="97" w="386" h="45" measuredW="386" measuredH="45" zOrder="1" locked="false" isInGroup="49">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="58" measuredH="21" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>Continent</text>
+                <textOrientation>right</textOrientation>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::ComboBox" x="0" y="21" w="386" h="-1" measuredW="72" measuredH="24" zOrder="1" locked="false" isInGroup="1">
+              <controlProperties>
+                <state>closed</state>
+                <text>Europe%0AAntarctique%0AAm%E9rique%20du%20Nord%0AAm%E9rique%20du%20Sud%0AAsie%0AOc%E9anie</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="8" controlTypeID="__group__" x="0" y="0" w="149" h="27" measuredW="394" measuredH="27" zOrder="2" locked="false" isInGroup="49">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="0" w="-1" h="-1" measuredW="66" measuredH="27" zOrder="0" locked="false" isInGroup="8">
+              <controlProperties>
+                <color>6989903</color>
+                <state>up</state>
+                <text>Ajouter</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="81" y="0" w="-1" h="-1" measuredW="68" measuredH="27" zOrder="1" locked="false" isInGroup="8">
+              <controlProperties>
+                <href>mockup-visualisation-pays%26bm%3Bmockup-visualisation-pays.bmml%26bm%3Bmockup-visualisation-pays.bmml%26bm%3Bmockup-visualisation-pays.bmml</href>
+                <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22707%2C69%2C775%2C96%22%20href%3D%22mockup-visualisation-pays.bmml%22%20alt%3D%22mockup-visualisation-pays%22%20id%3D%221%22/%3E</map>
+                <text>Annuler</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="10" controlTypeID="__group__" x="0" y="283" w="394" h="45" measuredW="394" measuredH="45" zOrder="3" locked="false" isInGroup="49">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="__group__" x="0" y="0" w="188" h="45" measuredW="188" measuredH="45" zOrder="0" locked="false" isInGroup="10">
+              <groupChildrenDescriptors>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="188" h="-1" measuredW="98" measuredH="21" zOrder="0" locked="false" isInGroup="0">
+                  <controlProperties>
+                    <text>Superficie%20%28km%B2%29</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::NumericStepper" x="0" y="21" w="188" h="-1" measuredW="86" measuredH="24" zOrder="1" locked="false" isInGroup="0">
+                  <controlProperties>
+                    <text>674%20843</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="1" controlTypeID="__group__" x="227" y="0" w="167" h="45" measuredW="167" measuredH="45" zOrder="1" locked="false" isInGroup="10">
+              <groupChildrenDescriptors>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="102" h="-1" measuredW="60" measuredH="21" zOrder="0" locked="false" isInGroup="1">
+                  <controlProperties>
+                    <text>Population</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::NumericStepper" x="0" y="21" w="167" h="-1" measuredW="104" measuredH="24" zOrder="1" locked="false" isInGroup="1">
+                  <controlProperties>
+                    <text>65%20543%20000</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="11" controlTypeID="__group__" x="0" y="157" w="387" h="48" measuredW="387" measuredH="48" zOrder="4" locked="false" isInGroup="49">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="21" w="387" h="-1" measuredW="43" measuredH="27" zOrder="0" locked="false" isInGroup="11">
+              <controlProperties>
+                <text>Paris</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="112" h="-1" measuredW="50" measuredH="21" zOrder="1" locked="false" isInGroup="11">
+              <controlProperties>
+                <text>Capitale</text>
+                <textOrientation>right</textOrientation>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="12" controlTypeID="__group__" x="0" y="220" w="387" h="48" measuredW="387" measuredH="48" zOrder="5" locked="false" isInGroup="49">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="21" w="387" h="-1" measuredW="64" measuredH="27" zOrder="0" locked="false" isInGroup="12">
+              <controlProperties>
+                <text>Fran%E7ais</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="112" h="-1" measuredW="98" measuredH="21" zOrder="1" locked="false" isInGroup="12">
+              <controlProperties>
+                <text>Langue%20officielle</text>
+                <textOrientation>right</textOrientation>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Label" x="1373" y="160" w="21" h="-1" measuredW="10" measuredH="26" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <bold>true</bold>
+        <href>mockup-visualisation-pays%26bm%3Bmockup-visualisation-pays.bmml%26bm%3Bmockup-visualisation-pays.bmml%26bm%3Bmockup-visualisation-pays.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%221012%2C32%2C1033%2C58%22%20href%3D%22mockup-visualisation-pays.bmml%22%20alt%3D%22mockup-visualisation-pays%22%20id%3D%2250%22/%3E</map>
+        <size>18</size>
+        <text>x</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

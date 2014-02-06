@@ -1,0 +1,53 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1399" measuredH="797" mockupW="1038" mockupH="669">
+  <controls>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::TitleWindow" x="361" y="128" w="1038" h="669" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bottomheight>0</bottomheight>
+        <close>true</close>
+        <maximizeRestore>true</maximizeRestore>
+        <minimize>true</minimize>
+        <text>IF%27Routard%20%7C%20Gestion%20du%20catalogue%20voyage</text>
+        <topheight>26</topheight>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::DataGrid" x="437" y="157" w="516" h="632" measuredW="169" measuredH="125" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <borderStyle>square</borderStyle>
+        <hasHeader>false</hasHeader>
+        <hLines>true</hLines>
+        <rowHeight>40</rowHeight>
+        <text>Nom%20%5E%2C%20Continent%20%5Ev%0AArgentine%2C%20Am%E9rique%0AAustralie%2C%20Oc%E9anie%0A%7BL%2C%20L%7D</text>
+        <verticalScrollbar>true</verticalScrollbar>
+        <vLines>false</vLines>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::HSplitter" x="953" y="159" w="-1" h="637" measuredW="11" measuredH="100" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="375" y="157" w="1024" h="640" measuredW="200" measuredH="122" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>mockup-visualisation-voyages%26bm%3Bmockup-visualisation-voyages.bmml%26bm%3Bmockup-visualisation-voyages.bmml%26bm%3Bmockup-visualisation-voyages.bmml%2C</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2214%2C49%2C73%2C79%22%20href%3D%22mockup-visualisation-voyages.bmml%22%20alt%3D%22mockup-visualisation-voyages%22%20id%3D%2233%22/%3E</map>
+        <position>left</position>
+        <selectedIndex>1</selectedIndex>
+        <text>Voyages%0APays</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Canvas" x="437" y="241" w="497" h="39" measuredW="100" measuredH="70" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <borderStyle>none</borderStyle>
+        <href>mockup-modification-pays%26bm%3Bmockup-modification-pays.bmml%26bm%3Bmockup-modification-pays.bmml%26bm%3Bmockup-modification-pays.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2276%2C113%2C573%2C152%22%20href%3D%22mockup-modification-pays.bmml%22%20alt%3D%22mockup-modification-pays%22%20id%3D%2248%22/%3E</map>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Button" x="1109" y="463" w="163" h="56" measuredW="106" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <href>mockup-nouveau-pays%26bm%3Bmockup-nouveau-pays.bmml%26bm%3Bmockup-nouveau-pays.bmml%26bm%3Bmockup-nouveau-pays.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22748%2C335%2C911%2C391%22%20href%3D%22mockup-nouveau-pays.bmml%22%20alt%3D%22mockup-nouveau-pays%22%20id%3D%2249%22/%3E</map>
+        <state>up</state>
+        <text>Nouveau%20Pays</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

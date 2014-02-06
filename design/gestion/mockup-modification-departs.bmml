@@ -34,6 +34,8 @@
     </control>
     <control controlID="33" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="375" y="157" w="1024" h="640" measuredW="200" measuredH="122" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
+        <hrefs>%2Cmockup-visualisation-pays%26bm%3Bmockup-visualisation-pays.bmml%26bm%3Bmockup-visualisation-pays.bmml%26bm%3Bmockup-visualisation-pays.bmml</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2214%2C77%2C73%2C107%22%20href%3D%22mockup-visualisation-pays.bmml%22%20alt%3D%22mockup-visualisation-pays%22%20id%3D%2233%22/%3E</map>
         <position>left</position>
         <selectedIndex>0</selectedIndex>
         <text>Voyages%0APays</text>
@@ -42,14 +44,14 @@
     <control controlID="49" controlTypeID="__group__" x="964" y="189" w="435" h="592" measuredW="435" measuredH="592" zOrder="5" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::VSplitter" x="4" y="347" w="431" h="-1" measuredW="100" measuredH="11" zOrder="0" locked="false" isInGroup="49"/>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::DataGrid" x="0" y="0" w="435" h="349" measuredW="370" measuredH="205" zOrder="1" locked="false" isInGroup="49">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::DataGrid" x="0" y="0" w="435" h="349" measuredW="370" measuredH="181" zOrder="1" locked="false" isInGroup="49">
           <controlProperties>
             <align>left</align>
             <borderStyle>square</borderStyle>
-            <hasHeader>false</hasHeader>
+            <hasHeader>true</hasHeader>
             <hLines>true</hLines>
             <rowHeight>40</rowHeight>
-            <selectedIndex>1</selectedIndex>
+            <selectedIndex>0</selectedIndex>
             <text>Ville%20de%20d%E9part%20%5Ev%2C%20Date%20%5Ev%2C%20Prix%20%5E%2C%20Description%20%5Ev%0AParis%2C%2007/02/2014%2C%202000%u20AC%2C%20Nous%20consulter%0ALyon%2C%2007/03/2014%2C%202000%u20AC%2C%20Vol%20r%E9gulier%0AToulouse%2C%2006/01/2014%2C%202205%u20AC%2C%20Vol%20r%E9gulier%0ALyon%2C%2006/01/2014%2C%202495%u20AC%2C%20Air%20France%0A%7BL%2C%20C%2C%20C%2C%20L%7D</text>
             <verticalScrollbar>true</verticalScrollbar>
             <vLines>false</vLines>

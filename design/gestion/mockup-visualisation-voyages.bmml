@@ -25,6 +25,8 @@
     <control controlID="18" controlTypeID="com.balsamiq.mockups::HSplitter" x="953" y="159" w="-1" h="637" measuredW="11" measuredH="100" zOrder="3" locked="false" isInGroup="-1"/>
     <control controlID="33" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="375" y="157" w="1024" h="640" measuredW="200" measuredH="122" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
+        <hrefs>%2Cmockup-visualisation-pays%26bm%3Bmockup-visualisation-pays.bmml%26bm%3Bmockup-visualisation-pays.bmml%26bm%3Bmockup-visualisation-pays.bmml</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2214%2C77%2C73%2C107%22%20href%3D%22mockup-visualisation-pays.bmml%22%20alt%3D%22mockup-visualisation-pays%22%20id%3D%2233%22/%3E</map>
         <position>left</position>
         <selectedIndex>0</selectedIndex>
         <text>Voyages%0APays</text>
