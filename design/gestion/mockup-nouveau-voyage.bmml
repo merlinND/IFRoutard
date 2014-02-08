@@ -23,10 +23,10 @@
       </controlProperties>
     </control>
     <control controlID="18" controlTypeID="com.balsamiq.mockups::HSplitter" x="953" y="159" w="-1" h="637" measuredW="11" measuredH="100" zOrder="3" locked="false" isInGroup="-1"/>
-    <control controlID="19" controlTypeID="com.balsamiq.mockups::TabBar" x="964" y="163" w="435" h="633" measuredW="210" measuredH="100" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::TabBar" x="964" y="163" w="435" h="633" measuredW="161" measuredH="100" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <selectedIndex>0</selectedIndex>
-        <text>Description%2C%20D%E9parts</text>
+        <text>Description</text>
       </controlProperties>
     </control>
     <control controlID="33" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="375" y="157" w="1024" h="640" measuredW="200" measuredH="122" zOrder="1" locked="false" isInGroup="-1">
