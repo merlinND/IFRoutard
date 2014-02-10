@@ -35,7 +35,7 @@ public class Main
 		monConseiller.addSpecialite(russie);
 		ServiceEmploye.creerConseiller(monConseiller);
 		
-		System.out.println("Liste de tous les conseillers :");
+		System.out.println("\nListe de tous les conseillers :");
 		List<Conseiller> tousLesConseillers = ServiceEmploye.obtenirConseillers();
 		for (Conseiller c : tousLesConseillers)
 			System.out.println(c);

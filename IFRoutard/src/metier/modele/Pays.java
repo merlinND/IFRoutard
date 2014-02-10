@@ -13,23 +13,19 @@ import javax.persistence.Id;
 @Entity
 public class Pays implements Serializable {
 	private static final long serialVersionUID = 1L;
-	public static enum Continent {
-		ANTARCTIQUE,
-		AMERIQUE_NORD,
-		AMERIQUE_SUD,
-		ASIE,
-		EUROPE,
-		OCEANIE
-	};
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	private String code;
 	private String nom;
-	private Continent continent;
+	private String region;
+	private String regime;
+	/** Superficie (en km^) */
 	private int superficie;
-	private int nbHabitants;
+	/** Population (en nombre d'habitants) */
+	private int population;
 	private String langue;
 	private String capitale;
 
@@ -38,11 +34,14 @@ public class Pays implements Serializable {
 	public Pays(String nom) {
 		this.nom = nom;
 	}
-	public Pays(String nom, Continent continent, int superficie, int nbHabitants, String langue, String capitale) {
+	public Pays(String code, String nom, String region, String regime,
+			int superficie, int nbHabitants, String langue, String capitale) {
+		this.code = code;
 		this.nom = nom;
-		this.continent = continent;
+		this.region = region;
+		this.regime = regime;
 		this.superficie = superficie;
-		this.nbHabitants = nbHabitants;
+		this.population = nbHabitants;
 		this.langue = langue;
 		this.capitale = capitale;
 	}
@@ -56,17 +55,29 @@ public class Pays implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 	public String getNom() {
 		return nom;
 	}
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public Continent getContinent() {
-		return continent;
+	public String getRegion() {
+		return region;
 	}
-	public void setContinent(Continent continent) {
-		this.continent = continent;
+	public void setRegion(String region) {
+		this.region = region;
+	}
+	public String getRegime() {
+		return regime;
+	}
+	public void setRegime(String regime) {
+		this.regime = regime;
 	}
 	public int getSuperficie() {
 		return superficie;
@@ -74,11 +85,11 @@ public class Pays implements Serializable {
 	public void setSuperficie(int superficie) {
 		this.superficie = superficie;
 	}
-	public int getNbHabitants() {
-		return nbHabitants;
+	public int getPopulation() {
+		return population;
 	}
-	public void setNbHabitants(int nbHabitants) {
-		this.nbHabitants = nbHabitants;
+	public void setPopulation(int population) {
+		this.population = population;
 	}
 	public String getLangue() {
 		return langue;

@@ -10,6 +10,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.Date;
+import metier.modele.Client;
 
 /**
  * La classe LectureDonneesCsv permet (comme son nom l'indique) la lecture de données CSV
@@ -44,6 +45,7 @@ public class LectureDonneesCsv {
 	 * immédiatement ouvert (en lecture) par ce constructeur.
 	 * @param cheminVersFichier Chemin vers le fichier CSV.
 	 * @throws FileNotFoundException Si le chemin vers le fichier n'est pas valide ou le fichier non-lisible.
+	 * @throws UnsupportedEncodingException Si l'encodage n'est pas supporté
 	 */
 	public LectureDonneesCsv(String cheminVersFichier) throws FileNotFoundException, UnsupportedEncodingException {
 
@@ -181,7 +183,7 @@ public class LectureDonneesCsv {
 	/**
 	 * Créée un Pays à partir de sa description.
 	 * La superficie et la population sont notamment interpétées comme des nombres.
-	 * @param descriptionClient Ligne du fichier CSV de Pays.
+	 * @param descriptionPays Ligne du fichier CSV de Pays.
 	 */
 	public void creerPays(String[] descriptionPays) {
 		

@@ -47,12 +47,13 @@ public class JpaUtil {
 		}
 	}
 
+	// TODO : réactiver la fonction de log si besoin
 	private static void log(String message) {
-		System.out.flush();
-		pause(5);
-		System.err.println(message);
-		System.err.flush();
-		pause(5);
+		// System.out.flush();
+		// pause(5);
+		// System.err.println(message);
+		// System.err.flush();
+		//pause(5);
 	}
 
 	;
