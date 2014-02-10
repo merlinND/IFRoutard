@@ -1,1 +1,3 @@
 *.bak
+/IFRoutard/nbproject/private/
+/IFRoutard/build/
