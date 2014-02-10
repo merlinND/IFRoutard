@@ -21,7 +21,7 @@ public class JpaUtil {
 	 * Nom de l'unité de persistance utilisée par la Factory de Entity Manager.
 	 * <br/><strong>Vérifier le nom de l'unité de persistance (cf.&nbsp;persistence.xml)</strong>
 	 */
-	public static final String PERSISTENCE_UNIT_NAME = "tdJpaPU";
+	public static final String PERSISTENCE_UNIT_NAME = "IFRoutardPU";
 	/**
 	 * Factory de Entity Manager liée à l'unité de persistance.
 	 * <br/><strong>Vérifier le nom de l'unité de persistance indiquée dans l'attribut statique PERSISTENCE_UNIT_NAME (cf.&nbsp;persistence.xml)</strong>
@@ -60,7 +60,6 @@ public class JpaUtil {
 	/**
 	 * Créée l'instance courante de Entity Manager (liée à ce Thread).
 	 * <br/><strong>À utiliser uniquement au niveau Service.</strong>
-	 * @return instance de Entity Manager
 	 */
 	public static void creerEntityManager() {
 		log("création du contexte de persistance");
@@ -118,7 +117,7 @@ public class JpaUtil {
 	 * <br/><strong>À utiliser uniquement au niveau DAO.</strong>
 	 * @return instance de Entity Manager
 	 */
-	protected static EntityManager obtenirEntityManager() {
+	public static EntityManager obtenirEntityManager() {
 		log("obtention du contexte de persistance");
 		return threadLocalEntityManager.get();
 	}
