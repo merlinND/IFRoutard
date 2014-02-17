@@ -20,13 +20,13 @@ public class Circuit extends Voyage implements Serializable {
     public Circuit() {
     }
 
-    public Circuit(String transport, float nbKilometres, int code, String titre, int nbJours, String description) {
-        super(code, titre, nbJours, description);
-        this.transport = transport;
-        this.nbKilometres = nbKilometres;
+    public Circuit(String transport, float nbKilometres, int code, String titre, int nbJours, String description, Pays destination) {
+	super(code, titre, nbJours, description, destination);
+	this.transport = transport;
+	this.nbKilometres = nbKilometres;
     }
-    
 
+    
 
     public String getTransport() {
         return transport;
