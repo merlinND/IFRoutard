@@ -1,3 +1,7 @@
 *.bak
 /IFRoutard/nbproject/private/
 /IFRoutard/build/
+/IFRoutard/lib
+
+*.*#
+*.DS_Store
