@@ -48,7 +48,11 @@ public class Circuit extends Voyage implements Serializable {
 
     @Override
     public String toString() {
-         return "metier.modele.Circuit[ id=" + getId() + " ]"+" \n"+ "transport : " + getTransport() +" \n"+ "nbKilometres : " + getNbKilometres() + " \n"+ "code : " + getCode() + " \n"+ "titre : " + getTitre() + " \n"+ "nbJours : " + getNbJours() + " \n"+ "description : " + getDescription();
+         return "metier.modele.Circuit[ id=" + getId() + " ]"+" \n"+ "transport : " 
+		 + getTransport() +" \n"+ "nbKilometres : " + getNbKilometres() 
+		 + " \n"+ "code : " + getCode() + " \n"+ "titre : " + getTitre() 
+		 + " \n"+ "nbJours : " + getNbJours() + " \n"+ "description : "
+		 + getDescription()+" \n";
 
     }
     

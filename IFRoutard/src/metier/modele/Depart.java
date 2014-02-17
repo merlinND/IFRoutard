@@ -34,7 +34,7 @@ public class Depart implements Serializable {
     public Depart() {
     }
 
-    public Depart(float prix, Date dateDeDepart, String ville, String description, Voyage voyage) {
+    public Depart(Voyage voyage, float prix, Date dateDeDepart, String ville, String description) {
         this.prix = prix;
         this.dateDeDepart = dateDeDepart;
         this.ville = ville;
@@ -114,7 +114,7 @@ public class Depart implements Serializable {
 
     @Override
     public String toString() {
-        return "metier.modele.Depart[  ]"+" \n"+ prix +  " euros, de : " + ville +  "le : " + dateDeDepart + "pour un voyage en direction de :"+ voyage+"\n"+ "description : " + description +"\n";
+        return "metier.modele.Depart[  ]"+" \n"+ prix +  " euros, de : " + ville +  " le : " + dateDeDepart + " pour un voyage en direction de :"+ voyage.getDestination() +"\n"+ "description : " + description +"\n";
     }
     
 }

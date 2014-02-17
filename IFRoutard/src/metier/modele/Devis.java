@@ -110,7 +110,10 @@ public class Devis implements Serializable {
 
     @Override
     public String toString() {
-        return "metier.modele.Devis[ id=" + id + " ]";
+                return "metier.modele.Devis[ id=" + id + " ]" + " \n" 
+				+ "Numero : " + numero + " \n"+ "Nombre de personne : " + nbPersonnes + " \n"+ "Conseiller : " + conseiller.getNom() + ",\n"
+				+ "Client : " + client.getNom()+ " \n" + "Départ :  " + depart.getDateDeDepart() + " \n"
+				+ "Date du devis : " + date+ "\n";
     }
     
 }
