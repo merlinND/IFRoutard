@@ -6,6 +6,9 @@
     <class>metier.modele.Pays</class>
     <class>metier.modele.Employe</class>
     <class>metier.modele.Conseiller</class>
+    <class>metier.modele.Circuit</class>
+    <class>metier.modele.Sejour</class>
+    <class>metier.modele.Voyage</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/IFRoutard"/>
       <property name="javax.persistence.jdbc.password" value="password"/>

@@ -5,11 +5,14 @@
 package metier.modele;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import metier.service.ServiceClient;
 
 
 /**
@@ -19,7 +22,20 @@ import javax.persistence.Id;
 @Entity
 public class Client implements Serializable {
     private static final long serialVersionUID = 1L;
-    public enum Civilite {M ,MME};
+    public enum Civilite {
+		M,
+		MME;
+
+		public static Civilite fromString(String string) {
+			if(string.equalsIgnoreCase("M") || string.equalsIgnoreCase("M."))
+				return M;
+			else if (string.equalsIgnoreCase("MME") || string.equalsIgnoreCase("MME.")
+					|| string.equalsIgnoreCase("MLLE") || string.equalsIgnoreCase("MLLE."))
+				return MME;
+			else
+				throw new UnsupportedOperationException("Civilité inconnue : " + string);
+		}
+	};
    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,14 +44,16 @@ public class Client implements Serializable {
     private String nom;
     private String prenom;
     private Civilite civilite;
+	@Temporal(javax.persistence.TemporalType.DATE)
+	private Date dateDeNaissance;
+	
     private String telephone;
     private  String email;
-    private int code;
-    private int hashMotDePasse;
-    
-    @Embedded
-    private Adresse adresse;
+    private String adresse;
 
+	private String hashMotDePasse;
+    
+    
     /*@Temporal(javax.persistence.TemporalType.DATE)
     private Date dateDeNaissance;*/
 
@@ -46,96 +64,86 @@ public class Client implements Serializable {
     public Client() {
     }
 
-    public Client(String nom, String prenom,Civilite civilite, String telephone, String email, Adresse adresse, int code, int hashMotDePasse/*, Date dateDeNaissance*/) {
+	/**
+	 * 
+	 * @param nom
+	 * @param prenom
+	 * @param civilite
+	 * @param dateDeNaissance
+	 * @param telephone
+	 * @param email
+	 * @param adresse
+	 * @param motDePasse Le mot de passe en clair 
+	 */
+    public Client(String nom, String prenom, Civilite civilite, Date dateDeNaissance,
+				String telephone, String email, String adresse, String motDePasse) {
         this.nom = nom;
         this.prenom = prenom;
         this.civilite = civilite;
+		this.dateDeNaissance = dateDeNaissance;
+		
         this.telephone = telephone;
         this.email = email;
         this.adresse = adresse;
-        this.code = code;
-        this.hashMotDePasse = hashMotDePasse;
-       /* this.dateDeNaissance = dateDeNaissance;*/
+        
+		this.hashMotDePasse = ServiceClient.chiffrerMotDePasse(motDePasse);
     }
-        public Long getId() {
+    
+	public Long getId() {
         return id;
     }
- 
-    public String getNom() {
+	public String getNom() {
         return nom;
     }
-
     public String getPrenom() {
         return prenom;
     }
-
     public Civilite getCivilite() {
         return civilite;
     }
-
+	public Date getDateDeNaissance() {
+        return dateDeNaissance;
+    }
     public String getTelephone() {
         return telephone;
     }
-
     public String getEmail() {
         return email;
     }
-
-    public Adresse getAdresse() {
+    public String getAdresse() {
         return adresse;
     }
-
-    public int getCode() {
-        return code;
-    }
-
-    public int getHashMotDePasse() {
+    public String getHashMotDePasse() {
         return hashMotDePasse;
     }
 
-  /*  public Date getDateDeNaissance() {
-        return dateDeNaissance;
-    }*/
-
+	public void setId(Long id) {
+        this.id = id;
+    } 
     public void setNom(String nom) {
         this.nom = nom;
     }
-
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
-
     public void setCivilite(Civilite civilite) {
         this.civilite = civilite;
     }
-
+	public void setDateDeNaissance(Date dateDeNaissance) {
+        this.dateDeNaissance = dateDeNaissance;
+	}
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public void setAdresse(Adresse adresse) {
+    public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public void setHashMotDePasse(int hashMotDePasse) {
+    public void setHashMotDePasse(String hashMotDePasse) {
         this.hashMotDePasse = hashMotDePasse;
-    }
-
-   /* public void setDateDeNaissance(Date dateDeNaissance) {
-        this.dateDeNaissance = dateDeNaissance;
-    }*/
-    
-      public void setId(Long id) {
-        this.id = id;
-    }  
+    } 
 
     @Override
     public int hashCode() {
@@ -159,7 +167,11 @@ public class Client implements Serializable {
 
     @Override
     public String toString() {
-        return "metier.modele.Client[ id=" + id + " ]"+" \n"+ "nom : " + nom + " \n"+ "prénom : " + prenom + "\n"+ "civilité : " + civilite + "\n"+"téléphone : " + telephone + "\n"+ "code : " + code + "\n" + "email : " + email + "\n"+"adresse : "+ adresse + " \n"+ "hashMotDePasse : " + hashMotDePasse + "\n";
+        return "metier.modele.Client[ id=" + id + " ]" + " \n" 
+				+ "nom : " + nom + " \n"+ "prénom : " + prenom + "\n"
+				+ "civilité : " + civilite + "\n"+"téléphone : " 
+				+ telephone + "\n" + "email : " + email + "\n"+"adresse : "
+				+ adresse + " \n"+ "hashMotDePasse : " + hashMotDePasse + "\n";
     }
     
 }
