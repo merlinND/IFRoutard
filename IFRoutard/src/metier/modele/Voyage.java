@@ -5,12 +5,16 @@
 package metier.modele;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -28,18 +32,20 @@ abstract public class Voyage implements Serializable {
     private String titre;
     private int nbJours;
     private String description;
-
+    @OneToOne
+    private Pays destination;
+    @OneToMany
+    private List<Depart> depart = new ArrayList<Depart>();
     public Voyage() {
     }
 
-    public Voyage(int code, String titre, int nbJours, String description) {
-        this.code = code;
-        this.titre = titre;
-        this.nbJours = nbJours;
-        this.description = description;
-    }
-     
-     
+    public Voyage(int code, String titre, int nbJours, String description, Pays destination) {
+	this.code = code;
+	this.titre = titre;
+	this.nbJours = nbJours;
+	this.description = description;
+	this.destination = destination;
+    }   
 
     public Long getId() {
         return id;
@@ -61,6 +67,14 @@ abstract public class Voyage implements Serializable {
         return description;
     }
 
+    public Pays getDestination() {
+        return destination;
+    }
+
+    public List<Depart> getDepart() {
+        return depart;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -79,6 +93,14 @@ abstract public class Voyage implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setDestination(Pays destination) {
+	this.destination = destination;
+    }
+
+    public void setDestinations(List<Depart> depart) {
+        this.depart = depart;
     }
 
     @Override

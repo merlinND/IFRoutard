@@ -20,14 +20,10 @@ public class Sejour extends Voyage implements Serializable {
     public Sejour() {
     }
 
-    
-    public Sejour(String residence, int code, String titre, int nbJours, String description) {
-        super(code, titre, nbJours, description);
-        this.residence = residence;
-    }
-
-    
-    
+    public Sejour(String residence, int code, String titre, int nbJours, String description, Pays destination) {
+	super(code, titre, nbJours, description, destination);
+	this.residence = residence;
+    }     
     
     public String getResidence() {
         return residence;
@@ -45,7 +41,10 @@ public class Sejour extends Voyage implements Serializable {
 
     @Override
     public String toString() {
-       return "metier.modele.Sejour[ id=" + getId() + " ]"+" \n"+ "residence : " + getResidence() + " \n"+ "code : " + getCode() + " \n"+ "titre : " + getTitre() + " \n"+ "nbJours : " + getNbJours() + " \n"+ "description : " + getDescription();
+       return "metier.modele.Sejour[ id=" + getId() + " ]"+" \n"+ "residence : " 
+	       + getResidence() + " \n"+ "code : " + getCode() + " \n"+ "titre : " 
+	       + getTitre() + " \n"+ "nbJours : " + getNbJours() 
+	       + " \n"+ "description : " + getDescription()+ " \n";
     }
     
 }

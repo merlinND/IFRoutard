@@ -1,10 +1,15 @@
 package vue;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
+import metier.modele.Circuit;
 import metier.modele.Client;
 import metier.modele.Conseiller;
+import metier.modele.Depart;
+import metier.modele.Devis;
 import metier.modele.Pays;
+import metier.modele.Sejour;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
 import metier.service.ServiceVoyage;
@@ -12,16 +17,17 @@ import util.LectureDonneesCsv;
 
 /**
  *
- * @author Merlin
+ * @author Merlin & Romain
  */
 public class Main
 {
-
+   
 	/**
 	 * @param args the command line arguments
 	 */
 	public static void main(String[] args)
 	{
+
 		// Si on ne veut pas imposer de limite : utiliser -1
 		int limite = 3;
 		

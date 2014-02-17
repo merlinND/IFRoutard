@@ -15,8 +15,9 @@ public class Conseiller extends Employe implements Serializable {
 	
 	@OneToMany
 	private List<Pays> specialites = new ArrayList<Pays>();
-	// TODO: ajouter le champ devis
-	
+
+	@OneToMany
+	private List<Devis> devis = new ArrayList<Devis>();
 	public Conseiller() {
 		super();
 	}
@@ -41,7 +42,6 @@ public class Conseiller extends Employe implements Serializable {
 			descriptionSpecialites += p + ", ";
 		
 		return "metier.modele.Conseiller[ id=" + getId() + " ]\n"
-				+ "Nom complet : " + getNom() + " " + getPrenom() + "\n"
 				+ "Spécialités : " + descriptionSpecialites;
 		
 	}
