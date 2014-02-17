@@ -13,13 +13,27 @@ import util.JpaUtil;
 public class ServiceEmploye {
 
 	/**
-	 * Insère le pays donné en base de données.
+	 * Insère le conseiller donné en base de données.
 	 * @param conseiller 
 	 */
 	public static void creerConseiller(Conseiller conseiller) {
 		JpaUtil.creerEntityManager();
 		JpaUtil.ouvrirTransaction();
 		EmployeDao.creerEmploye(conseiller);
+		JpaUtil.validerTransaction();
+		JpaUtil.fermerEntityManager();
+	}
+	
+	/**
+	 * Insère tous les conseillers donnés en base de données.
+	 * @param conseillers
+	 */
+	public static void creerConseillers(List<Conseiller> conseillers) {
+		JpaUtil.creerEntityManager();
+		JpaUtil.ouvrirTransaction();
+		for (Conseiller c : conseillers) {
+			EmployeDao.creerEmploye(c);
+		}
 		JpaUtil.validerTransaction();
 		JpaUtil.fermerEntityManager();
 	}

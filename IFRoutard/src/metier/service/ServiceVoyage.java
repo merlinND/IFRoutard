@@ -25,6 +25,20 @@ public class ServiceVoyage {
 	}
 	
 	/**
+	 * Insère tous les pays donnés en base de données.
+	 * @param pays
+	 */
+	public static void creerPays(List<Pays> pays) {
+		JpaUtil.creerEntityManager();
+		JpaUtil.ouvrirTransaction();
+		for (Pays p : pays) {
+			PaysDao.creerPays(p);
+		}
+		JpaUtil.validerTransaction();
+		JpaUtil.fermerEntityManager();
+	}
+	
+	/**
 	 * Obtenir la liste de <strong>tous</strong> les pays disponibles.
 	 * @return 
 	 */

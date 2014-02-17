@@ -25,6 +25,20 @@ public class ServiceClient {
 	}
 	
 	/**
+	 * Insérer les clients donnés en base de données.
+	 * @param clients
+	 */
+	public static void creerClients(List<Client> clients) {
+		JpaUtil.creerEntityManager();
+		JpaUtil.ouvrirTransaction();
+		for (Client c : clients) {
+			ClientDao.creerClient(c);
+		}
+		JpaUtil.validerTransaction();
+		JpaUtil.fermerEntityManager();
+	}
+	
+	/**
 	 * Obtenir tous les clients disponibles en base de données.
 	 * @return 
 	 */
