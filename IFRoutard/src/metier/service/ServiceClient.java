@@ -1,6 +1,8 @@
 package metier.service;
 
 import dao.ClientDao;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import metier.modele.Client;
 import util.JpaUtil;
@@ -47,6 +49,29 @@ public class ServiceClient {
 		List<Client> result = ClientDao.obtenirClients();
 		JpaUtil.fermerEntityManager();
 		return result;
+	}
+	
+	public static String chiffrerMotDePasse(String clair) {
+		try {
+			byte[] digest = MessageDigest.getInstance("SHA-1").digest(clair.getBytes());
+			return new String(digest);
+		}
+		catch (NoSuchAlgorithmException ex) {
+			System.err.println("L'algorithme SHA-1 n'est pas supporté dans cette VM !");
+			System.err.println("Le mot de passe n'a pas été chiffré.");
+			return clair;
+		}
+	}
+	
+	/**
+	 * Teste si le mot de passe fourni est bien celui du client.
+	 * Algorithme de chiffrement utilisé : SHA1
+	 * @param client Le client qui souhaite se connecter
+	 * @param clair Le mot de passe en clair
+	 * @return 
+	 */
+	public static Boolean testerMotDePasse(Client client, String clair) {
+		return client.getHashMotDePasse().equals(chiffrerMotDePasse(clair));
 	}
 	
 }
