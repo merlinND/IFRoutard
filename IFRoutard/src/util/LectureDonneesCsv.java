@@ -72,7 +72,7 @@ public class LectureDonneesCsv {
 	 * @param date Chaîne de caractère représentant la date.
 	 * @return La date interpétée ou la date actuelle en cas mauvais format en entrée.
 	 */
-	protected static Date parseDate(String date) {
+	public static Date parseDate(String date) {
 		try {
 			return CSV_DATE_FORMAT.parse(date);
 		} catch (ParseException ex) {
@@ -136,13 +136,20 @@ public class LectureDonneesCsv {
 		ServiceClient.creerClients(nouveauxClients);
 	}
 	
+	
+	protected static Client instancierClient(String[] descriptionClient) {
+		// Instanciation avec un mot de passe par défaut
+		// car les données de test ne contiennent pas de mot de passe
+		return instancierClient(descriptionClient, "password");
+	}
+	
 	/**
 	 * Créée un Client à partir de sa description.
 	 * La date de naissance est notamment interpétée comme un objet Date.
 	 * @param descriptionClient Ligne du fichier CSV de Clients.
 	 * @return L'instance de Client correspondante
 	 */
-	public Client instancierClient(String[] descriptionClient) {
+	public static Client instancierClient(String[] descriptionClient, String motDePasse) {
 		
 		String civiliteS = descriptionClient[0];
 		Client.Civilite civilite = Client.Civilite.fromString(civiliteS);
@@ -154,9 +161,6 @@ public class LectureDonneesCsv {
 		String email = descriptionClient[6];
 		
 		//System.out.println("Client: "+  civilite + " " + nom + " " + prenom + ", né le " + formatDate(dateNaissance) + ", habitant à " + adresse + ", téléphone: " + telephone + ", e-mail: " + email);
-		
-		// Mot de passe constant pour tout le monde car non précisé dans les données de test
-		String motDePasse = "password";
 		
 		return new Client(nom, prenom, civilite, dateNaissance, 
 						  telephone, email, adresse, motDePasse);
@@ -197,7 +201,7 @@ public class LectureDonneesCsv {
 	 * @param descriptionPays Ligne du fichier CSV de Pays.
 	 * @return L'instance de Pays correspondant
 	 */
-	public Pays instancierPays(String[] descriptionPays) {
+	public static Pays instancierPays(String[] descriptionPays) {
 		
 		String nom = descriptionPays[0];
 		String code = descriptionPays[1];

@@ -45,7 +45,7 @@ public class Main
 		
 		Conseiller monConseiller = new Conseiller("Conseiller", "Random", "random@domain.tld");
 		
-		System.out.println("Liste de tous les pays :");
+		System.out.println("----- Liste de tous les pays -----");
 		List<Pays> tousLesPays = ServiceVoyage.obtenirPays();
 		Pays unPays;
 		for (Pays p : tousLesPays) {
@@ -56,16 +56,18 @@ public class Main
 		
 		ServiceEmploye.creerConseiller(monConseiller);
 		
-		System.out.println("\nListe de tous les conseillers :");
+		System.out.println("\n----- Liste de tous les conseillers -----");
 		List<Conseiller> tousLesConseillers = ServiceEmploye.obtenirConseillers();
 		for (Conseiller c : tousLesConseillers)
 			System.out.println(c);
 		
+		// Test de l'inscription interactive d'un client
+		System.out.println("\n");
+		InscriptionClient.inscriptionInteractive();
 		
-		System.out.println("\nListe de tous les clients :");
+		System.out.println("\n----- Liste de tous les clients -----");
 		List<Client> tousLesClients = ServiceClient.obtenirClients();
 		for (Client c : tousLesClients)
 			System.out.println(c);
 	}
-	
 }

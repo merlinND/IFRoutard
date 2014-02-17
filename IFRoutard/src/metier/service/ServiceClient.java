@@ -14,6 +14,29 @@ import util.JpaUtil;
  */
 public class ServiceClient {
 
+	public static String chiffrerMotDePasse(String clair) {
+		try {
+			byte[] digest = MessageDigest.getInstance("SHA-1").digest(clair.getBytes());
+			return new String(digest);
+		}
+		catch (NoSuchAlgorithmException ex) {
+			System.err.println("L'algorithme SHA-1 n'est pas supporté dans cette VM !");
+			System.err.println("Le mot de passe n'a pas été chiffré.");
+			return clair;
+		}
+	}
+	
+	/**
+	 * Teste si le mot de passe fourni est bien celui du client.
+	 * Algorithme de chiffrement utilisé : SHA1
+	 * @param client Le client qui souhaite se connecter
+	 * @param clair Le mot de passe en clair
+	 * @return 
+	 */
+	public static Boolean testerMotDePasse(Client client, String clair) {
+		return client.getHashMotDePasse().equals(chiffrerMotDePasse(clair));
+	}
+	
 	/**
 	 * Insérer le client donné en base de données.
 	 * @param client 
@@ -49,29 +72,6 @@ public class ServiceClient {
 		List<Client> result = ClientDao.obtenirClients();
 		JpaUtil.fermerEntityManager();
 		return result;
-	}
-	
-	public static String chiffrerMotDePasse(String clair) {
-		try {
-			byte[] digest = MessageDigest.getInstance("SHA-1").digest(clair.getBytes());
-			return new String(digest);
-		}
-		catch (NoSuchAlgorithmException ex) {
-			System.err.println("L'algorithme SHA-1 n'est pas supporté dans cette VM !");
-			System.err.println("Le mot de passe n'a pas été chiffré.");
-			return clair;
-		}
-	}
-	
-	/**
-	 * Teste si le mot de passe fourni est bien celui du client.
-	 * Algorithme de chiffrement utilisé : SHA1
-	 * @param client Le client qui souhaite se connecter
-	 * @param clair Le mot de passe en clair
-	 * @return 
-	 */
-	public static Boolean testerMotDePasse(Client client, String clair) {
-		return client.getHashMotDePasse().equals(chiffrerMotDePasse(clair));
 	}
 	
 }
