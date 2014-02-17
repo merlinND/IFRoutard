@@ -9,8 +9,13 @@ import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import metier.modele.Client;
+import metier.modele.Pays;
+import metier.service.ServiceClient;
+import metier.service.ServiceVoyage;
 
 /**
  * La classe LectureDonneesCsv permet (comme son nom l'indique) la lecture de données CSV
@@ -115,11 +120,11 @@ public class LectureDonneesCsv {
 		nextLine = this.lecteurFichier.readNext();
 		afficherEnTeteCsv(nextLine);
 		
-		
+		List<Client> nouveauxClients = new ArrayList<Client>();
 		// Lecture des lignes
 		while ((nextLine = this.lecteurFichier.readNext()) != null) {
 		
-			creerClient(nextLine);
+			nouveauxClients.add(instancierClient(nextLine));
 			
 			// Limite (ou -1 si pas de limite)
 			if ( !(limite < 0) && (--limite < 1) ) {
@@ -127,16 +132,20 @@ public class LectureDonneesCsv {
 			}
 		}
 
+		// On persiste tous ces nouveaux clients en une grande transaction
+		ServiceClient.creerClients(nouveauxClients);
 	}
 	
 	/**
 	 * Créée un Client à partir de sa description.
 	 * La date de naissance est notamment interpétée comme un objet Date.
 	 * @param descriptionClient Ligne du fichier CSV de Clients.
+	 * @return L'instance de Client correspondante
 	 */
-	public void creerClient(String[] descriptionClient) {
+	public Client instancierClient(String[] descriptionClient) {
 		
-		String civilite = descriptionClient[0];
+		String civiliteS = descriptionClient[0];
+		Client.Civilite civilite = Client.Civilite.fromString(civiliteS);
 		String nom = descriptionClient[1];
 		String prenom = descriptionClient[2];
 		Date dateNaissance = parseDate(descriptionClient[3]);
@@ -144,13 +153,13 @@ public class LectureDonneesCsv {
 		String telephone = descriptionClient[5];
 		String email = descriptionClient[6];
 		
-		System.out.println("Client: "+  civilite + " " + nom + " " + prenom + ", né le " + formatDate(dateNaissance) + ", habitant à " + adresse + ", téléphone: " + telephone + ", e-mail: " + email);
+		//System.out.println("Client: "+  civilite + " " + nom + " " + prenom + ", né le " + formatDate(dateNaissance) + ", habitant à " + adresse + ", téléphone: " + telephone + ", e-mail: " + email);
 		
-		// À implémenter...
-		//Client client = new Client(civilite,nom,prenom,dateNaissance,adresse,telephone,email);
-		//System.out.println(client);
-		//Service.creerClient(client);
+		// Mot de passe constant pour tout le monde car non précisé dans les données de test
+		String motDePasse = "password";
 		
+		return new Client(nom, prenom, civilite, dateNaissance, 
+						  telephone, email, adresse, motDePasse);
 	}
 
 	/**
@@ -166,26 +175,29 @@ public class LectureDonneesCsv {
 		nextLine = this.lecteurFichier.readNext();
 		afficherEnTeteCsv(nextLine);
 		
-		
+		List<Pays> nouveauxPays = new ArrayList<Pays>();
 		// Lecture des lignes
 		while ((nextLine = this.lecteurFichier.readNext()) != null) {
 		
-			creerPays(nextLine);
+			nouveauxPays.add(instancierPays(nextLine));
 			
 			// Limite (ou -1 si pas de limite)
 			if ( !(limite < 0) && (--limite < 1) ) {
 				break;
 			}
 		}
-
+		
+		// On persiste tous ces pays en une grande transaction
+		ServiceVoyage.creerPays(nouveauxPays);
 	}
 	
 	/**
 	 * Créée un Pays à partir de sa description.
 	 * La superficie et la population sont notamment interpétées comme des nombres.
 	 * @param descriptionPays Ligne du fichier CSV de Pays.
+	 * @return L'instance de Pays correspondant
 	 */
-	public void creerPays(String[] descriptionPays) {
+	public Pays instancierPays(String[] descriptionPays) {
 		
 		String nom = descriptionPays[0];
 		String code = descriptionPays[1];
@@ -193,15 +205,15 @@ public class LectureDonneesCsv {
 		String capitale = descriptionPays[3];
 		String langues = descriptionPays[4];
 		Integer superficie = Integer.parseInt(descriptionPays[5]);
-		Float population = Float.parseFloat(descriptionPays[6]);
+		Float populationF = Float.parseFloat(descriptionPays[6]);
+		Integer population = (int)(populationF * 1000);
 		String regime = descriptionPays[7];
 		
-		System.out.println("Pays: "+  nom + " [" + code + "] (" + regime + "), Capitale: " + capitale + ", Région: " + region + ", Langues: " + langues + ", " + superficie + " km², " + population + " millions d'hbitants");
+		//System.out.println("Pays: "+  nom + " [" + code + "] (" + regime + "), Capitale: " + capitale + ", Région: " + region + ", Langues: " + langues + ", " + superficie + " km², " + population + " millions d'hbitants");
 		
 		// À implémenter...
-		//Pays pays = new Pays(code,nom,capitale,population,superficie,langues);
-		//System.out.println(pays);
-		//Service.creerPays(pays);
+		return new Pays(code, nom, region, regime, superficie, population, langues, capitale);
+		//Service.instancierPays(pays);
 		
 	}
 	
@@ -214,22 +226,17 @@ public class LectureDonneesCsv {
 	public static void main(String[] args) {
 		
 		try {
-			String fichierClients = "C:\\Temp\\PredictIF-Clients.csv";
-			String fichierPays = "C:\\Temp\\IFRoutard-Pays.csv";
-			
+			String fichierClients = "res/data/IFRoutard-Clients.csv";
 			LectureDonneesCsv lectureDonneesCsv_Clients = new LectureDonneesCsv(fichierClients);
-			
 			// Pour tester: limite à 10
 			lectureDonneesCsv_Clients.lireClients(10);
 			// Puis, quand tout est au point!
 			//lectureDonneesCsv.lireClients(-1);
-
 			lectureDonneesCsv_Clients.fermer();
 
+			String fichierPays = "res/data/IFRoutard-Pays.csv";
 			LectureDonneesCsv lectureDonneesCsv_Pays = new LectureDonneesCsv(fichierPays);
-			
 			lectureDonneesCsv_Pays.lirePays(10);
-			
 			lectureDonneesCsv_Pays.fermer();
 			
 		} catch (IOException ex) {

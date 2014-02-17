@@ -41,6 +41,7 @@ public class Conseiller extends Employe implements Serializable {
 			descriptionSpecialites += p + ", ";
 		
 		return "metier.modele.Conseiller[ id=" + getId() + " ]\n"
+				+ "Nom complet : " + getNom() + " " + getPrenom() + "\n"
 				+ "Spécialités : " + descriptionSpecialites;
 		
 	}

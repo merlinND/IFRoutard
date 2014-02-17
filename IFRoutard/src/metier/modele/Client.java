@@ -168,10 +168,9 @@ public class Client implements Serializable {
     @Override
     public String toString() {
         return "metier.modele.Client[ id=" + id + " ]" + " \n" 
-				+ "nom : " + nom + " \n"+ "prénom : " + prenom + "\n"
-				+ "civilité : " + civilite + "\n"+"téléphone : " 
-				+ telephone + "\n" + "email : " + email + "\n"+"adresse : "
-				+ adresse + " \n"+ "hashMotDePasse : " + hashMotDePasse + "\n";
+				+ "Nom complet : " + civilite + " " + nom + " " + prenom + ",\n"
+				+ "Téléphone : " + telephone + ", " + "E-mail : " + email + ", "
+				+ "Adresse : " + adresse + "\n";
     }
     
 }
