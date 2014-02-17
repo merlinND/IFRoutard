@@ -31,4 +31,22 @@ public class ClientDao
 		return (List<Client>)query.getResultList();
 	}
 	
+	/**
+	 * 
+	 * @param email
+	 * @return L'instance si elle existe, null sinon
+	 */
+	public static Client obtenirClientParEmail(String email) {
+		EntityManager em = JpaUtil.obtenirEntityManager();
+		Query query = em.createQuery("SELECT c from Client c "
+									+ "WHERE c.email=:email ORDER BY c.email");
+		query.setParameter("email", email);
+		List<Client> results = (List<Client>)query.getResultList();
+		
+		if (!results.isEmpty())
+			return results.get(0);
+		else
+			return null;
+	}
+	
 }

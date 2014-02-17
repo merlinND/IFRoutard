@@ -74,4 +74,16 @@ public class ServiceClient {
 		return result;
 	}
 	
+	/**
+	 * 
+	 * @param email
+	 * @return L'instance si elle existe, null sinon
+	 */
+	public static Client obtenirClientParEmail(String email) {
+		JpaUtil.creerEntityManager();
+		Client result = ClientDao.obtenirClientParEmail(email);
+		JpaUtil.fermerEntityManager();
+		return result;
+	}
+	
 }

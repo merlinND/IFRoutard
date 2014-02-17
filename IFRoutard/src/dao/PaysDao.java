@@ -38,8 +38,8 @@ public class PaysDao {
 		Query query = em.createQuery("SELECT p from Pays p "
 									+ "WHERE p.nom=:nom ORDER BY p.nom");
 		query.setParameter("nom", nom);
-		
 		List<Pays> results = (List<Pays>)query.getResultList();
+		
 		if (!results.isEmpty())
 			return results.get(0);
 		else
