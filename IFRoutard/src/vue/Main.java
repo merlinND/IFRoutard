@@ -23,7 +23,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		// Si on ne veut pas imposer de limite : utiliser -1
-		int limite = 10;
+		int limite = 3;
 		
 		// Récupérer les données de test
 		String fichierClients = "res/data/IFRoutard-Clients.csv";
@@ -43,17 +43,16 @@ public class Main
 			ex.printStackTrace(System.err);
 		}
 		
-		Conseiller monConseiller = new Conseiller("Conseiller", "Random", "random@domain.tld");
-		
 		System.out.println("----- Liste de tous les pays -----");
 		List<Pays> tousLesPays = ServiceVoyage.obtenirPays();
 		Pays unPays;
 		for (Pays p : tousLesPays) {
 			System.out.println(p);
-			if(Math.random() > 0.9)
-				monConseiller.addSpecialite(p);
 		}
 		
+		Conseiller monConseiller = new Conseiller("Conseiller", "Random", "random@domain.tld");
+		monConseiller.addSpecialite(ServiceVoyage.obtenirPays("Algérie"));
+		monConseiller.addSpecialite(ServiceVoyage.obtenirPays("Albanie"));
 		ServiceEmploye.creerConseiller(monConseiller);
 		
 		System.out.println("\n----- Liste de tous les conseillers -----");
@@ -62,8 +61,8 @@ public class Main
 			System.out.println(c);
 		
 		// Test de l'inscription interactive d'un client
-		System.out.println("\n");
-		InscriptionClient.inscriptionInteractive();
+		//System.out.println("\n");
+		//InscriptionClient.inscriptionInteractive();
 		
 		System.out.println("\n----- Liste de tous les clients -----");
 		List<Client> tousLesClients = ServiceClient.obtenirClients();

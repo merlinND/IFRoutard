@@ -118,7 +118,7 @@ public class LectureDonneesCsv {
 
 		 // En-tete du fichier CSV
 		nextLine = this.lecteurFichier.readNext();
-		afficherEnTeteCsv(nextLine);
+		//afficherEnTeteCsv(nextLine);
 		
 		List<Client> nouveauxClients = new ArrayList<Client>();
 		// Lecture des lignes
@@ -147,6 +147,7 @@ public class LectureDonneesCsv {
 	 * Créée un Client à partir de sa description.
 	 * La date de naissance est notamment interpétée comme un objet Date.
 	 * @param descriptionClient Ligne du fichier CSV de Clients.
+	 * @param motDePasse Le mot de passe de ce client, en clair
 	 * @return L'instance de Client correspondante
 	 */
 	public static Client instancierClient(String[] descriptionClient, String motDePasse) {
@@ -177,7 +178,7 @@ public class LectureDonneesCsv {
 
 		 // En-tete du fichier CSV
 		nextLine = this.lecteurFichier.readNext();
-		afficherEnTeteCsv(nextLine);
+		//afficherEnTeteCsv(nextLine);
 		
 		List<Pays> nouveauxPays = new ArrayList<Pays>();
 		// Lecture des lignes
@@ -215,10 +216,7 @@ public class LectureDonneesCsv {
 		
 		//System.out.println("Pays: "+  nom + " [" + code + "] (" + regime + "), Capitale: " + capitale + ", Région: " + region + ", Langues: " + langues + ", " + superficie + " km², " + population + " millions d'hbitants");
 		
-		// À implémenter...
 		return new Pays(code, nom, region, regime, superficie, population, langues, capitale);
-		//Service.instancierPays(pays);
-		
 	}
 	
 	/**
