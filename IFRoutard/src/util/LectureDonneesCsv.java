@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 import metier.modele.Client;
 import metier.modele.Pays;
+import metier.modele.Voyage;
 import metier.service.ServiceClient;
 import metier.service.ServiceVoyage;
 
@@ -217,6 +218,47 @@ public class LectureDonneesCsv {
 		//System.out.println("Pays: "+  nom + " [" + code + "] (" + regime + "), Capitale: " + capitale + ", Région: " + region + ", Langues: " + langues + ", " + superficie + " km², " + population + " millions d'hbitants");
 		
 		return new Pays(code, nom, region, regime, superficie, population, langues, capitale);
+	}
+	
+	/**
+	 * Lit le fichier CSV, affiche son en-tête, puis appelle la création de Voyage pour chaque ligne.
+	 * @param limite Nombre maximum de lignes à lire ou -1 pour ne pas limiter
+	 * @throws IOException 
+	 */
+	public void lireVoyages(int limite) throws IOException {
+		String[] nextLine;
+		// En-tete du fichier CSV
+		nextLine = this.lecteurFichier.readNext();
+		afficherEnTeteCsv(nextLine);
+		
+		List<Voyage> nouveauxVoyages = new ArrayList<Voyage>();
+		// Lecture des lignes
+		while ((nextLine = this.lecteurFichier.readNext()) != null) {
+		
+			nouveauxVoyages.add(instanciervoyage(nextLine));
+			
+			// Limite (ou -1 si pas de limite)
+			if ( !(limite < 0) && (--limite < 1) ) {
+				break;
+			}
+		}
+		
+		// On persiste tous ces pays en une grande transaction
+		ServiceVoyage.creerVoyages(nouveauxVoyages);
+	}
+	
+	/**
+	 * Créée un Voyage à partir de sa description.
+	 * @param descriptionVoyage Ligne du fichier CSV de Voyage.
+	 * @return L'instance de Voyage correspondant
+	 */
+	public static Voyage instanciervoyage(String[] descriptionVoyage) {
+		// TODO
+		
+		//System.out.println("Pays: "+  nom + " [" + code + "] (" + regime + "), Capitale: " + capitale + ", Région: " + region + ", Langues: " + langues + ", " + superficie + " km², " + population + " millions d'hbitants");
+		
+		//return new Voyage();
+		throw new UnsupportedOperationException("Not implemented yet");
 	}
 	
 	/**
