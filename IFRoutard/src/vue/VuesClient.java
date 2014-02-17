@@ -6,15 +6,17 @@ import java.util.Scanner;
 import metier.modele.Client;
 import metier.service.ServiceClient;
 import util.LectureDonneesCsv;
+import util.Saisie;
 
 /**
- * Cette classe fournit une méthode permettant d'inscrire interactivement
- * un client en mode console.
+ * Cette classe fournit les méthodes interactives (mode console)
+ * relatives à l'objet métier Client.
  * @author Merlin
  */
-public class InscriptionClient {
+public class VuesClient {
 	
 	/**
+	 * Inscription interactive d'un client en mode console.
 	 * TODO : gestion d'erreur
 	 * TOOD : utiliser leur classe Saisie ?
 	 * @return Le Client nouvellement créé
@@ -24,7 +26,7 @@ public class InscriptionClient {
 		PrintStream output = System.out;
 		String[] description = new String[7];
 		
-		output.print("----- Client : inscription interactive -----\n");
+		output.println("----- Client : inscription interactive -----");
 		output.print("Civilité (M | MME) : ");
 		description[0] = input.nextLine();
 		output.print("Nom : ");
@@ -53,6 +55,43 @@ public class InscriptionClient {
 		output.print("--------------------------------------------\n");
 		
 		return nouveau;
+	}
+	
+	/**
+	 * TODO : choisir comment gérer les erreurs d'e-mail / mot de passe
+	 * @return Le client venant de se connecter, null sinon
+	 */
+	public static Client connexionInteractive() {
+		System.out.println("----- Client : connexion interactive -----");
+		System.out.println("Pour annuler, tapez `exit`");
+		
+		Client client = null;
+		String entree = "";
+		while (client == null && !entree.equals("exit")) {
+			entree = Saisie.lireChaine("E-mail : ");
+			client = ServiceClient.obtenirClientParEmail(entree);
+		}
+		
+		if (entree.equals("exit"))
+			return null;
+		
+		Integer tentativesRestantes = 3;
+		Boolean valide = false;
+		while (tentativesRestantes > 0 && !valide) {
+			entree = Saisie.lireChaine("Mot de passe : ");
+			valide = ServiceClient.testerMotDePasse(client, entree);
+			
+			if (!valide) {
+				tentativesRestantes--;
+				System.err.println("Mot de passe incorrect, " 
+						+ tentativesRestantes + " tentatives restantes.");
+			}
+		}
+		
+		if (valide)
+			return client;
+		else
+			return null;
 	}
 	
 }

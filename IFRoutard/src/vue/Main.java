@@ -62,11 +62,18 @@ public class Main
 		
 		// Test de l'inscription interactive d'un client
 		//System.out.println("\n");
-		//InscriptionClient.inscriptionInteractive();
+		//Client nouveau = VuesClient.inscriptionInteractive();
 		
 		System.out.println("\n----- Liste de tous les clients -----");
 		List<Client> tousLesClients = ServiceClient.obtenirClients();
 		for (Client c : tousLesClients)
 			System.out.println(c);
+		
+		// Test de la connexion interactive d'un client
+		System.out.println("\n");
+		Client connecte = VuesClient.connexionInteractive();
+		if (connecte != null) {
+			System.out.println("Bienvenue, " + connecte.getPrenom() + " !");
+		}
 	}
 }
