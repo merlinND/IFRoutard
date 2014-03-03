@@ -32,20 +32,21 @@ public class EmployeDao
 		Query query = em.createQuery("SELECT c FROM Conseiller c");
 		return (List<Conseiller>)query.getResultList();
 	}
-		/**
-	 * @param specialite trouver les conseiller qui ont la spécialité specialite
-	 * @return Une instance si trouvé, null sinon
+	
+	/**
+	 * Trouver les conseiller qui ont la spécialité demandée.
+	 * @param specialite 
+	 * @return Une liste de conseillers (potentiellement vide)
 	 */
-	public static List<Conseiller> obtenirSpecialite(String specialite) {
+	public static List<Conseiller> obtenirParSpecialite(Pays specialite) {
 		EntityManager em = JpaUtil.obtenirEntityManager();
-		Query query = em.createQuery("SELECT c from Conseiller c "
-									+ "WHERE c.specialite=:specialite ORDER BY c.specialite");
-		query.setParameter("specialite", specialite);
-		List<Conseiller> results = (List<Conseiller>)query.getResultList();
-		
-		if (!results.isEmpty())
-			return (List<Conseiller>) results.get(0);
-		else
-			return null;
+		Query query = em.createQuery("SELECT c FROM Conseiller c "
+									+ "WHERE :specialite "
+										+ "	IN (SELECT s.id FROM c.specialites s) ");
+		query.setParameter("specialite", specialite.getId());
+		return (List<Conseiller>)query.getResultList();
 	}
+	
+	// TODO: permettre de trouver le conseiller le moins occupé parmi les
+	// conseillers ayant une spécialité donnée
 }

@@ -66,6 +66,13 @@ public class Main
 		for (Conseiller c : tousLesConseillers)
 			System.out.println(c);
 		
+		System.out.println("\n----- Liste des conseillers spécialistes d'Algérie -----");
+		Pays algerie = ServiceVoyage.obtenirPays("Algérie");
+		List<Conseiller> specialistes = ServiceEmploye.obtenirConseillerParSpecialite(algerie);
+		for (Conseiller c : specialistes) {
+			System.out.println(c);
+		}
+		
 		// Test de l'inscription interactive d'un client
 		//System.out.println("\n");
 		//Client nouveau = VuesClient.inscriptionInteractive();
@@ -76,10 +83,10 @@ public class Main
 			System.out.println(c);
 		
 		// Test de la connexion interactive d'un client
-		System.out.println("\n");
-		Client connecte = VuesClient.connexionInteractive();
-		if (connecte != null) {
-			System.out.println("Bienvenue, " + connecte.getPrenom() + " !");
-		}
+		//System.out.println("\n");
+		//Client connecte = VuesClient.connexionInteractive();
+		//if (connecte != null) {
+		//	System.out.println("Bienvenue, " + connecte.getPrenom() + " !");
+		//}
 	}
 }

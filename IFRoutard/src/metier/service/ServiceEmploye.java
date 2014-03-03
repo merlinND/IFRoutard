@@ -3,12 +3,13 @@ package metier.service;
 import dao.EmployeDao;
 import java.util.List;
 import metier.modele.Conseiller;
+import metier.modele.Pays;
 import util.JpaUtil;
 
 /**
  * Couche : Service
  * Objets métier : Employe, Conseiller
- * @author Merlin
+ * @author Merlin, Romain
  */
 public class ServiceEmploye {
 
@@ -49,16 +50,14 @@ public class ServiceEmploye {
 		return result;
 	}
 	
-
-	// TODO : méthodes de recherche de conseiller par leur spécialité
-		/**
+	/**
 	 * 
-	 * @param specialitePays
-	 * @return La liste, ou null si la spécialité demandé  n'existe pas
+	 * @param pays
+	 * @return La liste (éventuellement vide) des conseillers spécialistes de ce pays
 	 */
-	public static List<Conseiller> obtenirConseillerParSpecialite(String specialitePays) {
+	public static List<Conseiller> obtenirConseillerParSpecialite(Pays pays) {
 		JpaUtil.creerEntityManager();
-		List<Conseiller> result = EmployeDao.obtenirSpecialite(specialitePays);
+		List<Conseiller> result = EmployeDao.obtenirParSpecialite(pays);
 		JpaUtil.fermerEntityManager();
 		return result;
 	}
