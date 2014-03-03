@@ -49,6 +49,17 @@ public class ServiceEmploye {
 		return result;
 	}
 	
+
 	// TODO : méthodes de recherche de conseiller par leur spécialité
-	
+		/**
+	 * 
+	 * @param specialitePays
+	 * @return La liste, ou null si la spécialité demandé  n'existe pas
+	 */
+	public static List<Conseiller> obtenirConseillerParSpecialite(String specialitePays) {
+		JpaUtil.creerEntityManager();
+		List<Conseiller> result = EmployeDao.obtenirSpecialite(specialitePays);
+		JpaUtil.fermerEntityManager();
+		return result;
+	}
 }

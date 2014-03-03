@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import metier.modele.Conseiller;
 import metier.modele.Employe;
+import metier.modele.Pays;
 import util.JpaUtil;
 
 /**
@@ -31,5 +32,20 @@ public class EmployeDao
 		Query query = em.createQuery("SELECT c from Conseiller c");
 		return (List<Conseiller>)query.getResultList();
 	}
-	
+		/**
+	 * @param specialite trouver les conseiller qui ont la spécialité specialite
+	 * @return Une instance si trouvé, null sinon
+	 */
+	public static List<Conseiller> obtenirSpecialite(String specialite) {
+		EntityManager em = JpaUtil.obtenirEntityManager();
+		Query query = em.createQuery("SELECT c from Conseiller c "
+									+ "WHERE c.specialite=:specialite ORDER BY c.specialite");
+		query.setParameter("specialite", specialite);
+		List<Conseiller> results = (List<Conseiller>)query.getResultList();
+		
+		if (!results.isEmpty())
+			return (List<Conseiller>) results.get(0);
+		else
+			return null;
+	}
 }
