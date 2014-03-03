@@ -1,18 +1,19 @@
-
 package metier.service;
 
 import dao.DevisDao;
+import java.util.ArrayList;
 import java.util.List;
 import metier.modele.Devis;
 import util.JpaUtil;
 
 /**
- *
+ * Couche : Service
+ * Objets métiers : Devis
  * @author Romain
  */
 public class ServiceDevis {
-    	/**
-	 * Insère le deivs donné en base de données.
+    /**
+	 * Insère le devis donné en base de données.
 	 * @param devis 
 	 */
 	public static void creerDevis(Devis devis) {
@@ -47,12 +48,12 @@ public class ServiceDevis {
 		JpaUtil.fermerEntityManager();
 		return result;
 	}
-       /**
-        * envoyer un devis par email au client concerné.
-     * @param email
-        */
-        public static void envoyerDevis(String email){
-            
-        }
-    
+	
+	/**
+	 * Envoyer un devis par email au client concerné.
+	 * @param email
+	*/
+	public static void envoyerDevis(String email){
+		// TODO
+	}
 }

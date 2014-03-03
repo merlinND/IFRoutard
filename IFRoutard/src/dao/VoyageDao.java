@@ -39,7 +39,7 @@ public class VoyageDao {
 	 */
 	public static List<Sejour> obtenirSejours() {
 		EntityManager em = JpaUtil.obtenirEntityManager();
-		Query query = em.createQuery("SELECT s from Sejour s");
+		Query query = em.createQuery("SELECT s FROM Sejour s");
 		return (List<Sejour>)query.getResultList();
 	}
 	/**
@@ -47,14 +47,14 @@ public class VoyageDao {
 	 */
 	public static List<Circuit> obtenirCircuits() {
 		EntityManager em = JpaUtil.obtenirEntityManager();
-		Query query = em.createQuery("SELECT c from Circuit c");
+		Query query = em.createQuery("SELECT c FROM Circuit c");
 		return (List<Circuit>)query.getResultList();
 	}
 
 	public static List<Voyage> obtenirVoyagesParDestination(Pays pays) {
 		EntityManager em = JpaUtil.obtenirEntityManager();
 		// TODO : est-ce qu'il faudrait requêter sur les sous-types ?
-		Query query = em.createQuery("SELECT v from Voyage v"
+		Query query = em.createQuery("SELECT v FROM Voyage v"
 									+ "WHERE v.destination=:pays");
 		query.setParameter("pays", pays);
 		return (List<Voyage>)query.getResultList();

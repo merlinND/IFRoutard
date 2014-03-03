@@ -11,7 +11,7 @@ import util.JpaUtil;
 /**
  * Couche : DAO
  * Objets métier : Conseiller
- * @author Merlin
+ * @author Romain
  */
 public class EmployeDao
 {
@@ -29,7 +29,7 @@ public class EmployeDao
 	 */
 	public static List<Conseiller> obtenirConseillers() {
 		EntityManager em = JpaUtil.obtenirEntityManager();
-		Query query = em.createQuery("SELECT c from Conseiller c");
+		Query query = em.createQuery("SELECT c FROM Conseiller c");
 		return (List<Conseiller>)query.getResultList();
 	}
 		/**

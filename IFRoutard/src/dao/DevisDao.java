@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package dao;
 
 import java.util.List;
@@ -13,7 +7,8 @@ import metier.modele.Devis;
 import util.JpaUtil;
 
 /**
- *
+ * Couche : DAO
+ * Objets métier : Devis
  * @author Romain
  */
 public class DevisDao {
@@ -25,12 +20,13 @@ public class DevisDao {
 	public static void creerDevis(Devis devis) {
 		JpaUtil.obtenirEntityManager().persist(devis);
 	}
-        /**
-	 * @return List<Voyage> La liste de tous les voyages existants
+	
+	/**
+	 * @return List<Devis> La liste de tous les devis existants
 	 */
 	public static List<Devis> obtenirDevis() {
 		EntityManager em = JpaUtil.obtenirEntityManager();
-		Query query = em.createQuery("SELECT d from Devis d");
+		Query query = em.createQuery("SELECT d FROM Devis d");
 		return (List<Devis>)query.getResultList();
 	}
 	

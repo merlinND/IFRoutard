@@ -25,7 +25,7 @@ public class PaysDao {
 	 */
 	public static List<Pays> obtenirPays() {
 		EntityManager em = JpaUtil.obtenirEntityManager();
-		Query query = em.createQuery("SELECT p from Pays p");
+		Query query = em.createQuery("SELECT p FROM Pays p");
 		return (List<Pays>)query.getResultList();
 	}
 	
@@ -35,7 +35,7 @@ public class PaysDao {
 	 */
 	public static Pays obtenirPays(String nom) {
 		EntityManager em = JpaUtil.obtenirEntityManager();
-		Query query = em.createQuery("SELECT p from Pays p "
+		Query query = em.createQuery("SELECT p FROM Pays p "
 									+ "WHERE p.nom=:nom ORDER BY p.nom");
 		query.setParameter("nom", nom);
 		List<Pays> results = (List<Pays>)query.getResultList();

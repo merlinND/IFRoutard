@@ -27,7 +27,7 @@ public class ClientDao
 	 */
 	public static List<Client> obtenirClients() {
 		EntityManager em = JpaUtil.obtenirEntityManager();
-		Query query = em.createQuery("SELECT c from Client c");
+		Query query = em.createQuery("SELECT c FROM Client c");
 		return (List<Client>)query.getResultList();
 	}
 	
@@ -38,7 +38,7 @@ public class ClientDao
 	 */
 	public static Client obtenirClientParEmail(String email) {
 		EntityManager em = JpaUtil.obtenirEntityManager();
-		Query query = em.createQuery("SELECT c from Client c "
+		Query query = em.createQuery("SELECT c FROM Client c "
 									+ "WHERE c.email=:email ORDER BY c.email");
 		query.setParameter("email", email);
 		List<Client> results = (List<Client>)query.getResultList();
