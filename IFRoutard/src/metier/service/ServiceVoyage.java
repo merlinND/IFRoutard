@@ -132,7 +132,7 @@ public class ServiceVoyage {
 	/**
 	 * 
 	 * @param nomPays
-	 * @return La liste, ou null si le demandé pays n'existe pas
+	 * @return La liste, ou null si le pays demandé pays n'existe pas
 	 */
 	public static List<Voyage> obtenirVoyagesParPays(String nomPays) {
 		Pays pays = obtenirPays(nomPays);

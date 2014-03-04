@@ -1,15 +1,10 @@
 package vue;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
-import metier.modele.Circuit;
 import metier.modele.Client;
 import metier.modele.Conseiller;
-import metier.modele.Depart;
-import metier.modele.Devis;
 import metier.modele.Pays;
-import metier.modele.Sejour;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
 import metier.service.ServiceVoyage;
@@ -34,6 +29,9 @@ public class Main
 		// Récupérer les données de test
 		String fichierClients = "res/data/IFRoutard-Clients.csv";
 		String fichierPays = "res/data/IFRoutard-Pays.csv";
+                String fichierDeparts = "res/data/IFRoutard-Departs.csv";
+                String fichierVoyagesCircuits = "res/data/IFRoutard-Voyages-Circuits.csv";
+                String fichierVoyagesSejours = "res/data/IFRoutard-Voyages-Sejours.csv";
 		LectureDonneesCsv lecteur;
 		try {
 			lecteur = new LectureDonneesCsv(fichierClients);
@@ -42,6 +40,18 @@ public class Main
 
 			lecteur = new LectureDonneesCsv(fichierPays);
 			lecteur.lirePays(limite);
+			lecteur.fermer();
+                        
+                       	lecteur = new LectureDonneesCsv(fichierDeparts);
+			lecteur.lireDeparts(limite);
+			lecteur.fermer();
+                        
+                        lecteur = new LectureDonneesCsv(fichierVoyagesCircuits);
+			lecteur.lireVoyages(limite);
+			lecteur.fermer();
+                        
+                       	lecteur = new LectureDonneesCsv(fichierVoyagesSejours);
+			lecteur.lireVoyages(limite);
 			lecteur.fermer();
 			
 			// TODO : les autres objets métier

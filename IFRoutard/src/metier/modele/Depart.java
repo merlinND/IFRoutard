@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 
@@ -29,6 +30,7 @@ public class Depart implements Serializable {
     private Date dateDeDepart;
     private String ville;
     private String description;
+    @ManyToOne
     private Voyage voyage; 
     
     public Depart() {
@@ -114,7 +116,7 @@ public class Depart implements Serializable {
 
     @Override
     public String toString() {
-        return "metier.modele.Depart[  ]"+" \n"+ prix +  " euros, de : " + ville +  " le : " + dateDeDepart + " pour un voyage en direction de :"+ voyage.getDestination() +"\n"+ "description : " + description +"\n";
+        return "metier.modele.Depart[  ]"+" \n"+ prix +  " euros, de : " + ville +  " le : " + dateDeDepart + " pour un voyage en direction de :"+ voyage.getCodeDestination() +"\n"+ "description : " + description +"\n";
     }
     
 }

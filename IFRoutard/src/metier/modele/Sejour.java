@@ -20,10 +20,14 @@ public class Sejour extends Voyage implements Serializable {
     public Sejour() {
     }
 
-    public Sejour(String residence, int code, String titre, int nbJours, String description, Pays destination) {
-	super(code, titre, nbJours, description, destination);
+    public Sejour(String residence, String code, String titre, int nbJours, String description, String codeDestination) {
+	super(code, titre, nbJours, description, codeDestination);
 	this.residence = residence;
     }     
+
+    public Sejour(String code) {
+        super(code);
+    }
     
     public String getResidence() {
         return residence;

@@ -28,30 +28,35 @@ abstract public class Voyage implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private int code;
+    private String code;
     private String titre;
     private int nbJours;
     private String description;
     @OneToOne
-    private Pays destination;
+    private String codeDestination;
     @OneToMany
     private List<Depart> depart = new ArrayList<Depart>();
     public Voyage() {
     }
 
-    public Voyage(int code, String titre, int nbJours, String description, Pays destination) {
+    public Voyage(String code, String titre, int nbJours, String description, String codeDestination) {
 	this.code = code;
 	this.titre = titre;
 	this.nbJours = nbJours;
 	this.description = description;
-	this.destination = destination;
+	this.codeDestination = codeDestination;
     }   
+
+    public Voyage(String code) {
+        this.code = code;
+    }
+
 
     public Long getId() {
         return id;
     }
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
@@ -67,8 +72,8 @@ abstract public class Voyage implements Serializable {
         return description;
     }
 
-    public Pays getDestination() {
-        return destination;
+    public String getCodeDestination() {
+        return codeDestination;
     }
 
     public List<Depart> getDepart() {
@@ -79,7 +84,7 @@ abstract public class Voyage implements Serializable {
         this.id = id;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
@@ -95,8 +100,8 @@ abstract public class Voyage implements Serializable {
         this.description = description;
     }
 
-    public void setDestination(Pays destination) {
-	this.destination = destination;
+    public void setCodeDestination(String codeDestination) {
+	this.codeDestination = codeDestination;
     }
 
     public void setDestinations(List<Depart> depart) {

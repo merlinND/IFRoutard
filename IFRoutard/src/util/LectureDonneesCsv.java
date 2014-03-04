@@ -12,8 +12,12 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import metier.modele.Circuit;
 import metier.modele.Client;
+import metier.modele.Conseiller;
+import metier.modele.Depart;
 import metier.modele.Pays;
+import metier.modele.Sejour;
 import metier.modele.Voyage;
 import metier.service.ServiceClient;
 import metier.service.ServiceVoyage;
@@ -167,13 +171,44 @@ public class LectureDonneesCsv {
 		return new Client(nom, prenom, civilite, dateNaissance, 
 						  telephone, email, adresse, motDePasse);
 	}
+        //TODO: lireDepart Lire etc...
+        
+        public void lireDeparts(int limite) throws IOException {
 
-	/**
-	 * Lit le fichier CSV, affiche son en-tête, puis appelle la création de Pays pour chaque ligne.
-	 * @param limite Nombre maximum de lignes à lire ou -1 pour ne pas limiter
-	 * @throws IOException 
-	 */
-	public void lirePays(int limite) throws IOException {
+		String[] nextLine;
+
+		 // En-tete du fichier CSV
+		nextLine = this.lecteurFichier.readNext();
+		//afficherEnTeteCsv(nextLine);
+		
+		List<Depart> nouveauxDeparts = new ArrayList<Depart>();
+		// Lecture des lignes
+		while ((nextLine = this.lecteurFichier.readNext()) != null) {
+		
+			nouveauxDeparts.add(instancierDepart(nextLine));
+			
+			// Limite (ou -1 si pas de limite)
+			if ( !(limite < 0) && (--limite < 1) ) {
+				break;
+			}
+		}
+        }
+        
+        public static Depart instancierDepart(String[] descriptionDepart) {
+		String code = descriptionDepart[0];
+		
+                Date dateDepart = parseDate(descriptionDepart[1]);
+		
+		String ville = descriptionDepart[2];
+		Float prix = Float.parseFloat(descriptionDepart[3]);
+
+		String description = descriptionDepart[4];
+                Sejour sejour = new Sejour (code);
+		//System.out.println("Client: "+  civilite + " " + nom + " " + prenom + ", né le " + formatDate(dateNaissance) + ", habitant à " + adresse + ", téléphone: " + telephone + ", e-mail: " + email);
+		
+		return new Depart (sejour, prix, dateDepart, ville, description);
+	}
+        public void lirePays(int limite) throws IOException {
 
 		String[] nextLine;
 
@@ -221,11 +256,59 @@ public class LectureDonneesCsv {
 	}
 	
 	/**
+	 * Lit le fichier CSV, affiche son en-tête, puis appelle la création de Pays pour chaque ligne.
+	 * @param limite Nombre maximum de lignes à lire ou -1 pour ne pas limiter
+	 * @throws IOException 
+	 */
+	public void lireConseillers(int limite) throws IOException {
+
+		String[] nextLine;
+
+		 // En-tete du fichier CSV
+		nextLine = this.lecteurFichier.readNext();
+		//afficherEnTeteCsv(nextLine);
+		
+		List<Conseiller> nouveauxConseillers = new ArrayList<Conseiller>();
+		// Lecture des lignes
+		while ((nextLine = this.lecteurFichier.readNext()) != null) {
+		
+			nouveauxConseillers.add(instancierConseillers(nextLine));
+			
+			// Limite (ou -1 si pas de limite)
+			if ( !(limite < 0) && (--limite < 1) ) {
+				break;
+			}
+		}
+
+	}
+	
+	/**
+	 * Créée un Conseiller à partir de sa description.
+	 * @param descriptionConseillers Ligne du fichier CSV de Conseiller.
+	 * @return L'instance de Pays correspondant
+	 */
+	public static Conseiller instancierConseillers(String[] descriptionConseillers) {
+		
+		String civiliteS = descriptionConseillers[0];
+                String nom = descriptionConseillers[1];
+		String prenom = descriptionConseillers[2];
+                Date dateNaissance = parseDate(descriptionConseillers[3]);
+		String adresse = descriptionConseillers[4];
+		String telephone = descriptionConseillers[5];
+		String email = descriptionConseillers[6];
+		
+		
+		
+		
+		return new Conseiller(nom , prenom, email);
+	}
+	
+	/**
 	 * Lit le fichier CSV, affiche son en-tête, puis appelle la création de Voyage pour chaque ligne.
 	 * @param limite Nombre maximum de lignes à lire ou -1 pour ne pas limiter
 	 * @throws IOException 
 	 */
-	public void lireVoyages(int limite) throws IOException {
+	public void lireVoyagesCircuit(int limite) throws IOException {
 		String[] nextLine;
 		// En-tete du fichier CSV
 		nextLine = this.lecteurFichier.readNext();
@@ -235,7 +318,7 @@ public class LectureDonneesCsv {
 		// Lecture des lignes
 		while ((nextLine = this.lecteurFichier.readNext()) != null) {
 		
-			nouveauxVoyages.add(instanciervoyage(nextLine));
+			nouveauxVoyages.add(instanciervoyagecircuit(nextLine));
 			
 			// Limite (ou -1 si pas de limite)
 			if ( !(limite < 0) && (--limite < 1) ) {
@@ -252,13 +335,57 @@ public class LectureDonneesCsv {
 	 * @param descriptionVoyage Ligne du fichier CSV de Voyage.
 	 * @return L'instance de Voyage correspondant
 	 */
-	public static Voyage instanciervoyage(String[] descriptionVoyage) {
-		// TODO
+	public static Circuit instanciervoyagecircuit(String[] descriptionVoyage) {
+
+                String code = descriptionVoyage[1];
+                String titre = descriptionVoyage[2];
+                Integer duree = Integer.parseInt(descriptionVoyage[3]);
+                String description = descriptionVoyage[4]; 
+                String transport = descriptionVoyage[5];
+                Float km = Float.parseFloat(descriptionVoyage[6]);
+                String codeDestination = descriptionVoyage [0];
+
+		return new Circuit( transport , km , code, titre , duree , description , codeDestination);
+		//throw new UnsupportedOperationException("Not implemented yet");
+	}
+	public void lireVoyagesSejour(int limite) throws IOException {
+		String[] nextLine;
+		// En-tete du fichier CSV
+		nextLine = this.lecteurFichier.readNext();
+		afficherEnTeteCsv(nextLine);
 		
-		//System.out.println("Pays: "+  nom + " [" + code + "] (" + regime + "), Capitale: " + capitale + ", Région: " + region + ", Langues: " + langues + ", " + superficie + " km², " + population + " millions d'hbitants");
+		List<Voyage> nouveauxVoyages = new ArrayList<Voyage>();
+		// Lecture des lignes
+		while ((nextLine = this.lecteurFichier.readNext()) != null) {
 		
-		//return new Voyage();
-		throw new UnsupportedOperationException("Not implemented yet");
+			nouveauxVoyages.add(instanciervoyagesejour(nextLine));
+			
+			// Limite (ou -1 si pas de limite)
+			if ( !(limite < 0) && (--limite < 1) ) {
+				break;
+			}
+		}
+		
+		// On persiste tous ces pays en une grande transaction
+		ServiceVoyage.creerVoyages(nouveauxVoyages);
+	}
+	
+	/**
+	 * Créée un Voyage à partir de sa description.
+	 * @param descriptionVoyage Ligne du fichier CSV de Voyage.
+	 * @return L'instance de Voyage correspondant
+	 */
+	public static Sejour instanciervoyagesejour(String[] descriptionVoyage) {
+		String code = descriptionVoyage[1];
+                String titre = descriptionVoyage[2];
+                String description = descriptionVoyage[4];
+                String residence = descriptionVoyage[5];
+                Integer duree = Integer.parseInt(descriptionVoyage[3]);
+                String codeDestination = descriptionVoyage [0];
+
+		return new Sejour( residence, code, titre, duree, description, codeDestination);
+
+		//throw new UnsupportedOperationException("Not implemented yet");
 	}
 	
 	/**
