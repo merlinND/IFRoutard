@@ -261,9 +261,8 @@ public class LectureDonneesCsv {
 	 * @throws IOException 
 	 */
 	public void lireConseillers(int limite) throws IOException {
-
 		String[] nextLine;
-
+		
 		 // En-tete du fichier CSV
 		nextLine = this.lecteurFichier.readNext();
 		//afficherEnTeteCsv(nextLine);
@@ -279,7 +278,8 @@ public class LectureDonneesCsv {
 				break;
 			}
 		}
-
+		
+		ServiceEmploye.creerConseillers(nouveauxConseillers);
 	}
 	
 	/**
@@ -290,17 +290,23 @@ public class LectureDonneesCsv {
 	public static Conseiller instancierConseillers(String[] descriptionConseillers) {
 		
 		String civiliteS = descriptionConseillers[0];
-                String nom = descriptionConseillers[1];
+		String nom = descriptionConseillers[1];
 		String prenom = descriptionConseillers[2];
-                Date dateNaissance = parseDate(descriptionConseillers[3]);
+		Date dateNaissance = parseDate(descriptionConseillers[3]);
 		String adresse = descriptionConseillers[4];
 		String telephone = descriptionConseillers[5];
 		String email = descriptionConseillers[6];
 		
+		Conseiller c = new Conseiller(civiliteS, nom , prenom, dateNaissance,
+									adresse, telephone, email);
 		
+		for (int i = 7; i < descriptionConseillers.length; ++i) {
+			Pays specialite = ServiceVoyage.obtenirPaysParCode(descriptionConseillers[i]);
+			if (specialite != null)
+				c.addSpecialite(specialite);
+		}
 		
-		
-		return new Conseiller(nom , prenom, email);
+		return c;
 	}
 	
 	/**

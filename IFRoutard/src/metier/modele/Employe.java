@@ -1,12 +1,14 @@
 package metier.modele;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -20,20 +22,28 @@ public abstract class Employe implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	private String civilite;
 	private String nom;
 	private String prenom;
+	@Temporal(javax.persistence.TemporalType.DATE)
+	private Date dateDeNaissance;
+	private String adresse;
+	private String telephone;
 	private String email;
 
 	protected Employe() {
 	}
-	protected Employe(String nom, String prenom, String email) {
+	protected Employe(String civilite, String nom, String prenom, Date dateDeNaissance, 
+						String adresse, String telephone, String email) {
+		this.civilite = civilite;
 		this.nom = nom;
 		this.prenom = prenom;
+		this.dateDeNaissance = dateDeNaissance;
+		this.adresse = adresse;
+		this.telephone = telephone;
 		this.email = email;
 	}
 	
-	
-
 	/*
 	 * GETTERS & SETTERS
 	 */
@@ -42,6 +52,12 @@ public abstract class Employe implements Serializable {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public String getCivilite() {
+		return civilite;
+	}
+	public void setCivilite(String civilite) {
+		this.civilite = civilite;
 	}
 	public String getNom() {
 		return nom;
@@ -55,13 +71,30 @@ public abstract class Employe implements Serializable {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+	public Date getDateDeNaissance() {
+		return dateDeNaissance;
+	}
+	public void setDateDeNaissance(Date dateDeNaissance) {
+		this.dateDeNaissance = dateDeNaissance;
+	}
+	public String getAdresse() {
+		return adresse;
+	}
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 	
 	@Override
 	public int hashCode() {
@@ -85,7 +118,8 @@ public abstract class Employe implements Serializable {
 
 	@Override
 	public String toString() {
-		return "metier.modele.Employe[ id=" + id + " ]";
+		return "metier.modele.Employe[ id=" + id + " ]" + '\n'
+				+ getCivilite() + ' ' + getPrenom() + ' ' + getNom() + '\n';
 	}
 
 }

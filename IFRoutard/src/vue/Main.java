@@ -32,6 +32,7 @@ public class Main
                 String fichierDeparts = "res/data/IFRoutard-Departs.csv";
                 String fichierVoyagesCircuits = "res/data/IFRoutard-Voyages-Circuits.csv";
                 String fichierVoyagesSejours = "res/data/IFRoutard-Voyages-Sejours.csv";
+                fichierConseillers = "res/data/IFRoutard-Conseillers.csv",
 		LectureDonneesCsv lecteur;
 		try {
 			lecteur = new LectureDonneesCsv(fichierClients);
@@ -44,6 +45,9 @@ public class Main
                         
                        	lecteur = new LectureDonneesCsv(fichierDeparts);
 			lecteur.lireDeparts(limite);
+            
+            lecteur = new LectureDonneesCsv(fichierConseillers);
+			lecteur.lireConseillers(limite);
 			lecteur.fermer();
                         
                         lecteur = new LectureDonneesCsv(fichierVoyagesCircuits);

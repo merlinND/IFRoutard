@@ -2,6 +2,7 @@ package metier.modele;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -21,8 +22,9 @@ public class Conseiller extends Employe implements Serializable {
 	public Conseiller() {
 		super();
 	}
-	public Conseiller(String nom, String prenom, String email) {
-		super(nom, prenom, email);
+	public Conseiller(String civilite, String nom, String prenom, Date dateDeNaissance, 
+						String adresse, String telephone, String email) {
+		super(civilite, nom, prenom, dateDeNaissance, adresse, telephone, email);
 	}
 	
 	/*
@@ -40,9 +42,11 @@ public class Conseiller extends Employe implements Serializable {
 		String descriptionSpecialites = "";
 		for (Pays p : getSpecialites())
 			descriptionSpecialites += p + ", ";
+		descriptionSpecialites = descriptionSpecialites.substring(0, descriptionSpecialites.length() - 2);
 		
 		return "metier.modele.Conseiller[ id=" + getId() + " ]\n"
-				+ "Spécialités : " + descriptionSpecialites;
+				+ getCivilite() + ' ' + getPrenom() + ' ' + getNom() + '\n'
+				+ "Spécialités : " + descriptionSpecialites + '\n';
 		
 	}
 
