@@ -17,7 +17,7 @@ import javax.persistence.Temporal;
 
 /**
  *
- * @author Administrateur
+ * @author Romain
  */
 @Entity
 public class Depart implements Serializable {
@@ -116,7 +116,10 @@ public class Depart implements Serializable {
 
     @Override
     public String toString() {
-        return "metier.modele.Depart[  ]"+" \n"+ prix +  " euros, de : " + ville +  " le : " + dateDeDepart + " pour un voyage en direction de :"+ voyage.getCodeDestination() +"\n"+ "description : " + description +"\n";
+        return "metier.modele.Depart[  ]"+" \n"+ prix +  " euros, de : " + ville 
+				+  " le : " + dateDeDepart 
+				+ " pour un voyage en direction de :"+ voyage.getDestination().getNom() 
+				+"\n"+ "description : " + description +"\n";
     }
     
 }

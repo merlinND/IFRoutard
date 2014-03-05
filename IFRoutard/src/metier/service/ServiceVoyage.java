@@ -142,6 +142,17 @@ public class ServiceVoyage {
 	
 	/**
 	 * 
+	 * @param code
+	 * @return Le voyage, ou null si le code ne correspond à aucun voyage
+	 */
+	public static Voyage obtenirVoyageParCode(String code) {
+		JpaUtil.creerEntityManager();
+		Voyage result = VoyageDao.obtenirVoyageParCode(code);
+		JpaUtil.fermerEntityManager();
+		return result;
+	}
+	/**
+	 * 
 	 * @param nomPays
 	 * @return La liste, ou null si le pays demandé pays n'existe pas
 	 */
@@ -163,4 +174,10 @@ public class ServiceVoyage {
 		JpaUtil.fermerEntityManager();
 		return result;
 	}
+	
+	
+	/* ----------------------------------------------
+	   DEPARTS
+	   ---------------------------------------------- */
+	// TODO
 }

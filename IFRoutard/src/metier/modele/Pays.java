@@ -22,7 +22,7 @@ public class Pays implements Serializable {
 	private String nom;
 	private String region;
 	private String regime;
-	/** Superficie (en km^) */
+	/** Superficie (en km^2) */
 	private int superficie;
 	/** Population (en nombre d'habitants) */
 	private int population;

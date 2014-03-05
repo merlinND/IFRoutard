@@ -51,12 +51,31 @@ public class VoyageDao {
 		return (List<Circuit>)query.getResultList();
 	}
 
+	/**
+	 * @param code
+	 * @return Le voyage, ou null si aucun voyage ne correspond à ce code 
+	 */
+	public static Voyage obtenirVoyageParCode(String code) {
+		EntityManager em = JpaUtil.obtenirEntityManager();
+		Query query = em.createQuery("SELECT v FROM Voyage v"
+									+ " WHERE v.code=:code");
+		query.setParameter("code", code);
+		List<Voyage> results = (List<Voyage>)query.getResultList();
+		if (results.size() > 0)
+			return results.get(0);
+		else
+			return null;
+	}
+	
 	public static List<Voyage> obtenirVoyagesParDestination(Pays pays) {
 		EntityManager em = JpaUtil.obtenirEntityManager();
 		// TODO : est-ce qu'il faudrait requêter sur les sous-types ?
 		Query query = em.createQuery("SELECT v FROM Voyage v"
-									+ "WHERE v.destination=:pays");
+									+ " WHERE v.destination=:pays");
 		query.setParameter("pays", pays);
 		return (List<Voyage>)query.getResultList();
 	}
+	
+	
+	// TODO: DAO pour les départs
 }

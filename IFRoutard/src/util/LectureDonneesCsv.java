@@ -20,6 +20,7 @@ import metier.modele.Pays;
 import metier.modele.Sejour;
 import metier.modele.Voyage;
 import metier.service.ServiceClient;
+import metier.service.ServiceEmploye;
 import metier.service.ServiceVoyage;
 
 /**
@@ -124,13 +125,13 @@ public class LectureDonneesCsv {
 		 // En-tete du fichier CSV
 		nextLine = this.lecteurFichier.readNext();
 		//afficherEnTeteCsv(nextLine);
-		
+
 		List<Client> nouveauxClients = new ArrayList<Client>();
 		// Lecture des lignes
 		while ((nextLine = this.lecteurFichier.readNext()) != null) {
-		
+
 			nouveauxClients.add(instancierClient(nextLine));
-			
+
 			// Limite (ou -1 si pas de limite)
 			if ( !(limite < 0) && (--limite < 1) ) {
 				break;
@@ -171,63 +172,26 @@ public class LectureDonneesCsv {
 		return new Client(nom, prenom, civilite, dateNaissance, 
 						  telephone, email, adresse, motDePasse);
 	}
-        //TODO: lireDepart Lire etc...
-        
-        public void lireDeparts(int limite) throws IOException {
-
+	
+	public void lirePays(int limite) throws IOException {
 		String[] nextLine;
 
 		 // En-tete du fichier CSV
 		nextLine = this.lecteurFichier.readNext();
 		//afficherEnTeteCsv(nextLine);
-		
-		List<Depart> nouveauxDeparts = new ArrayList<Depart>();
-		// Lecture des lignes
-		while ((nextLine = this.lecteurFichier.readNext()) != null) {
-		
-			nouveauxDeparts.add(instancierDepart(nextLine));
-			
-			// Limite (ou -1 si pas de limite)
-			if ( !(limite < 0) && (--limite < 1) ) {
-				break;
-			}
-		}
-        }
-        
-        public static Depart instancierDepart(String[] descriptionDepart) {
-		String code = descriptionDepart[0];
-		
-                Date dateDepart = parseDate(descriptionDepart[1]);
-		
-		String ville = descriptionDepart[2];
-		Float prix = Float.parseFloat(descriptionDepart[3]);
 
-		String description = descriptionDepart[4];
-                Sejour sejour = new Sejour (code);
-		//System.out.println("Client: "+  civilite + " " + nom + " " + prenom + ", né le " + formatDate(dateNaissance) + ", habitant à " + adresse + ", téléphone: " + telephone + ", e-mail: " + email);
-		
-		return new Depart (sejour, prix, dateDepart, ville, description);
-	}
-        public void lirePays(int limite) throws IOException {
-
-		String[] nextLine;
-
-		 // En-tete du fichier CSV
-		nextLine = this.lecteurFichier.readNext();
-		//afficherEnTeteCsv(nextLine);
-		
 		List<Pays> nouveauxPays = new ArrayList<Pays>();
 		// Lecture des lignes
 		while ((nextLine = this.lecteurFichier.readNext()) != null) {
-		
+
 			nouveauxPays.add(instancierPays(nextLine));
-			
+
 			// Limite (ou -1 si pas de limite)
 			if ( !(limite < 0) && (--limite < 1) ) {
 				break;
 			}
 		}
-		
+
 		// On persiste tous ces pays en une grande transaction
 		ServiceVoyage.creerPays(nouveauxPays);
 	}
@@ -323,8 +287,9 @@ public class LectureDonneesCsv {
 		List<Voyage> nouveauxVoyages = new ArrayList<Voyage>();
 		// Lecture des lignes
 		while ((nextLine = this.lecteurFichier.readNext()) != null) {
-		
-			nouveauxVoyages.add(instanciervoyagecircuit(nextLine));
+			Circuit circuit = instancierVoyageCircuit(nextLine);
+			if (circuit != null)
+				nouveauxVoyages.add(circuit);
 			
 			// Limite (ou -1 si pas de limite)
 			if ( !(limite < 0) && (--limite < 1) ) {
@@ -341,18 +306,24 @@ public class LectureDonneesCsv {
 	 * @param descriptionVoyage Ligne du fichier CSV de Voyage.
 	 * @return L'instance de Voyage correspondant
 	 */
-	public static Circuit instanciervoyagecircuit(String[] descriptionVoyage) {
+	public static Circuit instancierVoyageCircuit(String[] descriptionVoyage) {
 
-                String code = descriptionVoyage[1];
-                String titre = descriptionVoyage[2];
-                Integer duree = Integer.parseInt(descriptionVoyage[3]);
-                String description = descriptionVoyage[4]; 
-                String transport = descriptionVoyage[5];
-                Float km = Float.parseFloat(descriptionVoyage[6]);
-                String codeDestination = descriptionVoyage [0];
-
-		return new Circuit( transport , km , code, titre , duree , description , codeDestination);
-		//throw new UnsupportedOperationException("Not implemented yet");
+		String code = descriptionVoyage[1];
+		String titre = descriptionVoyage[2];
+		Integer duree = Integer.parseInt(descriptionVoyage[3]);
+		String description = descriptionVoyage[4]; 
+		String transport = descriptionVoyage[5];
+		Float km = Float.parseFloat(descriptionVoyage[6]);
+		
+		String codeDestination = descriptionVoyage [0];
+		Pays destination = ServiceVoyage.obtenirPaysParCode(codeDestination);
+		
+		if (destination != null)
+			return new Circuit(transport, km, code, titre, duree, description, destination);
+		else {
+			System.err.println("Aucun pays de code " + codeDestination + " n'a été trouvé.");
+			return null;
+		}
 	}
 	public void lireVoyagesSejour(int limite) throws IOException {
 		String[] nextLine;
@@ -363,8 +334,9 @@ public class LectureDonneesCsv {
 		List<Voyage> nouveauxVoyages = new ArrayList<Voyage>();
 		// Lecture des lignes
 		while ((nextLine = this.lecteurFichier.readNext()) != null) {
-		
-			nouveauxVoyages.add(instanciervoyagesejour(nextLine));
+			Sejour sejour = instancierVoyageSejour(nextLine);
+			if (sejour != null)
+				nouveauxVoyages.add(sejour);
 			
 			// Limite (ou -1 si pas de limite)
 			if ( !(limite < 0) && (--limite < 1) ) {
@@ -372,7 +344,7 @@ public class LectureDonneesCsv {
 			}
 		}
 		
-		// On persiste tous ces pays en une grande transaction
+		// On persiste tous ces voyages en une grande transaction
 		ServiceVoyage.creerVoyages(nouveauxVoyages);
 	}
 	
@@ -381,18 +353,62 @@ public class LectureDonneesCsv {
 	 * @param descriptionVoyage Ligne du fichier CSV de Voyage.
 	 * @return L'instance de Voyage correspondant
 	 */
-	public static Sejour instanciervoyagesejour(String[] descriptionVoyage) {
+	public static Sejour instancierVoyageSejour(String[] descriptionVoyage) {
 		String code = descriptionVoyage[1];
-                String titre = descriptionVoyage[2];
-                String description = descriptionVoyage[4];
-                String residence = descriptionVoyage[5];
-                Integer duree = Integer.parseInt(descriptionVoyage[3]);
-                String codeDestination = descriptionVoyage [0];
-
-		return new Sejour( residence, code, titre, duree, description, codeDestination);
-
-		//throw new UnsupportedOperationException("Not implemented yet");
+		String titre = descriptionVoyage[2];
+		String description = descriptionVoyage[4];
+		String residence = descriptionVoyage[5];
+		Integer duree = Integer.parseInt(descriptionVoyage[3]);
+		
+		String codeDestination = descriptionVoyage[0];
+		Pays destination = ServiceVoyage.obtenirPaysParCode(codeDestination);
+		
+		if (destination != null)
+			return new Sejour(residence, code, titre, duree, description, destination);
+		else {
+			System.err.println("Aucun pays de code " + codeDestination + " n'a été trouvé.");
+			return null;
+		}
 	}
+	
+	//TODO: lireDepart Lire etc...
+        
+	public void lireDeparts(int limite) throws IOException {
+
+		String[] nextLine;
+
+		// En-tete du fichier CSV
+		nextLine = this.lecteurFichier.readNext();
+		//afficherEnTeteCsv(nextLine);
+
+		List<Depart> nouveauxDeparts = new ArrayList<Depart>();
+		// Lecture des lignes
+		while ((nextLine = this.lecteurFichier.readNext()) != null) {
+			Depart depart = instancierDepart(nextLine);
+			if (depart != null)
+				nouveauxDeparts.add(depart);
+
+			// Limite (ou -1 si pas de limite)
+			if ( !(limite < 0) && (--limite < 1) ) {
+				break;
+			}
+		}
+		
+		// TODO: insérer en base
+	}
+	
+	public static Depart instancierDepart(String[] descriptionDepart) {		
+		String codeVoyage = descriptionDepart[0];
+		Voyage voyage = ServiceVoyage.obtenirVoyageParCode(codeVoyage);
+		
+		Date dateDepart = parseDate(descriptionDepart[1]);
+		String ville = descriptionDepart[2];
+		Float prix = Float.parseFloat(descriptionDepart[3]);
+		String description = descriptionDepart[4];
+		
+		return new Depart(voyage, prix, dateDepart, ville, description);
+	}
+	
 	
 	/**
 	 * Cette méthode main() permet de tester cette classe avant de l'intégrer dans votre code.

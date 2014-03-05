@@ -2,9 +2,11 @@ package vue;
 
 import java.io.IOException;
 import java.util.List;
+import metier.modele.Circuit;
 import metier.modele.Client;
 import metier.modele.Conseiller;
 import metier.modele.Pays;
+import metier.modele.Sejour;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
 import metier.service.ServiceVoyage;
@@ -27,12 +29,12 @@ public class Main
 		int limite = 3;
 		
 		// Récupérer les données de test
-		String fichierClients = "res/data/IFRoutard-Clients.csv";
-		String fichierPays = "res/data/IFRoutard-Pays.csv";
-                String fichierDeparts = "res/data/IFRoutard-Departs.csv";
-                String fichierVoyagesCircuits = "res/data/IFRoutard-Voyages-Circuits.csv";
-                String fichierVoyagesSejours = "res/data/IFRoutard-Voyages-Sejours.csv";
+		String fichierClients = "res/data/IFRoutard-Clients.csv",
+				fichierPays = "res/data/IFRoutard-Pays.csv",
                 fichierConseillers = "res/data/IFRoutard-Conseillers.csv",
+                fichierVoyagesCircuits = "res/data/IFRoutard-Voyages-Circuits.csv",
+                fichierVoyagesSejours = "res/data/IFRoutard-Voyages-Sejours.csv",
+				fichierDeparts = "res/data/IFRoutard-Departs.csv";
 		LectureDonneesCsv lecteur;
 		try {
 			lecteur = new LectureDonneesCsv(fichierClients);
@@ -42,23 +44,22 @@ public class Main
 			lecteur = new LectureDonneesCsv(fichierPays);
 			lecteur.lirePays(limite);
 			lecteur.fermer();
-                        
-                       	lecteur = new LectureDonneesCsv(fichierDeparts);
-			lecteur.lireDeparts(limite);
             
             lecteur = new LectureDonneesCsv(fichierConseillers);
 			lecteur.lireConseillers(limite);
 			lecteur.fermer();
                         
-                        lecteur = new LectureDonneesCsv(fichierVoyagesCircuits);
-			lecteur.lireVoyages(limite);
+            lecteur = new LectureDonneesCsv(fichierVoyagesCircuits);
+			lecteur.lireVoyagesCircuit(limite);
 			lecteur.fermer();
                         
-                       	lecteur = new LectureDonneesCsv(fichierVoyagesSejours);
-			lecteur.lireVoyages(limite);
+            lecteur = new LectureDonneesCsv(fichierVoyagesSejours);
+			lecteur.lireVoyagesSejour(limite);
 			lecteur.fermer();
 			
-			// TODO : les autres objets métier
+            lecteur = new LectureDonneesCsv(fichierDeparts);
+			lecteur.lireDeparts(limite);
+			lecteur.fermer();
 		} catch (IOException ex) {
 			ex.printStackTrace(System.err);
 		}
@@ -70,10 +71,6 @@ public class Main
 			System.out.println(p);
 		}
 		
-		Conseiller monConseiller = new Conseiller("Conseiller", "Random", "random@domain.tld");
-		monConseiller.addSpecialite(ServiceVoyage.obtenirPays("Algérie"));
-		monConseiller.addSpecialite(ServiceVoyage.obtenirPays("Albanie"));
-		ServiceEmploye.creerConseiller(monConseiller);
 		System.out.println("\n----- Liste de tous les séjours -----");
 		List<Sejour> tousLesSejours = ServiceVoyage.obtenirSejours();
 		for (Sejour s : tousLesSejours) {
