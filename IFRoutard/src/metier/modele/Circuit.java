@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 
 /**
  *
- * @author Administrateur
+ * @author Romain
  */
 @Entity
 public class Circuit extends Voyage implements Serializable {
@@ -20,10 +20,10 @@ public class Circuit extends Voyage implements Serializable {
     public Circuit() {
     }
 
-    public Circuit(String transport, float nbKilometres, String code, String titre, int nbJours, String description, String codeDestination) {
-	super(code, titre, nbJours, description, codeDestination);
-	this.transport = transport;
-	this.nbKilometres = nbKilometres;
+    public Circuit(String transport, float nbKilometres, String code, String titre, int nbJours, String description, Pays destination) {
+		super(code, titre, nbJours, description, destination);
+		this.transport = transport;
+		this.nbKilometres = nbKilometres;
     }
 
     
@@ -48,11 +48,14 @@ public class Circuit extends Voyage implements Serializable {
 
     @Override
     public String toString() {
-         return "metier.modele.Circuit[ id=" + getId() + " ]"+" \n"+ "transport : " 
-		 + getTransport() +" \n"+ "nbKilometres : " + getNbKilometres() 
-		 + " \n"+ "code : " + getCode() + " \n"+ "titre : " + getTitre() 
-		 + " \n"+ "nbJours : " + getNbJours() + " \n"+ "description : "
-		 + getDescription()+" \n";
+         return "metier.modele.Circuit[ id=" + getId() + " ]"+" \n"
+				+ "code : " + getCode() + " \n"
+				+ "destination : " + getDestination().getNom() + "\n"
+				+ "titre : " + getTitre()  + "\n"
+				+ "transport : " + getTransport() +" \n"
+				+ "nbKilometres : " + getNbKilometres() + "\n"
+				+ "nbJours : " + getNbJours() + " \n"
+				+ "description : " + getDescription()+" \n";
 
     }
     

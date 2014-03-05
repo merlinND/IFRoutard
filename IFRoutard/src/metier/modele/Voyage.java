@@ -33,18 +33,19 @@ abstract public class Voyage implements Serializable {
     private int nbJours;
     private String description;
     @OneToOne
-    private String codeDestination;
+    private Pays destination;
     @OneToMany
     private List<Depart> depart = new ArrayList<Depart>();
+	
     public Voyage() {
     }
-
-    public Voyage(String code, String titre, int nbJours, String description, String codeDestination) {
-	this.code = code;
-	this.titre = titre;
-	this.nbJours = nbJours;
-	this.description = description;
-	this.codeDestination = codeDestination;
+	
+    public Voyage(String code, String titre, int nbJours, String description, Pays destination) {
+		this.code = code;
+		this.titre = titre;
+		this.nbJours = nbJours;
+		this.description = description;
+		this.destination = destination;
     }   
 
     public Voyage(String code) {
@@ -72,8 +73,8 @@ abstract public class Voyage implements Serializable {
         return description;
     }
 
-    public String getCodeDestination() {
-        return codeDestination;
+    public Pays getDestination() {
+        return destination;
     }
 
     public List<Depart> getDepart() {
@@ -100,8 +101,8 @@ abstract public class Voyage implements Serializable {
         this.description = description;
     }
 
-    public void setCodeDestination(String codeDestination) {
-	this.codeDestination = codeDestination;
+    public void setDestination(Pays destination) {
+		this.destination = destination;
     }
 
     public void setDestinations(List<Depart> depart) {
@@ -130,7 +131,10 @@ abstract public class Voyage implements Serializable {
 
     @Override
     public String toString() {
-        return "metier.modele.Voyage[ id=" + id + " ]"+ " \n"+ "code : " + code + " \n"+ "titre : " + titre + " \n"+ "nbJours : " + nbJours + " \n"+ "description : " + description;
+        return "metier.modele.Voyage[ id=" + id + " ]"+ " \n"
+				+ "code : " + code + " \n"
+				+ "titre : " + titre + " \n"+ "nbJours : " + nbJours 
+				+ " \n"+ "description : " + description;
     }
     
 }

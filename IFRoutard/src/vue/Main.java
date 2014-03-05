@@ -74,6 +74,17 @@ public class Main
 		monConseiller.addSpecialite(ServiceVoyage.obtenirPays("Algérie"));
 		monConseiller.addSpecialite(ServiceVoyage.obtenirPays("Albanie"));
 		ServiceEmploye.creerConseiller(monConseiller);
+		System.out.println("\n----- Liste de tous les séjours -----");
+		List<Sejour> tousLesSejours = ServiceVoyage.obtenirSejours();
+		for (Sejour s : tousLesSejours) {
+			System.out.println(s);
+		}
+		
+		System.out.println("\n----- Liste de tous les circuits -----");
+		List<Circuit> tousLesCircuits = ServiceVoyage.obtenirCircuits();
+		for (Circuit c : tousLesCircuits) {
+			System.out.println(c);
+		}
 		
 		System.out.println("\n----- Liste de tous les conseillers -----");
 		List<Conseiller> tousLesConseillers = ServiceEmploye.obtenirConseillers();

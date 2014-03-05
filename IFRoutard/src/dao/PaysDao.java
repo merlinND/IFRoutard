@@ -45,4 +45,21 @@ public class PaysDao {
 		else
 			return null;
 	}
+	
+	/**
+	 * @param code Le code du pays à trouver
+	 * @return Une instance si trouvé, null sinon
+	 */
+	public static Pays obtenirPaysParCode(String code) {
+		EntityManager em = JpaUtil.obtenirEntityManager();
+		Query query = em.createQuery("SELECT p FROM Pays p "
+									+ "WHERE p.code=:code ORDER BY p.code");
+		query.setParameter("code", code);
+		List<Pays> results = (List<Pays>)query.getResultList();
+		
+		if (!results.isEmpty())
+			return results.get(0);
+		else
+			return null;
+	}
 }

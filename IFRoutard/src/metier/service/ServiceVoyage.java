@@ -67,6 +67,17 @@ public class ServiceVoyage {
 		JpaUtil.fermerEntityManager();
 		return result;
 	}
+	/**
+	 * 
+	 * @param code Le code du pays à trouver
+	 * @return 
+	 */
+	public static Pays obtenirPaysParCode(String code) {
+		JpaUtil.creerEntityManager();
+		Pays result = PaysDao.obtenirPaysParCode(code);
+		JpaUtil.fermerEntityManager();
+		return result;
+	}
 	
 	/* ----------------------------------------------
 	   VOYAGES

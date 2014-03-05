@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 
 /**
  *
- * @author Administrateur
+ * @author Romain
  */
 @Entity
 public class Sejour extends Voyage implements Serializable {
@@ -20,9 +20,9 @@ public class Sejour extends Voyage implements Serializable {
     public Sejour() {
     }
 
-    public Sejour(String residence, String code, String titre, int nbJours, String description, String codeDestination) {
-	super(code, titre, nbJours, description, codeDestination);
-	this.residence = residence;
+    public Sejour(String residence, String code, String titre, int nbJours, String description, Pays destination) {
+		super(code, titre, nbJours, description, destination);
+		this.residence = residence;
     }     
 
     public Sejour(String code) {
@@ -36,19 +36,16 @@ public class Sejour extends Voyage implements Serializable {
     public void setResidence(String residence) {
         this.residence = residence;
     }
-
-
-
-
-
-    
-
+	
     @Override
     public String toString() {
-       return "metier.modele.Sejour[ id=" + getId() + " ]"+" \n"+ "residence : " 
-	       + getResidence() + " \n"+ "code : " + getCode() + " \n"+ "titre : " 
-	       + getTitre() + " \n"+ "nbJours : " + getNbJours() 
-	       + " \n"+ "description : " + getDescription()+ " \n";
+       return "metier.modele.Sejour[ id=" + getId() + " ]"+" \n"
+				+ "code : " + getCode() + " \n" 
+				+ "destination : " + getDestination().getNom() + "\n"
+				+ "titre : " + getTitre() + "\n"
+				+ "residence : " + getResidence() + "\n"
+				+ "nbJours : " + getNbJours() + "\n"
+				+ "description : " + getDescription()+ "\n";
     }
     
 }
