@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package metier.modele;
 
 import java.io.Serializable;
@@ -10,13 +6,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 /**
  *
- * @author Administrateur
+ * @author Romain
  */
 @Entity
 public class Devis implements Serializable {
@@ -33,7 +28,7 @@ public class Devis implements Serializable {
     @OneToOne
     private Depart depart;
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date date;
+    private Date dateCreation;
 
     public Devis() {
     }
@@ -44,7 +39,7 @@ public class Devis implements Serializable {
 	this.conseiller = conseiller;
 	this.client = client;
 	this.depart = depart;
-	this.date = date;
+	this.dateCreation = date;
     }
     
     
@@ -64,8 +59,8 @@ public class Devis implements Serializable {
 	return depart;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getDateCreation() {
+        return dateCreation;
     }
 
     public void setId(Long id) {
@@ -84,8 +79,8 @@ public class Devis implements Serializable {
 	this.depart = depart;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDateCreation(Date dateCreation) {
+        this.dateCreation = dateCreation;
     }
 
     @Override
@@ -113,7 +108,7 @@ public class Devis implements Serializable {
                 return "metier.modele.Devis[ id=" + id + " ]" + " \n" 
 				+ "Numero : " + numero + " \n"+ "Nombre de personne : " + nbPersonnes + " \n"+ "Conseiller : " + conseiller.getNom() + ",\n"
 				+ "Client : " + client.getNom()+ " \n" + "Départ :  " + depart.getDateDeDepart() + " \n"
-				+ "Date du devis : " + date+ "\n";
+				+ "Date du devis : " + dateCreation+ "\n";
     }
     
 }

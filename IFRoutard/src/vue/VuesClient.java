@@ -1,7 +1,6 @@
 package vue;
 
 import java.io.PrintStream;
-import java.util.Date;
 import java.util.Scanner;
 import metier.modele.Client;
 import metier.service.ServiceClient;

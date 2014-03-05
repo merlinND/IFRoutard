@@ -1,7 +1,6 @@
 package metier.service;
 
 import dao.DevisDao;
-import java.util.ArrayList;
 import java.util.List;
 import metier.modele.Devis;
 import util.JpaUtil;
