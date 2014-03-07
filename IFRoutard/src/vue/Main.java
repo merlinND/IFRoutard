@@ -5,6 +5,7 @@ import java.util.List;
 import metier.modele.Circuit;
 import metier.modele.Client;
 import metier.modele.Conseiller;
+import metier.modele.Devis;
 import metier.modele.Pays;
 import metier.modele.Sejour;
 import metier.service.ServiceClient;
@@ -101,14 +102,28 @@ public class Main
 		
 		System.out.println("\n----- Liste de tous les clients -----");
 		List<Client> tousLesClients = ServiceClient.obtenirClients();
-		for (Client c : tousLesClients)
+		Client randomClient = null;
+		for (Client c : tousLesClients) {
 			System.out.println(c);
-		
+			randomClient = c;
+		}
 		// Test de la connexion interactive d'un client
 		//System.out.println("\n");
 		//Client connecte = VuesClient.connexionInteractive();
 		//if (connecte != null) {
 		//	System.out.println("Bienvenue, " + connecte.getPrenom() + " !");
 		//}
+		
+		// Test de l'établissement interactif d'un devis
+		System.out.println("\n");
+		Devis devis = VuesClient.devisInteractif(randomClient);
+		if (devis != null) {
+			// TODO: simuler l'envoi par e-mail
+			System.out.println("\nDevis établi avec succès :");
+			System.out.println(devis);
+		}
+		else {
+			System.err.println("\nEchec de l'établissement du devis.");
+		}
 	}
 }

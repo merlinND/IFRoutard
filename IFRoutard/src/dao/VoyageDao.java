@@ -35,6 +35,17 @@ public class VoyageDao {
 		return result;
 	}
 	/**
+	 * @return List<Voyage> La liste de tous les voyages qui ont des départs disponibles
+	 */
+	public static List<Voyage> obtenirVoyagesAyantDeparts() {
+		EntityManager em = JpaUtil.obtenirEntityManager();
+		// TODO : à tester avec des départs
+		Query query = em.createQuery("SELECT v FROM Voyage v"
+									+ " WHERE (SELECT count(*) FROM Depart d) > 0");
+		List<Voyage> results = (List<Voyage>)query.getResultList();
+		return results;
+	}
+	/**
 	 * @return List<Sejour> La liste de tous les séjours existants
 	 */
 	public static List<Sejour> obtenirSejours() {

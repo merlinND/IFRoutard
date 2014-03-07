@@ -111,13 +111,25 @@ public class ServiceVoyage {
 	
 	/**
 	 * Obtenir la liste de tous les voyages, tous types de voyage confondus.
+	 * @param inclureSansDeparts Laisser dans la liste les voyages qui n'ont pas de départ disponible
+	 * @return 
+	 */
+	public static List<Voyage> obtenirVoyages(Boolean inclureSansDeparts) {
+		JpaUtil.creerEntityManager();
+		List<Voyage> result;
+		if (inclureSansDeparts)
+			result = VoyageDao.obtenirVoyages();
+		else
+			result = VoyageDao.obtenirVoyagesAyantDeparts();
+		JpaUtil.fermerEntityManager();
+		return result;
+	}
+	/**
+	 * Obtenir la liste des voyages ayant des départs disponibles (tous types de voyage confondus)
 	 * @return 
 	 */
 	public static List<Voyage> obtenirVoyages() {
-		JpaUtil.creerEntityManager();
-		List<Voyage> result = VoyageDao.obtenirVoyages();
-		JpaUtil.fermerEntityManager();
-		return result;
+		return obtenirVoyages(false);
 	}
 	/**
 	 * Obtenir la liste des voyages de type Sejour.

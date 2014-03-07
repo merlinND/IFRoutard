@@ -1,9 +1,16 @@
 package vue;
 
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import metier.modele.Client;
+import metier.modele.Depart;
+import metier.modele.Devis;
+import metier.modele.Pays;
+import metier.modele.Voyage;
 import metier.service.ServiceClient;
+import metier.service.ServiceVoyage;
 import util.LectureDonneesCsv;
 import util.Saisie;
 
@@ -93,4 +100,86 @@ public class VuesClient {
 			return null;
 	}
 	
+	/**
+	 * Permet à l'utilisateur de créer un devis :
+	 * 1. Choix du type de recherche
+	 * 2. Recherche par type de voyage ou par pays
+	 * 3. Sélection du voyage parmi les propositions
+	 * 4. Sélection du départ parmi les propositions
+	 * 5. Confirmation du devis
+	 * TODO : afficher davantage de détails à chaque étape.
+	 * TODO : possibilité d'annuler
+	 * @param Client Le client qui souhaite partir
+	 * @return Le Devis créé, null sinon 
+	 */
+	public static Devis devisInteractif(Client client) {
+		System.out.println("\n----- Établissement interactif d'un devis -----");
+		String question;
+		Integer choix;
+		
+		// TODO: étape 1 (choix du type de recherche)
+		
+		// Choix du pays
+		Pays destination = null;
+		do {
+			question = "\nEntrez le nom du pays de destination souhaité : ";
+			String nomPays = Saisie.lireChaine(question);
+			destination = ServiceVoyage.obtenirPays(nomPays);
+			
+			if (destination == null) {
+				// TODO : s'assurer qu'il y a bien des départs pour ce pays ?
+				System.out.println("Il n'existe pas de voyages pour le pays demandé.");
+			}
+		} while (destination == null);
+		
+		// Liste des voyages de ce pays
+		// TODO : n'afficher que les voyages ayant des départs
+		List<Voyage> voyages = ServiceVoyage.obtenirVoyagesParDestination(destination);
+		System.out.println("\nVoyages à destination de " + destination.getNom() + " :");
+		Integer i = 1;
+		List<Integer> valeursPossibles = new ArrayList<Integer>();
+		for (Voyage v : voyages) {
+			if (v.getDepart().size() > 0) {
+				System.out.println("\n" + i + ". " + v.getTitre());
+				valeursPossibles.add(i);
+				i++;
+			}
+		}
+		
+		if (i - 1 <= 0) {
+			System.err.println("Aucun voyage n'a de départ pour ce pays.");
+			return null;
+		}
+		
+		question = "\nVotre choix (nombre de 1 à " + (i-1) + ") : ";
+		choix = Saisie.lireInteger(question, valeursPossibles);
+		Voyage voyage = voyages.get(choix - 1);
+		
+		// Liste des départs de ce voyage
+		List<Depart> departs = voyage.getDepart();
+		System.out.println("\nDéparts disponibles :");
+		i = 1;
+		valeursPossibles.clear();
+		for (Depart d : departs) {
+			System.out.println("\n" + i + ". " + d.getDescription());
+			valeursPossibles.add(i);
+			i++;
+		}
+		
+		question = "\nVotre choix (nombre de 1 à " + (i-1) + ") : ";
+		choix = Saisie.lireInteger(question, valeursPossibles);
+		Depart depart = departs.get(choix - 1);
+		
+		Integer nbPersonnes;
+		do {
+			question = "\nCombien de personnes pour ce voyage ?";
+			nbPersonnes = Saisie.lireInteger(question);
+		} while (nbPersonnes < 1);
+		
+		// TODO : assigner un conseiller
+		
+		Devis devis = new Devis(client, depart, nbPersonnes, null);
+		
+		return devis;
+	}
 }
