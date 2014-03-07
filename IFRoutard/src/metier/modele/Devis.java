@@ -19,7 +19,6 @@ public class Devis implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private int numero;
     private int nbPersonnes;
     @OneToOne
     private Conseiller conseiller;
@@ -32,53 +31,48 @@ public class Devis implements Serializable {
 
     public Devis() {
     }
-
-    public Devis(int numero, int nbPersonnes, Conseiller conseiller, Client client, Depart depart, Date date) {
-	this.numero = numero;
-	this.nbPersonnes = nbPersonnes;
-	this.conseiller = conseiller;
-	this.client = client;
-	this.depart = depart;
-	this.dateCreation = date;
+	
+	/**
+	 * Création d'un devis avec pour date : maintenant.
+	 * @param client
+	 * @param depart
+	 * @param nbPersonnes
+	 * @param conseiller 
+	 */
+	public Devis(Client client, Depart depart, int nbPersonnes, Conseiller conseiller) {
+		this(client, depart, nbPersonnes, conseiller, new Date());
+	}
+	
+    public Devis(Client client, Depart depart, int nbPersonnes, Conseiller conseiller, Date date) {
+		this.client = client;
+		this.depart = depart;
+		this.nbPersonnes = nbPersonnes;
+		this.conseiller = conseiller;
+		this.dateCreation = date;
     }
     
     
     public Long getId() {
         return id;
     }
-
-    public int getNumero() {
-        return numero;
-    }
-
     public int getNbPersonnes() {
         return nbPersonnes;
     }
-
     public Depart getDepart() {
-	return depart;
+		return depart;
     }
-
     public Date getDateCreation() {
         return dateCreation;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
     public void setNbPersonnes(int nbPersonnes) {
         this.nbPersonnes = nbPersonnes;
     }
-
     public void setDepart(Depart depart) {
-	this.depart = depart;
+		this.depart = depart;
     }
-
     public void setDateCreation(Date dateCreation) {
         this.dateCreation = dateCreation;
     }
@@ -106,7 +100,7 @@ public class Devis implements Serializable {
     @Override
     public String toString() {
                 return "metier.modele.Devis[ id=" + id + " ]" + " \n" 
-				+ "Numero : " + numero + " \n"+ "Nombre de personne : " + nbPersonnes + " \n"+ "Conseiller : " + conseiller.getNom() + ",\n"
+				+  "Nombre de personne : " + nbPersonnes + " \n"+ "Conseiller : " + conseiller.getNom() + ",\n"
 				+ "Client : " + client.getNom()+ " \n" + "Départ :  " + depart.getDateDeDepart() + " \n"
 				+ "Date du devis : " + dateCreation+ "\n";
     }
