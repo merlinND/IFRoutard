@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package metier.modele;
 
 import java.io.Serializable;
@@ -14,14 +10,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 
 /**
  *
- * @author Administrateur
+ * @author Romain
  */
 @Entity
 @Inheritance ( strategy = InheritanceType.JOINED)
@@ -35,7 +30,7 @@ abstract public class Voyage implements Serializable {
     private String titre;
     private int nbJours;
     private String description;
-    @OneToOne
+    @ManyToOne
     private Pays destination;
     @OneToMany(mappedBy = "voyage", cascade = CascadeType.ALL)
 	@OrderBy("prix")
