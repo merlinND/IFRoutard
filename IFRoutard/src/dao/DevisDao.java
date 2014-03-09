@@ -19,7 +19,10 @@ public class DevisDao {
 	 */
 	public static void creerDevis(Devis devis) {
 		JpaUtil.obtenirEntityManager().persist(devis);
-		JpaUtil.obtenirEntityManager().merge(devis.getConseiller());
+		if (devis.getClient() != null)
+			JpaUtil.obtenirEntityManager().merge(devis.getClient());
+		if (devis.getConseiller() != null)
+			JpaUtil.obtenirEntityManager().merge(devis.getConseiller());
 	}
 	
 	/**

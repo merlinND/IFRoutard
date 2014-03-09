@@ -23,10 +23,10 @@ public class Devis implements Serializable {
     private int nbPersonnes;
     @ManyToOne
     private Conseiller conseiller;
-    @OneToOne
+    @ManyToOne
     private Client client;
-    @OneToOne
-    private Depart depart;
+    @ManyToOne
+	private Depart depart;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateCreation;
 
@@ -45,11 +45,12 @@ public class Devis implements Serializable {
 	}
 	
     public Devis(Client client, Depart depart, int nbPersonnes, Conseiller conseiller, Date date) {
-		this.client = client;
 		this.depart = depart;
 		this.nbPersonnes = nbPersonnes;
-		setConseiller(conseiller);
 		this.dateCreation = date;
+	
+		setClient(client);
+		setConseiller(conseiller);
     }
     
     
@@ -76,7 +77,12 @@ public class Devis implements Serializable {
         this.id = id;
     }
 	public void setClient(Client client) {
+		if (this.client != null)
+			this.client.removeDevis(this);
+		
 		this.client = client;
+		if (client != null)
+			this.client.addDevis(this);
 	}
     public void setNbPersonnes(int nbPersonnes) {
         this.nbPersonnes = nbPersonnes;
@@ -92,7 +98,8 @@ public class Devis implements Serializable {
 			this.conseiller.removeDevis(this);
 		
 		this.conseiller = conseiller;
-		this.conseiller.addDevis(this);
+		if (conseiller != null)
+			this.conseiller.addDevis(this);
 	}
 
     @Override

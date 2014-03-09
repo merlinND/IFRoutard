@@ -5,11 +5,16 @@
 package metier.modele;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import metier.service.ServiceClient;
 
@@ -52,14 +57,10 @@ public class Client implements Serializable {
     private String adresse;
 
 	private String hashMotDePasse;
-    
-    
-    /*@Temporal(javax.persistence.TemporalType.DATE)
-    private Date dateDeNaissance;*/
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
+	
+	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+	@OrderBy("dateCreation DESC")
+    private List<Devis> devis = new ArrayList<Devis>();
 
     public Client() {
     }
@@ -89,6 +90,9 @@ public class Client implements Serializable {
 		this.hashMotDePasse = ServiceClient.chiffrerMotDePasse(motDePasse);
     }
     
+	public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 	public Long getId() {
         return id;
     }
@@ -120,6 +124,10 @@ public class Client implements Serializable {
     public String getHashMotDePasse() {
         return hashMotDePasse;
     }
+	
+	public List<Devis> getDevis() {
+		return devis;
+	}
 
 	public void setId(Long id) {
         this.id = id;
@@ -147,7 +155,15 @@ public class Client implements Serializable {
     }
     public void setHashMotDePasse(String hashMotDePasse) {
         this.hashMotDePasse = hashMotDePasse;
-    } 
+    }
+	
+	public void addDevis(Devis devis) {
+		if (!this.devis.contains(devis))
+			this.devis.add(devis);
+	}
+	public void removeDevis(Devis devis) {
+		this.devis.remove(devis);
+	}
 
     @Override
     public int hashCode() {
