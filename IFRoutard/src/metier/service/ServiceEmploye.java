@@ -55,10 +55,28 @@ public class ServiceEmploye {
 	 * @param pays
 	 * @return La liste (éventuellement vide) des conseillers spécialistes de ce pays
 	 */
-	public static List<Conseiller> obtenirConseillerParSpecialite(Pays pays) {
+	public static List<Conseiller> obtenirConseillersParSpecialite(Pays pays) {
 		JpaUtil.creerEntityManager();
 		List<Conseiller> result = EmployeDao.obtenirParSpecialite(pays);
 		JpaUtil.fermerEntityManager();
+		return result;
+	}
+	
+	/**
+	 * Obtenir le conseiller spécialiste d'un pays le moins occupé. Si plusieurs spécialistes
+	 * sont également occupés, on renvoie le plus jeune (critère un peu abritraire, certes)
+	 * @param pays
+	 * @return Le spécialiste le moins occupé, ou null s'il n'y en a aucun
+	 */
+	public static Conseiller obtenirSpecialiste(Pays pays) {
+		List<Conseiller> specialistes = obtenirConseillersParSpecialite(pays);
+		// On prend celui qui a le moins de devis
+		Conseiller result = null;
+		for (Conseiller c : specialistes) {
+			if (result == null || c.getDevis().size() < result.getDevis().size())
+				result = c;
+		}
+		
 		return result;
 	}
 }

@@ -46,7 +46,4 @@ public class EmployeDao
 		query.setParameter("specialite", specialite.getId());
 		return (List<Conseiller>)query.getResultList();
 	}
-	
-	// TODO: permettre de trouver le conseiller le moins occupé parmi les
-	// conseillers ayant une spécialité donnée
 }

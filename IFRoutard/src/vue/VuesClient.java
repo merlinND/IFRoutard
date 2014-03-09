@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import metier.modele.Client;
+import metier.modele.Conseiller;
 import metier.modele.Depart;
 import metier.modele.Devis;
 import metier.modele.Pays;
 import metier.modele.Voyage;
 import metier.service.ServiceClient;
+import metier.service.ServiceEmploye;
 import metier.service.ServiceVoyage;
 import util.LectureDonneesCsv;
 import util.Saisie;
@@ -172,13 +174,14 @@ public class VuesClient {
 		
 		Integer nbPersonnes;
 		do {
-			question = "\nCombien de personnes pour ce voyage ?";
+			question = "\nCombien de personnes pour ce voyage ? ";
 			nbPersonnes = Saisie.lireInteger(question);
 		} while (nbPersonnes < 1);
 		
 		// TODO : assigner un conseiller
+		Conseiller specialiste = ServiceEmploye.obtenirSpecialiste(voyage.getDestination());
 		
-		Devis devis = new Devis(client, depart, nbPersonnes, null);
+		Devis devis = new Devis(client, depart, nbPersonnes, specialiste);
 		
 		return devis;
 	}
