@@ -27,7 +27,7 @@ public class VuesClient {
 	
 	/**
 	 * Inscription interactive d'un client en mode console.
-	 * TODO : gestion d'erreur
+	 * TODO : gestion d'erreur si besoin
 	 * @return Le Client nouvellement créé
 	 */
 	public static Client inscriptionInteractive() {
@@ -67,7 +67,6 @@ public class VuesClient {
 	}
 	
 	/**
-	 * TODO : choisir comment gérer les erreurs d'e-mail / mot de passe
 	 * @return Le client venant de se connecter, null sinon
 	 */
 	public static Client connexionInteractive() {
@@ -111,8 +110,8 @@ public class VuesClient {
 	 * 3. Sélection du voyage parmi les propositions
 	 * 4. Sélection du départ parmi les propositions
 	 * 5. Confirmation du devis
-	 * TODO : afficher davantage de détails à chaque étape.
-	 * TODO : possibilité d'annuler
+	 * TODO : afficher davantage de détails à chaque étape
+	 * TODO : ajouter la possibilité d'annuler
 	 * @param client Le client qui souhaite partir
 	 * @return Le Devis créé, null sinon 
 	 */
@@ -132,20 +131,19 @@ public class VuesClient {
 			destination = ServiceVoyage.obtenirPays(nomPays);
 			
 			if (destination == null) {
-				// TODO : s'assurer qu'il y a bien des départs pour ce pays ?
 				System.out.println("Il n'existe pas de voyages pour le pays demandé.");
 			}
 		} while (destination == null);
 		
 		// Liste des voyages de ce pays
-		// TODO : n'afficher que les voyages ayant des départs
 		List<Voyage> voyages = ServiceVoyage.obtenirVoyagesParDestination(destination);
 		System.out.println("\nVoyages à destination de " + destination.getNom() + " :");
 		Integer i = 1;
 		List<Integer> valeursPossibles = new ArrayList<Integer>();
 		for (Voyage v : voyages) {
 			if (v.getDeparts().size() > 0) {
-				System.out.println("\n" + i + ". " + v.getTitre());
+				String typeVoyage = (v instanceof Circuit ? "[circuit]" : "[séjour]");
+				System.out.println(i + ". " + typeVoyage + " " + v.getTitre());
 				valeursPossibles.add(i);
 				i++;
 			}
@@ -166,7 +164,7 @@ public class VuesClient {
 		i = 1;
 		valeursPossibles.clear();
 		for (Depart d : departs) {
-			System.out.println("\n" + i + ". " + d.getDescription());
+			System.out.println(i + ". " + d.getDescription() + " à " + d.getPrix() + "€");
 			valeursPossibles.add(i);
 			i++;
 		}
@@ -193,6 +191,7 @@ public class VuesClient {
 	/**
 	 * Simuler l'envoi d'un e-mail de confirmation au client,
 	 * suite à l'établissement d'un devis.
+	 * TODO: améliorer le format d'affichage des dates ?
 	 * @param devis 
 	 */
 	public static void envoyerEmailConfirmation(Devis devis) {
@@ -221,8 +220,6 @@ public class VuesClient {
 						+ s.getResidence() + ")";
 		}
 		float prixTotal = (devis.getDepart().getPrix() * devis.getNbPersonnes());
-		
-		// TODO: format d'affichage des dates ?
 		
 		String description = "Date : " + devis.getDateCreation() + "\n\n"
 							+ "Votre conseiller pour ce voyage : " + conseiller + "\n\n"

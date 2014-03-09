@@ -34,7 +34,7 @@ public class Main
 		
 		// Test de l'inscription interactive d'un client
 		System.out.println("\n");
-		Client nouveau = VuesClient.inscriptionInteractive();
+		//Client nouveau = VuesClient.inscriptionInteractive();
 		
 		// Test de la connexion interactive d'un client
 		System.out.println("\n");

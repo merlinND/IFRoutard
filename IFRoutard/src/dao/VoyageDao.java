@@ -81,7 +81,6 @@ public class VoyageDao {
 	
 	public static List<Voyage> obtenirVoyagesParDestination(Pays pays) {
 		EntityManager em = JpaUtil.obtenirEntityManager();
-		// TODO : est-ce qu'il faudrait requêter sur les sous-types ?
 		Query query = em.createQuery("SELECT v FROM Voyage v"
 									+ " WHERE v.destination=:pays");
 		query.setParameter("pays", pays);
