@@ -27,9 +27,13 @@ public class Main
 	{
 		fillDatabase(10);
 		
+		// TODO : créer un fake devis pour chaque client
+		
+		// TODO: affichage des clients inscrits avec un résumé de leurs devis et des conseillers associés
+		
 		// Test de l'inscription interactive d'un client
-		//System.out.println("\n");
-		//Client nouveau = VuesClient.inscriptionInteractive();
+		System.out.println("\n");
+		Client nouveau = VuesClient.inscriptionInteractive();
 		
 		// Test de la connexion interactive d'un client
 		System.out.println("\n");

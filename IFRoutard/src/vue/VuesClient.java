@@ -28,7 +28,6 @@ public class VuesClient {
 	/**
 	 * Inscription interactive d'un client en mode console.
 	 * TODO : gestion d'erreur
-	 * TOOD : utiliser leur classe Saisie ?
 	 * @return Le Client nouvellement créé
 	 */
 	public static Client inscriptionInteractive() {
@@ -72,7 +71,7 @@ public class VuesClient {
 	 * @return Le client venant de se connecter, null sinon
 	 */
 	public static Client connexionInteractive() {
-		System.out.println("----- Client : connexion interactive -----");
+		System.out.println("----- Client : connexion interactive -------");
 		System.out.println("Pour annuler, tapez `exit`");
 		
 		Client client = null;
@@ -97,6 +96,7 @@ public class VuesClient {
 						+ tentativesRestantes + " tentatives restantes.");
 			}
 		}
+		System.out.println("--------------------------------------------\n");
 		
 		if (valide)
 			return client;
@@ -117,7 +117,8 @@ public class VuesClient {
 	 * @return Le Devis créé, null sinon 
 	 */
 	public static Devis devisInteractif(Client client) {
-		System.out.println("\n----- Établissement interactif d'un devis -----");
+		System.out.println("----- Établissement interactif d'un devis --");
+		
 		String question;
 		Integer choix;
 		
@@ -180,8 +181,10 @@ public class VuesClient {
 			nbPersonnes = Saisie.lireInteger(question);
 		} while (nbPersonnes < 1);
 		
-		Conseiller specialiste = ServiceEmploye.obtenirSpecialiste(voyage.getDestination());
+		System.out.println("--------------------------------------------\n");
 		
+		
+		Conseiller specialiste = ServiceEmploye.obtenirSpecialiste(voyage.getDestination());
 		Devis devis = new Devis(client, depart, nbPersonnes, specialiste);
 		
 		return devis;
@@ -196,6 +199,7 @@ public class VuesClient {
 		String email = devis.getClient().getEmail();
 		String nom = devis.getClient().getNomComplet();
 		
+		System.out.println("--- E-mail de confirmation -----------------\n");
 		String headers = "To: " + nom + "<"+email+">\n"
 						+ "From: IF'Routard<devis@ifroutard.fr>\n"
 						+ "Subject: Votre devis";
@@ -241,5 +245,6 @@ public class VuesClient {
 		
 		System.out.println(headers + '\n');
 		System.out.println(corps);
+		System.out.println("--------------------------------------------\n");
 	}
 }
