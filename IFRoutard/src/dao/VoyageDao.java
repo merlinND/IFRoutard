@@ -39,9 +39,10 @@ public class VoyageDao {
 	 */
 	public static List<Voyage> obtenirVoyagesAyantDeparts() {
 		EntityManager em = JpaUtil.obtenirEntityManager();
-		// TODO : à tester avec des départs
+		
 		Query query = em.createQuery("SELECT v FROM Voyage v"
-									+ " WHERE (SELECT count(*) FROM Depart d) > 0");
+									+ " WHERE (SELECT count(d)"
+											+ " FROM Depart d WHERE d.voyage = v) > 0");
 		List<Voyage> results = (List<Voyage>)query.getResultList();
 		return results;
 	}
