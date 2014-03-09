@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
@@ -17,7 +18,7 @@ public class Conseiller extends Employe implements Serializable {
 	@OneToMany
 	private List<Pays> specialites = new ArrayList<Pays>();
 
-	@OneToMany
+	@OneToMany(mappedBy = "conseiller", cascade = CascadeType.ALL)
 	private List<Devis> devis = new ArrayList<Devis>();
 	public Conseiller() {
 		super();
@@ -35,6 +36,17 @@ public class Conseiller extends Employe implements Serializable {
 	}
 	public void addSpecialite(Pays pays) {
 		this.specialites.add(pays);
+	}
+
+	public List<Devis> getDevis() {
+		return devis;
+	}
+	public void addDevis(Devis devis) {
+		if (!this.devis.contains(devis))
+			this.devis.add(devis);
+	}
+	public void removeDevis(Devis devis) {
+		this.devis.remove(devis);
 	}
 	
 	@Override

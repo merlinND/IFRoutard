@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
@@ -20,7 +21,7 @@ public class Devis implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int nbPersonnes;
-    @OneToOne
+    @ManyToOne
     private Conseiller conseiller;
     @OneToOne
     private Client client;
@@ -47,7 +48,7 @@ public class Devis implements Serializable {
 		this.client = client;
 		this.depart = depart;
 		this.nbPersonnes = nbPersonnes;
-		this.conseiller = conseiller;
+		setConseiller(conseiller);
 		this.dateCreation = date;
     }
     
@@ -76,6 +77,16 @@ public class Devis implements Serializable {
     public void setDateCreation(Date dateCreation) {
         this.dateCreation = dateCreation;
     }
+	public Conseiller getConseiller() {
+		return this.conseiller;
+	}
+	public void setConseiller(Conseiller conseiller) {
+		if (this.conseiller != null)
+			this.conseiller.removeDevis(this);
+		
+		this.conseiller = conseiller;
+		this.conseiller.addDevis(this);
+	}
 
     @Override
     public int hashCode() {
@@ -99,7 +110,7 @@ public class Devis implements Serializable {
 
     @Override
     public String toString() {
-                return "metier.modele.Devis[ id=" + id + " ]" + " \n" 
+                return "metier.modele.Devis[ id=" + getId() + " ]" + " \n"
 				+  "Nombre de personne : " + nbPersonnes + " \n"+ "Conseiller : " + conseiller.getNom() + ",\n"
 				+ "Client : " + client.getNom()+ " \n" + "Départ :  " + depart.getDateDeDepart() + " \n"
 				+ "Date du devis : " + dateCreation+ "\n";
