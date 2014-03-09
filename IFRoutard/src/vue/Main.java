@@ -5,12 +5,11 @@ import java.util.List;
 import metier.modele.Circuit;
 import metier.modele.Client;
 import metier.modele.Conseiller;
-import metier.modele.Depart;
 import metier.modele.Devis;
 import metier.modele.Pays;
 import metier.modele.Sejour;
-import metier.modele.Voyage;
 import metier.service.ServiceClient;
+import metier.service.ServiceDevis;
 import metier.service.ServiceEmploye;
 import metier.service.ServiceVoyage;
 import util.LectureDonneesCsv;
@@ -41,14 +40,17 @@ public class Main
 		
 		// Test de l'établissement interactif d'un devis
 		System.out.println("\n");
-		Devis devis;
+		Devis devis = null;
 		do {
 			devis = VuesClient.devisInteractif(clientConnecte);
 		} while (devis == null);
 
-		// TODO: simuler l'envoi par e-mail
-		System.out.println("\nDevis établi avec succès :");
-		System.out.println(devis);
+		if (devis != null) {
+			ServiceDevis.creerDevis(devis);
+			
+			System.out.println("\nDevis établi avec succès ! Envoi de l'e-mail récapitulatif :");
+			VuesClient.envoyerEmailConfirmation(devis);
+		}
 	}
 	
 	/**
@@ -120,7 +122,7 @@ public class Main
 		
 		System.out.println("\n----- Liste des conseillers spécialistes d'Algérie -----");
 		Pays algerie = ServiceVoyage.obtenirPays("Algérie");
-		List<Conseiller> specialistes = ServiceEmploye.obtenirConseillerParSpecialite(algerie);
+		List<Conseiller> specialistes = ServiceEmploye.obtenirConseillersParSpecialite(algerie);
 		for (Conseiller c : specialistes) {
 			System.out.println(c);
 		}

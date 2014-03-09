@@ -47,12 +47,4 @@ public class ServiceDevis {
 		JpaUtil.fermerEntityManager();
 		return result;
 	}
-	
-	/**
-	 * Envoyer un devis par email au client concerné.
-	 * @param email
-	*/
-	public static void envoyerDevis(String email){
-		// TODO
-	}
 }

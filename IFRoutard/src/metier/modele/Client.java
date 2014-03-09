@@ -101,6 +101,10 @@ public class Client implements Serializable {
     public Civilite getCivilite() {
         return civilite;
     }
+	public String getNomComplet() {
+		return getCivilite() + " " + getPrenom() + " " + getNom();
+	}
+	
 	public Date getDateDeNaissance() {
         return dateDeNaissance;
     }

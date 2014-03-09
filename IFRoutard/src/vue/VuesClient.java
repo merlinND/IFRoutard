@@ -4,11 +4,13 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import metier.modele.Circuit;
 import metier.modele.Client;
 import metier.modele.Conseiller;
 import metier.modele.Depart;
 import metier.modele.Devis;
 import metier.modele.Pays;
+import metier.modele.Sejour;
 import metier.modele.Voyage;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
@@ -178,11 +180,66 @@ public class VuesClient {
 			nbPersonnes = Saisie.lireInteger(question);
 		} while (nbPersonnes < 1);
 		
-		// TODO : assigner un conseiller
 		Conseiller specialiste = ServiceEmploye.obtenirSpecialiste(voyage.getDestination());
 		
 		Devis devis = new Devis(client, depart, nbPersonnes, specialiste);
 		
 		return devis;
+	}
+	
+	/**
+	 * Simuler l'envoi d'un e-mail de confirmation au client,
+	 * suite à l'établissement d'un devis.
+	 * @param devis 
+	 */
+	public static void envoyerEmailConfirmation(Devis devis) {
+		String email = devis.getClient().getEmail();
+		String nom = devis.getClient().getNomComplet();
+		
+		String headers = "To: " + nom + "<"+email+">\n"
+						+ "From: IF'Routard<devis@ifroutard.fr>\n"
+						+ "Subject: Votre devis";
+		
+		
+		String conseiller = devis.getConseiller().getNomComplet() 
+					+ " ("+ devis.getConseiller().getEmail() +")";
+		Voyage voyage = devis.getDepart().getVoyage();
+		String specifique = "";
+		if (voyage instanceof Circuit) {
+			Circuit c = (Circuit)voyage;
+			specifique = "Circuit (" + c.getNbJours() + " jours, "
+						+ c.getNbKilometres() + "km, "
+						+ c.getTransport() + ")";
+		}
+		else {
+			Sejour s = (Sejour)voyage;
+			specifique = "Séjour (" + s.getNbJours() + " jours, "
+						+ s.getResidence() + ")";
+		}
+		float prixTotal = (devis.getDepart().getPrix() * devis.getNbPersonnes());
+		
+		// TODO: format d'affichage des dates ?
+		
+		String description = "Date : " + devis.getDateCreation() + "\n\n"
+							+ "Votre conseiller pour ce voyage : " + conseiller + "\n\n"
+							+ "Votre voyage : " + voyage.getTitre() + "\n"
+							+ "Destination : " + voyage.getDestination().getNom() + "\n"
+							+ specifique + "\n\n"
+							+ "Départ : le " + devis.getDepart().getDateDeDepart()
+									+ " de " + devis.getDepart().getVille() + "\n"
+							+ "Transport aérien : " + devis.getDepart().getDescription() + "\n\n"
+							+ voyage.getDescription() + "\n\n"
+							+ "--------------------\n"
+							+ "Nombre de voyageurs : " + devis.getNbPersonnes() + "\n"
+							+ "Prix par personne : " + devis.getDepart().getPrix() + "€\n"
+							+ "TOTAL : " + prixTotal + "€\n";
+		
+		
+		String corps = "Cher " + nom + ",\n"
+					+ "Veuillez trouver ci-dessous tous les détails de votre devis.\n\n"
+					+ description;
+		
+		System.out.println(headers + '\n');
+		System.out.println(corps);
 	}
 }

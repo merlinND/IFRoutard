@@ -56,6 +56,9 @@ public class Devis implements Serializable {
     public Long getId() {
         return id;
     }
+	public Client getClient() {
+		return client;
+	}
     public int getNbPersonnes() {
         return nbPersonnes;
     }
@@ -65,9 +68,16 @@ public class Devis implements Serializable {
     public Date getDateCreation() {
         return dateCreation;
     }
+	public Conseiller getConseiller() {
+		return this.conseiller;
+	}
+	
     public void setId(Long id) {
         this.id = id;
     }
+	public void setClient(Client client) {
+		this.client = client;
+	}
     public void setNbPersonnes(int nbPersonnes) {
         this.nbPersonnes = nbPersonnes;
     }
@@ -77,9 +87,6 @@ public class Devis implements Serializable {
     public void setDateCreation(Date dateCreation) {
         this.dateCreation = dateCreation;
     }
-	public Conseiller getConseiller() {
-		return this.conseiller;
-	}
 	public void setConseiller(Conseiller conseiller) {
 		if (this.conseiller != null)
 			this.conseiller.removeDevis(this);

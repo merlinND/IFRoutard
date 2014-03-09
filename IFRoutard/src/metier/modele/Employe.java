@@ -53,6 +53,9 @@ public abstract class Employe implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	public String getNomComplet() {
+		return getCivilite() + " " + getPrenom() + " " + getNom();
+	}
 	public String getCivilite() {
 		return civilite;
 	}
