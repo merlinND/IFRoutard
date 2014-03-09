@@ -29,6 +29,7 @@ public class Client implements Serializable {
 			if(string.equalsIgnoreCase("M") || string.equalsIgnoreCase("M."))
 				return M;
 			else if (string.equalsIgnoreCase("MME") || string.equalsIgnoreCase("MME.")
+					|| string.equalsIgnoreCase("MM")
 					|| string.equalsIgnoreCase("MLLE") || string.equalsIgnoreCase("MLLE."))
 				return MME;
 			else

@@ -4,6 +4,7 @@ import dao.PaysDao;
 import dao.VoyageDao;
 import java.util.List;
 import metier.modele.Circuit;
+import metier.modele.Depart;
 import metier.modele.Pays;
 import metier.modele.Sejour;
 import metier.modele.Voyage;
@@ -191,5 +192,31 @@ public class ServiceVoyage {
 	/* ----------------------------------------------
 	   DEPARTS
 	   ---------------------------------------------- */
-	// TODO
+	
+	/**
+	 * Insère le départ donné en base de données.
+	 * @param depart 
+	 */
+	public static void creerDepart(Depart depart) {
+		JpaUtil.creerEntityManager();
+		JpaUtil.ouvrirTransaction();
+		VoyageDao.creerDepart(depart);
+		JpaUtil.validerTransaction();
+		JpaUtil.fermerEntityManager();
+	}
+	
+	/**
+	 * Insère tous les départs donnés en base de données.
+	 * @param departs
+	 */
+	public static void creerDeparts(List<Depart> departs) {
+		JpaUtil.creerEntityManager();
+		JpaUtil.ouvrirTransaction();
+		for (Depart d : departs) {
+			VoyageDao.creerDepart(d);
+		}
+		JpaUtil.validerTransaction();
+		JpaUtil.fermerEntityManager();
+	}
+	
 }

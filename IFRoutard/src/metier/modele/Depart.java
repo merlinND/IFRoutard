@@ -1,17 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package metier.modele;
 
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
+import metier.modele.Voyage;
 
 /**
  *
@@ -34,16 +32,13 @@ public class Depart implements Serializable {
     public Depart() {
     }
 
-    public Depart(Voyage voyage, float prix, Date dateDeDepart, String ville, String description) {
+    public Depart(float prix, Date dateDeDepart, String ville, String description) {
         this.prix = prix;
         this.dateDeDepart = dateDeDepart;
         this.ville = ville;
         this.description = description;
-        this.voyage = voyage;
     }
-    
-    
-    
+	
     public float getPrix() {
         return prix;
     }
@@ -114,7 +109,7 @@ public class Depart implements Serializable {
 
     @Override
     public String toString() {
-        return "metier.modele.Depart[  ]"+" \n"+ prix +  " euros, de : " + ville 
+        return "metier.modele.Depart[ "+ getId() +" ]"+" \n"+ prix +  " euros, de : " + ville 
 				+  " le : " + dateDeDepart 
 				+ " pour un voyage en direction de :"+ voyage.getDestination().getNom() 
 				+"\n"+ "description : " + description +"\n";

@@ -7,14 +7,17 @@ package metier.modele;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 
 /**
  *
@@ -34,8 +37,9 @@ abstract public class Voyage implements Serializable {
     private String description;
     @OneToOne
     private Pays destination;
-    @OneToMany
-    private List<Depart> depart = new ArrayList<Depart>();
+    @OneToMany(mappedBy = "voyage", cascade = CascadeType.ALL)
+	@OrderBy("prix")
+    private List<Depart> departs = new ArrayList<Depart>();
 	
     public Voyage() {
     }
@@ -51,63 +55,57 @@ abstract public class Voyage implements Serializable {
     public Voyage(String code) {
         this.code = code;
     }
-
-
     public Long getId() {
         return id;
     }
-
-    public String getCode() {
+	public String getCode() {
         return code;
     }
-
     public String getTitre() {
         return titre;
     }
-
     public int getNbJours() {
         return nbJours;
     }
-
     public String getDescription() {
         return description;
     }
-
     public Pays getDestination() {
         return destination;
     }
-
-    public List<Depart> getDepart() {
-        return depart;
+    public List<Depart> getDeparts() {
+        return departs;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
     public void setCode(String code) {
         this.code = code;
     }
-
     public void setTitre(String titre) {
         this.titre = titre;
     }
-
     public void setNbJours(int nbJours) {
         this.nbJours = nbJours;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
-
     public void setDestination(Pays destination) {
 		this.destination = destination;
     }
-
     public void setDestinations(List<Depart> depart) {
-        this.depart = depart;
+        this.departs = depart;
     }
+	
+	public void addDepart(Depart depart) {
+		depart.setVoyage(this);
+		this.departs.add(depart);
+	}
+	public void removeDepart(Depart depart) {
+		depart.setVoyage(null);
+		this.departs.remove(depart);
+	}
 
     @Override
     public int hashCode() {

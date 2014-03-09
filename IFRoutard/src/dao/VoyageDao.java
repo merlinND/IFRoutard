@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import metier.modele.Circuit;
+import metier.modele.Depart;
 import metier.modele.Pays;
 import metier.modele.Sejour;
 import metier.modele.Voyage;
@@ -18,7 +19,6 @@ import util.JpaUtil;
 public class VoyageDao {
 	/**
 	 * Insère un nouveau voyage dans la base de données.
-	 * TODO : est-ce qu'il faudrait persister sur la sous-classe ?
 	 * @param voyage
 	 */
 	public static void creerVoyage(Voyage voyage) {
@@ -88,5 +88,13 @@ public class VoyageDao {
 	}
 	
 	
-	// TODO: DAO pour les départs
+	/**
+	 * Insère un nouveau départ dans la base de données.
+	 * @param depart
+	 */
+	public static void creerDepart(Depart depart) {
+		JpaUtil.obtenirEntityManager().persist(depart);
+		// On met également à jour le voyage le contenant
+		JpaUtil.obtenirEntityManager().merge(depart.getVoyage());
+	}
 }

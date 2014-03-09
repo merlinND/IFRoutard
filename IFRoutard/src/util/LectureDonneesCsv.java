@@ -209,7 +209,7 @@ public class LectureDonneesCsv {
 		String region = descriptionPays[2];
 		String capitale = descriptionPays[3];
 		String langues = descriptionPays[4];
-		Integer superficie = Integer.parseInt(descriptionPays[5]);
+		Integer superficie = (int)Float.parseFloat(descriptionPays[5]);
 		Float populationF = Float.parseFloat(descriptionPays[6]);
 		Integer population = (int)(populationF * 1000);
 		String regime = descriptionPays[7];
@@ -282,7 +282,7 @@ public class LectureDonneesCsv {
 		String[] nextLine;
 		// En-tete du fichier CSV
 		nextLine = this.lecteurFichier.readNext();
-		afficherEnTeteCsv(nextLine);
+		//afficherEnTeteCsv(nextLine);
 		
 		List<Voyage> nouveauxVoyages = new ArrayList<Voyage>();
 		// Lecture des lignes
@@ -329,7 +329,7 @@ public class LectureDonneesCsv {
 		String[] nextLine;
 		// En-tete du fichier CSV
 		nextLine = this.lecteurFichier.readNext();
-		afficherEnTeteCsv(nextLine);
+		//afficherEnTeteCsv(nextLine);
 		
 		List<Voyage> nouveauxVoyages = new ArrayList<Voyage>();
 		// Lecture des lignes
@@ -371,8 +371,6 @@ public class LectureDonneesCsv {
 		}
 	}
 	
-	//TODO: lireDepart Lire etc...
-        
 	public void lireDeparts(int limite) throws IOException {
 
 		String[] nextLine;
@@ -394,7 +392,7 @@ public class LectureDonneesCsv {
 			}
 		}
 		
-		// TODO: insérer en base
+		ServiceVoyage.creerDeparts(nouveauxDeparts);
 	}
 	
 	public static Depart instancierDepart(String[] descriptionDepart) {		
@@ -406,7 +404,10 @@ public class LectureDonneesCsv {
 		Float prix = Float.parseFloat(descriptionDepart[3]);
 		String description = descriptionDepart[4];
 		
-		return new Depart(voyage, prix, dateDepart, ville, description);
+		Depart d = new Depart(prix, dateDepart, ville, description);
+		voyage.addDepart(d);
+		
+		return d;
 	}
 	
 	
