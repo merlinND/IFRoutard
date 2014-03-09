@@ -5,9 +5,11 @@ import java.util.List;
 import metier.modele.Circuit;
 import metier.modele.Client;
 import metier.modele.Conseiller;
+import metier.modele.Depart;
 import metier.modele.Devis;
 import metier.modele.Pays;
 import metier.modele.Sejour;
+import metier.modele.Voyage;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
 import metier.service.ServiceVoyage;
@@ -19,16 +21,41 @@ import util.LectureDonneesCsv;
  */
 public class Main
 {
-   
 	/**
 	 * @param args the command line arguments
 	 */
 	public static void main(String[] args)
 	{
-
-		// Si on ne veut pas imposer de limite : utiliser -1
-		int limite = 3;
+		fillDatabase(10);
 		
+		// Test de l'inscription interactive d'un client
+		//System.out.println("\n");
+		//Client nouveau = VuesClient.inscriptionInteractive();
+		
+		// Test de la connexion interactive d'un client
+		System.out.println("\n");
+		Client clientConnecte = VuesClient.connexionInteractive();
+		if (clientConnecte != null) {
+			System.out.println("Bienvenue, " + clientConnecte.getPrenom() + " !");
+		}
+		
+		// Test de l'établissement interactif d'un devis
+		System.out.println("\n");
+		Devis devis;
+		do {
+			devis = VuesClient.devisInteractif(clientConnecte);
+		} while (devis == null);
+
+		// TODO: simuler l'envoi par e-mail
+		System.out.println("\nDevis établi avec succès :");
+		System.out.println(devis);
+	}
+	
+	/**
+	 * Utilise les données de test fournies pour remplir la base.
+	 * @param limite Le nombre d'éléments à insérer dans chaque table (-1 => tous)
+	 */
+	static void fillDatabase(int limite) {
 		// Récupérer les données de test
 		String fichierClients = "res/data/IFRoutard-Clients.csv",
 				fichierPays = "res/data/IFRoutard-Pays.csv",
@@ -64,7 +91,9 @@ public class Main
 		} catch (IOException ex) {
 			ex.printStackTrace(System.err);
 		}
-		
+	}
+	
+	static void printDatabaseSamples() {
 		System.out.println("----- Liste de tous les pays -----");
 		List<Pays> tousLesPays = ServiceVoyage.obtenirPays();
 		Pays unPays;
@@ -96,34 +125,12 @@ public class Main
 			System.out.println(c);
 		}
 		
-		// Test de l'inscription interactive d'un client
-		//System.out.println("\n");
-		//Client nouveau = VuesClient.inscriptionInteractive();
-		
 		System.out.println("\n----- Liste de tous les clients -----");
 		List<Client> tousLesClients = ServiceClient.obtenirClients();
 		Client randomClient = null;
 		for (Client c : tousLesClients) {
 			System.out.println(c);
 			randomClient = c;
-		}
-		// Test de la connexion interactive d'un client
-		//System.out.println("\n");
-		//Client connecte = VuesClient.connexionInteractive();
-		//if (connecte != null) {
-		//	System.out.println("Bienvenue, " + connecte.getPrenom() + " !");
-		//}
-		
-		// Test de l'établissement interactif d'un devis
-		System.out.println("\n");
-		Devis devis = VuesClient.devisInteractif(randomClient);
-		if (devis != null) {
-			// TODO: simuler l'envoi par e-mail
-			System.out.println("\nDevis établi avec succès :");
-			System.out.println(devis);
-		}
-		else {
-			System.err.println("\nEchec de l'établissement du devis.");
 		}
 	}
 }

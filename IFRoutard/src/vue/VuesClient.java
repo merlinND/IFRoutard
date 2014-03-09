@@ -109,7 +109,7 @@ public class VuesClient {
 	 * 5. Confirmation du devis
 	 * TODO : afficher davantage de détails à chaque étape.
 	 * TODO : possibilité d'annuler
-	 * @param Client Le client qui souhaite partir
+	 * @param client Le client qui souhaite partir
 	 * @return Le Devis créé, null sinon 
 	 */
 	public static Devis devisInteractif(Client client) {
@@ -139,7 +139,7 @@ public class VuesClient {
 		Integer i = 1;
 		List<Integer> valeursPossibles = new ArrayList<Integer>();
 		for (Voyage v : voyages) {
-			if (v.getDepart().size() > 0) {
+			if (v.getDeparts().size() > 0) {
 				System.out.println("\n" + i + ". " + v.getTitre());
 				valeursPossibles.add(i);
 				i++;
@@ -156,7 +156,7 @@ public class VuesClient {
 		Voyage voyage = voyages.get(choix - 1);
 		
 		// Liste des départs de ce voyage
-		List<Depart> departs = voyage.getDepart();
+		List<Depart> departs = voyage.getDeparts();
 		System.out.println("\nDéparts disponibles :");
 		i = 1;
 		valeursPossibles.clear();
