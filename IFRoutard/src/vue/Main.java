@@ -28,13 +28,13 @@ public class Main
 	 */
 	public static void main(String[] args)
 	{
-		remplirBaseDeDonnees(100);
+		remplirBaseDeDonnees(-1);
 		creerDevisAleatoires();
 		afficherResumeClients();
 		
 		// Test de l'inscription interactive d'un client
 		System.out.println("\n");
-		//Client nouveau = VuesClient.inscriptionInteractive();
+		Client nouveau = VuesClient.inscriptionInteractive();
 		
 		// Test de la connexion interactive d'un client
 		System.out.println("\n");
