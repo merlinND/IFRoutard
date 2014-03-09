@@ -5,13 +5,16 @@ import java.util.List;
 import metier.modele.Circuit;
 import metier.modele.Client;
 import metier.modele.Conseiller;
+import metier.modele.Depart;
 import metier.modele.Devis;
 import metier.modele.Pays;
 import metier.modele.Sejour;
+import metier.modele.Voyage;
 import metier.service.ServiceClient;
 import metier.service.ServiceDevis;
 import metier.service.ServiceEmploye;
 import metier.service.ServiceVoyage;
+import util.Aleatoire;
 import util.LectureDonneesCsv;
 
 /**
@@ -25,11 +28,9 @@ public class Main
 	 */
 	public static void main(String[] args)
 	{
-		fillDatabase(10);
-		
-		// TODO : créer un fake devis pour chaque client
-		
-		// TODO: affichage des clients inscrits avec un résumé de leurs devis et des conseillers associés
+		remplirBaseDeDonnees(100);
+		creerDevisAleatoires();
+		afficherResumeClients();
 		
 		// Test de l'inscription interactive d'un client
 		System.out.println("\n");
@@ -61,7 +62,7 @@ public class Main
 	 * Utilise les données de test fournies pour remplir la base.
 	 * @param limite Le nombre d'éléments à insérer dans chaque table (-1 => tous)
 	 */
-	static void fillDatabase(int limite) {
+	static void remplirBaseDeDonnees(int limite) {
 		// Récupérer les données de test
 		String fichierClients = "res/data/IFRoutard-Clients.csv",
 				fichierPays = "res/data/IFRoutard-Pays.csv",
@@ -99,7 +100,10 @@ public class Main
 		}
 	}
 	
-	static void printDatabaseSamples() {
+	/**
+	 * Affiche certains extraits du contenu de la base de données.
+	 */
+	static void afficherEchantillons() {
 		System.out.println("----- Liste de tous les pays -----");
 		List<Pays> tousLesPays = ServiceVoyage.obtenirPays();
 		Pays unPays;
@@ -133,10 +137,59 @@ public class Main
 		
 		System.out.println("\n----- Liste de tous les clients -----");
 		List<Client> tousLesClients = ServiceClient.obtenirClients();
-		Client randomClient = null;
 		for (Client c : tousLesClients) {
 			System.out.println(c);
-			randomClient = c;
 		}
+	}
+
+	/**
+	 * Pour chaque client, crée un devis aléatoire.
+	 */
+	static void creerDevisAleatoires() {
+		List<Client> tousLesClients = ServiceClient.obtenirClients();
+		List<Voyage> tousLesVoyages = ServiceVoyage.obtenirVoyages();
+		
+		for (Client c : tousLesClients) {
+			Integer r;
+			// Choix d'un voyage aléatoire
+			r = Aleatoire.random(0, tousLesVoyages.size()-1);
+			Voyage voyage = tousLesVoyages.get(r);
+			// Choix d'un départ aléatoire pour ce voyage
+			r = Aleatoire.random(0, voyage.getDeparts().size()-1);
+			Depart depart = voyage.getDeparts().get(r);
+			// Obtention du conseiller le moins occupé
+			Conseiller conseiller = ServiceEmploye.obtenirSpecialiste(voyage.getDestination());
+			
+			if (conseiller == null)
+				System.err.println("Impossible de trouver un conseiller spécialiste de " + voyage.getDestination().getNom());
+			
+			// Choix aléatoire du nombre de voyageurs
+			int nbVoyageurs = Aleatoire.random(1, 10);
+			
+			// Création et enregistrement du devis
+			Devis devis = new Devis(c, depart, nbVoyageurs, conseiller);
+			ServiceDevis.creerDevis(devis);
+		}
+	}
+	
+	/**
+	 * Affiche un résumé des clients, de leurs devis et du conseiller associé
+	 */
+	static void afficherResumeClients() {
+		System.out.println("----- Résumé de la base client -------------");
+		List<Client> tousLesClients = ServiceClient.obtenirClients();
+		
+		for (Client c : tousLesClients) {
+			System.out.println(c.getNomComplet() + " :");
+			if (c.getDevis().size() > 0) {
+				Devis d = c.getDevis().get(0);
+				System.out.println("a acheté le voyage : " + d.getDepart().getVoyage().getTitre());
+				if (d.getConseiller() != null)
+					System.out.println("et est suivi par : " + d.getConseiller().getNomComplet());
+			}
+			System.out.print("\n");
+		}
+		
+		System.out.println("--------------------------------------------\n");
 	}
 }
