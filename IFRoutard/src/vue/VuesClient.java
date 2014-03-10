@@ -110,8 +110,6 @@ public class VuesClient {
 	 * 3. Sélection du voyage parmi les propositions
 	 * 4. Sélection du départ parmi les propositions
 	 * 5. Confirmation du devis
-	 * TODO : afficher davantage de détails à chaque étape
-	 * TODO : ajouter la possibilité d'annuler
 	 * @param client Le client qui souhaite partir
 	 * @return Le Devis créé, null sinon 
 	 */
@@ -164,7 +162,10 @@ public class VuesClient {
 		i = 1;
 		valeursPossibles.clear();
 		for (Depart d : departs) {
-			System.out.println(i + ". " + d.getDescription() + " à " + d.getPrix() + "€");
+			System.out.println(i + ". " + d.getDateDeDepart().toLocaleString()
+								+ " de " + d.getVille()
+								+ " à " + d.getPrix() + "€"
+								+ " (" + d.getDescription() + ")");
 			valeursPossibles.add(i);
 			i++;
 		}
