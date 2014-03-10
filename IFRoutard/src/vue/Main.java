@@ -1,6 +1,7 @@
 package vue;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import metier.modele.Circuit;
 import metier.modele.Client;
@@ -16,6 +17,7 @@ import metier.service.ServiceEmploye;
 import metier.service.ServiceVoyage;
 import util.Aleatoire;
 import util.LectureDonneesCsv;
+import util.Saisie;
 
 /**
  *
@@ -28,34 +30,72 @@ public class Main
 	 */
 	public static void main(String[] args)
 	{
-		remplirBaseDeDonnees(-1);
-		creerDevisAleatoires();
-		afficherResumeClients();
-		
-		// Test de l'inscription interactive d'un client
-		System.out.println("\n");
-		Client nouveau = VuesClient.inscriptionInteractive();
-		
-		// Test de la connexion interactive d'un client
-		System.out.println("\n");
-		Client clientConnecte = VuesClient.connexionInteractive();
-		if (clientConnecte != null) {
-			System.out.println("Bienvenue, " + clientConnecte.getPrenom() + " !");
+		while (menu()) {
+			// Keep going.
 		}
+	}
+	
+	static Boolean menu() {
+		List<Integer> choixPossibles = new ArrayList<Integer>();
 		
-		// Test de l'établissement interactif d'un devis
-		System.out.println("\n");
-		Devis devis = null;
-		do {
-			devis = VuesClient.devisInteractif(clientConnecte);
-		} while (devis == null);
+		System.out.println("----- Menu ---------------------------------");
+		choixPossibles.add(1);
+		System.out.println("1. Charger les données de test");
+		choixPossibles.add(2);
+		System.out.println("2. Créer des devis aléatoires");
+		choixPossibles.add(3);
+		System.out.println("3. Afficher un résumé des clients");
+		choixPossibles.add(4);
+		System.out.println("4. Inscription interactive");
+		choixPossibles.add(5);
+		System.out.println("5. Connexion et établissement d'un devis");
+		choixPossibles.add(6);
+		System.out.println("0. Quitter");
+		choixPossibles.add(0);
+		
+		Integer choix = Saisie.lireInteger("Votre choix : ", choixPossibles);
+		System.out.println("--------------------------------------------\n");
+		
+		switch (choix) {
+			case 1:
+				remplirBaseDeDonnees(-1);
+				break;
+			case 2:
+				creerDevisAleatoires();
+				break;
+			case 3:
+				afficherResumeClients();
+				break;
+			case 4:
+				// Test de l'inscription interactive d'un client
+				System.out.println("\n");
+				VuesClient.inscriptionInteractive();
+				break;
+			case 5:
+				// Test de la connexion interactive d'un client
+				System.out.println("\n");
+				Client clientConnecte = VuesClient.connexionInteractive();
+				if (clientConnecte != null) {
+					System.out.println("Bienvenue, " + clientConnecte.getPrenom() + " !");
+				}
+				
+				// Test de l'établissement interactif d'un devis
+				System.out.println("\n");
+				Devis devis = null;
+				devis = VuesClient.devisInteractif(clientConnecte);
 
-		if (devis != null) {
-			ServiceDevis.creerDevis(devis);
+				if (devis != null) {
+					ServiceDevis.creerDevis(devis);
+
+					System.out.println("\nDevis établi avec succès ! Envoi de l'e-mail récapitulatif :");
+					VuesClient.envoyerEmailConfirmation(devis);
+				}
 			
-			System.out.println("\nDevis établi avec succès ! Envoi de l'e-mail récapitulatif :");
-			VuesClient.envoyerEmailConfirmation(devis);
+			case 0:
+			default:
+				return false;
 		}
+		return true;
 	}
 	
 	/**
@@ -189,7 +229,6 @@ public class Main
 			}
 			System.out.print("\n");
 		}
-		
 		System.out.println("--------------------------------------------\n");
 	}
 }
