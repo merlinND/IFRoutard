@@ -44,14 +44,15 @@ public class Main
 		choixPossibles.add(2);
 		System.out.println("2. Créer des devis aléatoires");
 		choixPossibles.add(3);
-		System.out.println("3. Afficher un résumé des clients");
+		System.out.println("3. Afficher un résumé des conseillers");
 		choixPossibles.add(4);
-		System.out.println("4. Inscription interactive");
+		System.out.println("4. Afficher un résumé des clients");
 		choixPossibles.add(5);
-		System.out.println("5. Connexion et établissement d'un devis");
+		System.out.println("5. Inscription interactive");
 		choixPossibles.add(6);
-		System.out.println("0. Quitter");
+		System.out.println("6. Connexion et établissement d'un devis");
 		choixPossibles.add(0);
+		System.out.println("0. Quitter");
 		
 		Integer choix = Saisie.lireInteger("Votre choix : ", choixPossibles);
 		System.out.println("--------------------------------------------\n");
@@ -64,14 +65,17 @@ public class Main
 				creerDevisAleatoires();
 				break;
 			case 3:
-				afficherResumeClients();
+				afficherResumeConseillers();
 				break;
 			case 4:
+				afficherResumeClients();
+				break;
+			case 5:
 				// Test de l'inscription interactive d'un client
 				System.out.println("\n");
 				VuesClient.inscriptionInteractive();
 				break;
-			case 5:
+			case 6:
 				// Test de la connexion interactive d'un client
 				System.out.println("\n");
 				Client clientConnecte = VuesClient.connexionInteractive();
@@ -81,16 +85,14 @@ public class Main
 				
 				// Test de l'établissement interactif d'un devis
 				System.out.println("\n");
-				Devis devis = null;
-				devis = VuesClient.devisInteractif(clientConnecte);
-
+				Devis devis = VuesClient.devisInteractif(clientConnecte);
 				if (devis != null) {
 					ServiceDevis.creerDevis(devis);
 
 					System.out.println("\nDevis établi avec succès ! Envoi de l'e-mail récapitulatif :");
 					VuesClient.envoyerEmailConfirmation(devis);
 				}
-			
+				break;
 			case 0:
 			default:
 				return false;
@@ -200,8 +202,8 @@ public class Main
 			// Obtention du conseiller le moins occupé
 			Conseiller conseiller = ServiceEmploye.obtenirSpecialiste(voyage.getDestination());
 			
-			if (conseiller == null)
-				System.err.println("Impossible de trouver un conseiller spécialiste de " + voyage.getDestination().getNom());
+			//if (conseiller == null)
+			//	System.err.println("Impossible de trouver un conseiller spécialiste de " + voyage.getDestination().getNom());
 			
 			// Choix aléatoire du nombre de voyageurs
 			int nbVoyageurs = Aleatoire.random(1, 10);
@@ -210,6 +212,24 @@ public class Main
 			Devis devis = new Devis(c, depart, nbVoyageurs, conseiller);
 			ServiceDevis.creerDevis(devis);
 		}
+	}
+	
+	/**
+	 * Affiche un résumé des conseillers et de leurs spécialités
+	 */
+	static void afficherResumeConseillers() {
+		System.out.println("----- Résumé de la base conseiller ---------");
+		List<Conseiller> conseillers = ServiceEmploye.obtenirConseillers();
+		
+		for(Conseiller c : conseillers) {
+			System.out.println(c.getNomComplet());
+			System.out.print(" est spécialiste de : ");
+			List<Pays> specialites = c.getSpecialites();
+			for (Pays p : specialites)
+				System.out.print(p.getNom() + ", ");
+			System.out.print('\n');
+		}
+		System.out.println("--------------------------------------------\n");
 	}
 	
 	/**
